@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNTAXIS — Das Portal | Dekonstruktion & Realitäts-Kartographie</title>
+  <meta name="description" content="Das SYNTAXIS-Universum von Gerald Glaser: Die Noir-Chroniken, die 9 Meister-Autopsien und die Landkarte der Realität.">
+
+  <!-- Typografie -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void: '#050608',
+            surface: '#0a0d13',
+            panel: '#111520',
+            panelHover: '#181e2d',
+            gold: '#d4af37',
+            goldGlow: '#f3cf55',
+            cyanGlow: '#00f2ff',
+            emeraldGlow: '#10b981',
+            crimsonGlow: '#ff2a4b',
+            bone: '#eae8e1',
+            boneDim: '#b3b1a8',
+            subtle: '#6a6c78'
+          },
+          fontFamily: {
+            serif: ['Cinzel', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050608;
+      background-image: 
+        radial-gradient(circle at 50% -5%, rgba(212, 175, 55, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 85% 30%, rgba(0, 242, 255, 0.07) 0%, transparent 45%),
+        radial-gradient(circle at 15% 40%, rgba(16, 185, 129, 0.05) 0%, transparent 45%),
+        linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      color: #eae8e1;
+    }
+    .glow-gold { text-shadow: 0 0 20px rgba(212, 175, 55, 0.45), 0 0 40px rgba(212, 175, 55, 0.15); }
+    .nexus-card { transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+    .nexus-card:hover { transform: translateY(-6px); }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-gold selection:text-void min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+  <!-- UNIFIED HEADER -->
+  <header class="border-b border-white/10 backdrop-blur-md sticky top-0 z-30 bg-void/90">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3.5">
+        <a href="index.html" class="w-10 h-10 rounded-lg border border-gold/50 bg-gold/10 flex items-center justify-center font-serif text-gold font-bold text-2xl shadow-md shadow-gold/10">
+          Ψ
+        </a>
+        <div>
+          <a href="index.html" class="font-serif text-xl font-black tracking-widest text-bone block leading-tight">
+            SYNTAXIS
+          </a>
+          <span class="font-mono text-[10px] tracking-widest text-gold block uppercase">
+            Ökosystem der Vernunft
+          </span>
+        </div>
+      </div>
+      
+      <nav class="hidden lg:flex items-center gap-7 font-mono text-xs tracking-wider uppercase text-zinc-400">
+        <a href="index.html" class="text-gold font-bold transition-colors">Start</a>
+        <a href="neocortex.html" class="hover:text-cyanGlow transition-colors">Neocortex City</a>
+        <a href="autopsien.html" class="hover:text-emeraldGlow transition-colors">Meister-Autopsien</a>
+        <a href="landkarte.html" class="hover:text-gold transition-colors">Landkarte der Realität</a>
+        <button id="nav-impressum-btn" class="text-zinc-400 hover:text-bone transition-colors font-bold">Impressum</button>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#tore" class="font-mono text-xs px-4 py-2 rounded-lg border border-gold/50 bg-gold/10 text-gold hover:bg-gold hover:text-void transition-all font-bold shadow-sm shadow-gold/20">
+          TORE ÖFFNEN ↓
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="relative max-w-7xl mx-auto px-6 pt-16 pb-20 md:pt-24 md:pb-28 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/5 font-mono text-xs text-gold mb-8">
+        <span>●</span> DREI PFADE ZUR SOUVERÄNITÄT DES GEISTES
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-bone uppercase mb-6 leading-none max-w-5xl mx-auto">
+        Wo Urteile enden, <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-bone to-goldGlow glow-gold">beginnt der Schnitt.</span>
+      </h1>
+
+      <p class="max-w-3xl mx-auto text-lg md:text-xl text-zinc-300 font-light leading-relaxed mb-12 font-sans">
+        Die Welt ertrinkt im Rauschen unvollständiger Geschichten, emotionaler Kriege und dogmatischer Mythen. 
+        <strong class="text-bone font-medium">SYNTAXIS</strong> ist das Arsenal des klaren Geistes: Drei Werke zur Dekonstruktion von Täuschung und zur Neukartierung der Realität.
+      </p>
+
+      <!-- Schnell-Tore Links -->
+      <div class="flex flex-wrap items-center justify-center gap-4 font-mono text-xs">
+        <a href="neocortex.html" class="px-5 py-3 rounded-lg border border-cyanGlow/40 bg-cyanGlow/10 text-cyanGlow hover:bg-cyanGlow hover:text-void transition-all font-bold">
+          1. NOIR-CHRONIKEN (NEOCORTEX) →
+        </a>
+        <a href="autopsien.html" class="px-5 py-3 rounded-lg border border-emeraldGlow/40 bg-emeraldGlow/10 text-emeraldGlow hover:bg-emeraldGlow hover:text-void transition-all font-bold">
+          2. MEISTER-AUTOPSIEN →
+        </a>
+        <a href="landkarte.html" class="px-5 py-3 rounded-lg bg-gold text-void font-bold hover:bg-goldGlow transition-all shadow-lg shadow-gold/20">
+          3. DAS HAUPTWERK (LANDKARTE) →
+        </a>
+      </div>
+    </section>
+
+    <!-- DIE 3 TORE DES ÖKOSYSTEMS -->
+    <section id="tore" class="max-w-7xl mx-auto px-6 py-20 border-t border-white/10">
+      <div class="text-center mb-16">
+        <span class="font-mono text-xs text-gold uppercase tracking-widest font-bold">// DER DREIKLANG</span>
+        <h2 class="font-serif text-3xl md:text-5xl text-bone mt-2 font-bold">Die drei Tore von SYNTAXIS</h2>
+        <p class="text-sm text-zinc-400 max-w-2xl mx-auto mt-2 font-mono">
+          Wähle deine Ebene des Zugangs: Erzählung, forensische Einzelfall-Dekonstruktion oder das philosophische Methoden-Arsenal.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- TOR 1: NEOCORTEX CITY -->
+        <article class="nexus-card bg-panel border border-cyanGlow/30 hover:border-cyanGlow rounded-2xl p-8 flex flex-col justify-between shadow-2xl group">
+          <div>
+            <div class="flex items-center justify-between font-mono text-xs mb-4">
+              <span class="text-cyanGlow font-bold">TOR I // DIE ROMANSERIE</span>
+              <span class="text-2xl">🧠</span>
+            </div>
+            <h3 class="font-serif text-2xl md:text-3xl font-bold text-bone group-hover:text-cyanGlow transition-colors mb-2">
+              Chroniken von Neocortex City
+            </h3>
+            <p class="font-mono text-xs text-cyanGlow/80 mb-4">Ermittlungen für ontologische Angelegenheiten</p>
+            <p class="text-sm text-zinc-300 font-sans leading-relaxed mb-6">
+              In den Regenschluchten der Metropole des Geistes ermittelt Privatdetektiv <strong>Valerian Trace</strong> mit seiner 1962er Pontiac <em>Pareidolia</em>. Unterstützt von Physiker Dr. Ratio, Feldbiologin Sylvia Krone und Parapsychologin Dr. Vera Tempel seziert er Fälle, in denen die Grenze zwischen Wahrnehmung und Wahn kollabiert.
+            </p>
+            <div class="p-4 bg-surface rounded-xl border border-white/5 font-mono text-xs text-zinc-400 space-y-1.5 mb-6">
+              <div>• <strong>Bände I–V:</strong> Groom Lake, Bigfoot, Werwolf, Exorzismus, Nullpunkt</div>
+              <div>• <strong>Sektoren-Atlas:</strong> DLPFC Tower bis Limbische Altstadt</div>
+              <div>• <strong>Lizenz:</strong> CC BY-NC-ND 4.0 (Keine Bearbeitung)</div>
+            </div>
+          </div>
+          <a href="neocortex.html" class="w-full py-3.5 rounded-lg bg-cyanGlow/10 border border-cyanGlow/40 text-cyanGlow hover:bg-cyanGlow hover:text-void font-mono text-xs font-bold text-center transition-all block">
+            ZUR NOIR-METROPOLE →
+          </a>
+        </article>
+
+        <!-- TOR 2: AUTOPSIEN -->
+        <article class="nexus-card bg-panel border border-emeraldGlow/30 hover:border-emeraldGlow rounded-2xl p-8 flex flex-col justify-between shadow-2xl group">
+          <div>
+            <div class="flex items-center justify-between font-mono text-xs mb-4">
+              <span class="text-emeraldGlow font-bold">TOR II // DAS FORENSISCHE ARCHIV</span>
+              <span class="text-2xl">🔬</span>
+            </div>
+            <h3 class="font-serif text-2xl md:text-3xl font-bold text-bone group-hover:text-emeraldGlow transition-colors mb-2">
+              Meister-Autopsien der Schatten
+            </h3>
+            <p class="font-mono text-xs text-emeraldGlow/80 mb-4">Chirurgische Dekonstruktion mit radikaler Empathie</p>
+            <p class="text-sm text-zinc-300 font-sans leading-relaxed mb-6">
+              Der Seziersaal für 9 große Mythen der Moderne: Von der Flachen Erde über Roswell, Chemtrails, Klimaleugnung bis hin zur Astrologie und Nibiru-Panik. Keine Strohmänner, sondern die Prüfung der Thesen in ihrer stärksten Form – mit der Provenienz-Klinge des Zeitstempels.
+            </p>
+            <div class="p-4 bg-surface rounded-xl border border-white/5 font-mono text-xs text-zinc-400 space-y-1.5 mb-6">
+              <div>• <strong>9 vollendete Bände:</strong> Sektion A (Kosmos voller Lügen)</div>
+              <div>• <strong>Werkzeuge:</strong> Der Lichttisch-Schnitt & Detector-Kit</div>
+              <div>• <strong>Lizenz:</strong> CC BY-NC 4.0 (Bearbeitung erlaubt)</div>
+            </div>
+          </div>
+          <a href="autopsien.html" class="w-full py-3.5 rounded-lg bg-emeraldGlow/10 border border-emeraldGlow/40 text-emeraldGlow hover:bg-emeraldGlow hover:text-void font-mono text-xs font-bold text-center transition-all block">
+            ZUM SEZIERSAAL DER AUTOPSIEN →
+          </a>
+        </article>
+
+        <!-- TOR 3: DAS HAUPTWERK -->
+        <article class="nexus-card bg-panel border border-gold/40 hover:border-gold rounded-2xl p-8 flex flex-col justify-between shadow-2xl group">
+          <div>
+            <div class="flex items-center justify-between font-mono text-xs mb-4">
+              <span class="text-gold font-bold">TOR III // DAS HAUPTWERK</span>
+              <span class="text-2xl">🧭</span>
+            </div>
+            <h3 class="font-serif text-2xl md:text-3xl font-bold text-bone group-hover:text-gold transition-colors mb-2">
+              Landkarte der Realität
+            </h3>
+            <p class="font-mono text-xs text-gold/80 mb-4">Die Reise: Vom Höhlenschatten zur Souveränität</p>
+            <p class="text-sm text-zinc-300 font-sans leading-relaxed mb-6">
+              Das philosophische und methodische Fundament in 7 großen Säulen. Die Symbiose aus dem <strong>Architekten</strong> (Klinge, Dekonstruktion, Ockham) und dem <strong>Gärtner</strong> (Boden, Empathie, Demut) – ergänzt durch das interaktive Dojo und 25 Fallakten-Schnitzeljagden.
+            </p>
+            <div class="p-4 bg-surface rounded-xl border border-white/5 font-mono text-xs text-zinc-400 space-y-1.5 mb-6">
+              <div>• <strong>3 Tore:</strong> Notaufnahme 🚑, Detektivbüro 🕵️, Bibliothek 🏛️</div>
+              <div>• <strong>Werkbänke:</strong> Evidenz-Waage, 4-Stufen-Dojo & Taktische Werkstatt</div>
+              <div>• <strong>Lizenz:</strong> CC BY-NC 4.0 (Bearbeitung erlaubt)</div>
+            </div>
+          </div>
+          <a href="landkarte.html" class="w-full py-3.5 rounded-lg bg-gold text-void hover:bg-goldGlow font-mono text-xs font-bold text-center transition-all block shadow-lg shadow-gold/20">
+            ZUR LANDKARTE DER REALITÄT →
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- INTERAKTIVER WEGWEISER -->
+    <section id="kompass" class="max-w-5xl mx-auto px-6 py-20 border-t border-white/10">
+      <div class="bg-panel border border-gold/30 rounded-2xl p-8 md:p-12 shadow-2xl">
+        <div class="text-center mb-8">
+          <span class="font-mono text-xs text-gold uppercase tracking-widest font-bold">// DER EXPEDITIONS-WEGWEISER</span>
+          <h2 class="font-serif text-2xl md:text-4xl font-bold text-bone mt-1">Wo beginnt deine Reise?</h2>
+          <p class="text-xs md:text-sm text-zinc-400 font-mono mt-2">Wähle dein aktuelles Anliegen für die passende Routenempfehlung</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs mb-8" id="navigator-options">
+          <button data-target="neocortex" class="nav-choice active p-5 rounded-xl border border-cyanGlow/40 bg-cyanGlow/10 text-left hover:border-cyanGlow transition-all">
+            <span class="text-cyanGlow font-bold block mb-1">OPTION A</span>
+            <p class="text-zinc-300 font-sans text-xs">Ich suche eine atmosphärische Noir-Ermittlung, die philosophische und kognitive Konzepte narrativ erlebbar macht.</p>
+          </button>
+          <button data-target="autopsien" class="nav-choice p-5 rounded-xl border border-white/10 bg-surface text-left hover:border-emeraldGlow transition-all">
+            <span class="text-emeraldGlow font-bold block mb-1">OPTION B</span>
+            <p class="text-zinc-300 font-sans text-xs">Ich brauche konkrete, naturwissenschaftlich fundierte Fakten-Analysen gegen Mythen wie Flache Erde oder Roswell.</p>
+          </button>
+          <button data-target="landkarte" class="nav-choice p-5 rounded-xl border border-white/10 bg-surface text-left hover:border-gold transition-all">
+            <span class="text-gold font-bold block mb-1">OPTION C</span>
+            <p class="text-zinc-300 font-sans text-xs">Ich will mein Denken von Grund auf schulen, Denkfehler ausräumen, im Dojo sparren und die 7 Säulen studieren.</p>
+          </button>
+        </div>
+
+        <!-- Empfehlungs-Box -->
+        <div id="navigator-result" class="p-6 bg-surface rounded-xl border border-cyanGlow/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <span id="nav-res-badge" class="font-mono text-xs text-cyanGlow font-bold block mb-1">EMPFOHLENE ROUTE: CHRONIKEN VON NEOCORTEX CITY</span>
+            <p id="nav-res-text" class="text-xs text-zinc-300 font-sans">
+              Starte bei Band I: <em>Der Schatten über Dreamland</em>. Steige in die 1962er Pontiac von Valerian Trace und erkunde die Stadt des Gehirns.
+            </p>
+          </div>
+          <a id="nav-res-link" href="neocortex.html" class="px-5 py-2.5 rounded-lg bg-cyanGlow text-void font-mono text-xs font-bold whitespace-nowrap hover:opacity-90 transition-opacity">
+            ZUR SEITE →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAS SYNTAXIS-MANIFEST -->
+    <section id="manifest" class="max-w-7xl mx-auto px-6 py-20 border-t border-white/10">
+      <div class="text-center mb-14">
+        <span class="font-mono text-xs text-zinc-500 uppercase tracking-widest">// PHILOSOPHISCHES FUNDAMENT</span>
+        <h2 class="font-serif text-3xl md:text-5xl text-bone mt-2 font-bold">Das Dreifache Axiom</h2>
+        <p class="text-sm text-zinc-400 max-w-2xl mx-auto mt-2 font-mono">Die unverhandelbaren Pfeiler des gesamten Ökosystems</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-8 bg-surface border border-white/5 rounded-2xl">
+          <div class="font-mono text-xs text-gold mb-3 font-bold">01 // DIE KLINGE (DER ARCHITEKT)</div>
+          <h3 class="font-serif text-xl text-bone font-bold mb-2">Unerbittliche Falsifikation</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Eine Idee ist nur so viel wert wie das Risiko, das sie eingeht, an der Realität zu scheitern. Ockhams Rasiermesser schneidet das spekulative Fett weg; die Hierarchie der Evidenz trennt Anekdoten von harten Daten.
+          </p>
+        </div>
+
+        <div class="p-8 bg-surface border border-white/5 rounded-2xl">
+          <div class="font-mono text-xs text-gardenerGreen mb-3 font-bold">02 // DER BODEN (DER GÄRTNER)</div>
+          <h3 class="font-serif text-xl text-bone font-bold mb-2">Radikale Empathie & Demut</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Menschen glauben nicht an Mythen, weil sie dumm sind, sondern weil Mythen tiefe psychologische Bedürfnisse nach Sinn, Kontrolle und Zugehörigkeit stillen. Wir schützen den Suchenden, während wir das Dogma zerlegen.
+          </p>
+        </div>
+
+        <div class="p-8 bg-surface border border-white/5 rounded-2xl">
+          <div class="font-mono text-xs text-cyanGlow mb-3 font-bold">03 // DIE SYNTHESE (DIE SOUVERÄNITÄT)</div>
+          <h3 class="font-serif text-xl text-bone font-bold mb-2">Die Große Kette des Seins</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Physik bedingt Chemie, Chemie bedingt Biologie, Biologie bedingt Psychologie, Psychologie bedingt Soziologie. Keine höhere Ebene kann die Gesetze der Ebene darunter brechen. Wahrheit entsteht im interdisziplinären Verbund.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITEKTUR & DATEI-ÜBERSICHT -->
+    <section id="architektur" class="max-w-7xl mx-auto px-6 py-20 border-t border-white/10">
+      <div class="bg-panel border border-white/10 rounded-2xl p-8 md:p-12">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-white/10 pb-6">
+          <div>
+            <span class="font-mono text-xs text-gold uppercase tracking-widest font-bold">// STRUKTUR</span>
+            <h3 class="font-serif text-2xl md:text-3xl text-bone font-bold mt-1">Die 4 Pfeiler des Repositories</h3>
+          </div>
+          <div class="font-mono text-xs text-zinc-400">
+            GITHUB: <span class="text-bone">syntaxisbuch.github.io/Syntaxis</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+          <div class="p-4 bg-surface rounded-xl border border-gold/40">
+            <span class="text-gold font-bold block mb-1">index.html</span>
+            <span class="text-zinc-400 block text-[11px]">Das Portal & Nexus des gesamten Ökosystems. (CC BY-NC 4.0)</span>
+          </div>
+          <div class="p-4 bg-surface rounded-xl border border-cyanGlow/40">
+            <span class="text-cyanGlow font-bold block mb-1">neocortex.html</span>
+            <span class="text-zinc-400 block text-[11px]">Die Noir-Romanserie (Bände 1–5). (CC BY-NC-ND 4.0)</span>
+          </div>
+          <div class="p-4 bg-surface rounded-xl border border-emeraldGlow/40">
+            <span class="text-emeraldGlow font-bold block mb-1">autopsien.html</span>
+            <span class="text-zinc-400 block text-[11px]">Die 9 Meister-Autopsien der Schatten. (CC BY-NC 4.0)</span>
+          </div>
+          <div class="p-4 bg-surface rounded-xl border border-goldGlow/40">
+            <span class="text-goldGlow font-bold block mb-1">landkarte.html</span>
+            <span class="text-zinc-400 block text-[11px]">Die 7 Säulen, das Dojo & die Werkstatt. (CC BY-NC 4.0)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- IMPRESSUM MODAL (CC BY-NC 4.0) -->
+  <div id="impressum-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md transition-opacity duration-300 opacity-0 pointer-events-none">
+    <div class="bg-panel border border-white/15 rounded-2xl max-w-2xl w-full p-8 max-h-[90vh] overflow-y-auto shadow-2xl relative">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+        <h3 class="font-serif text-2xl font-bold text-bone">Impressum & Lizenzierung</h3>
+        <button id="close-impressum-btn" class="font-mono text-xs text-zinc-400 hover:text-bone uppercase px-3 py-1 border border-white/10 rounded">
+          ✕
+        </button>
+      </div>
+
+      <div class="space-y-6 text-sm text-zinc-300 font-sans leading-relaxed">
+        <div>
+          <h4 class="font-mono text-xs text-gold uppercase tracking-widest mb-1 font-bold">Herausgeber & Urheber</h4>
+          <p class="text-bone font-medium text-base">Gerald Glaser</p>
+        </div>
+
+        <div>
+          <h4 class="font-mono text-xs text-gold uppercase tracking-widest mb-1 font-bold">Anschrift</h4>
+          <p>Gerald Glaser – Syntaxis<br>
+          c/o Autorenglück #13444<br>
+          Albert-Einstein-Straße 47<br>
+          02977 Hoyerswerda</p>
+        </div>
+
+        <div>
+          <h4 class="font-mono text-xs text-gold uppercase tracking-widest mb-1 font-bold">Kontakt</h4>
+          <p>E-Mail: <a href="mailto:Syntaxis_Buch@pm.me" class="text-cyanGlow hover:underline">Syntaxis_Buch@pm.me</a></p>
+        </div>
+
+        <div class="p-4 bg-surface rounded-lg border border-white/5">
+          <h4 class="font-mono text-xs text-zinc-400 uppercase tracking-widest mb-2 font-bold">Neurale Assistenz (Co-Prozessierung)</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Unterstützt durch neuronale Sprachsynthese-Systeme der künstlichen Intelligenz (Google Gemini & Anthropic Claude für Recherche, Orthografie, Faktensicherung und epistemische Struktur). Konzeption, Faktenprüfung, Textur, Quellensicherung und Endabnahme lagen durchgehend beim Autor.
+          </p>
+        </div>
+
+        <div class="p-4 bg-surface rounded-lg border border-gold/20">
+          <h4 class="font-mono text-xs text-gold uppercase tracking-widest mb-2 font-bold">Lizenzierung (Creative Commons)</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Dieses Werk wird digital und kostenfrei zur Verfügung gestellt. Lizenziert unter der <strong>Creative Commons Namensnennung – Nicht-kommerziell 4.0 International Lizenz (CC BY-NC 4.0)</strong>. Die Bearbeitung und Weiterverbreitung ist für nicht-kommerzielle Zwecke unter Namensnennung ausdrücklich gestattet.
+          </p>
+          <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.de" target="_blank" class="inline-block mt-3 text-xs font-mono text-cyanGlow hover:underline">
+            Lizenztext aufrufen →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- UNIFIED FOOTER -->
+  <footer class="border-t border-white/10 bg-surface/80 py-12 font-mono text-xs text-zinc-500 mt-20">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div>
+        <p class="text-zinc-300 font-bold tracking-wider font-serif text-sm">SYNTAXIS — Ökosystem der Vernunft</p>
+        <p class="text-[11px] text-zinc-600 mt-1">Herausgegeben von Gerald Glaser. Lizenziert unter CC BY-NC 4.0.</p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-6 text-xs">
+        <a href="index.html" class="text-gold font-bold">Start</a>
+        <a href="neocortex.html" class="hover:text-cyanGlow transition-colors">Neocortex City</a>
+        <a href="autopsien.html" class="hover:text-emeraldGlow transition-colors">Meister-Autopsien</a>
+        <a href="landkarte.html" class="hover:text-gold transition-colors">Landkarte der Realität</a>
+        <button id="footer-impressum-btn" class="hover:text-bone transition-colors underline decoration-dotted">
+          Impressum
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT ENGINE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // WEGWEISER INTERAKTION
+      const navChoices = document.querySelectorAll('.nav-choice');
+      const navResBadge = document.getElementById('nav-res-badge');
+      const navResText = document.getElementById('nav-res-text');
+      const navResLink = document.getElementById('nav-res-link');
+      const navResultBox = document.getElementById('navigator-result');
+
+      const routeData = {
+        neocortex: {
+          badge: "EMPFOHLENE ROUTE: CHRONIKEN VON NEOCORTEX CITY",
+          text: "Starte bei Band I: <em>Der Schatten über Dreamland</em>. Steige in die 1962er Pontiac von Valerian Trace und erkunde die Stadt des Gehirns.",
+          url: "neocortex.html",
+          btnText: "ZUR NOIR-METROPOLE →",
+          btnClass: "bg-cyanGlow text-void",
+          borderClass: "border-cyanGlow/30",
+          activeBorder: "border-cyanGlow/40",
+          activeBg: "bg-cyanGlow/10"
+        },
+        autopsien: {
+          badge: "EMPFOHLENE ROUTE: MEISTER-AUTOPSIEN DER SCHATTEN",
+          text: "Besuche den Seziersaal. Wähle aus den 9 vollendeten Meister-Autopsien (u.a. Flache Erde, Roswell, Chemtrails, Homöopathie) und nutze den Lichttisch-Schnitt.",
+          url: "autopsien.html",
+          btnText: "ZUM SEZIERSAAL →",
+          btnClass: "bg-emeraldGlow text-void",
+          borderClass: "border-emeraldGlow/30",
+          activeBorder: "border-emeraldGlow/40",
+          activeBg: "bg-emeraldGlow/10"
+        },
+        landkarte: {
+          badge: "EMPFOHLENE ROUTE: LANDKARTE DER REALITÄT (HAUPTWERK)",
+          text: "Tritt durch eines der 3 Tore (Notaufnahme, Detektivbüro, Bibliothek) in das Methoden-Arsenal ein und trainiere im interaktiven Dojo.",
+          url: "landkarte.html",
+          btnText: "ZUR LANDKARTE →",
+          btnClass: "bg-gold text-void",
+          borderClass: "border-gold/30",
+          activeBorder: "border-gold/40",
+          activeBg: "bg-gold/10"
+        }
+      };
+
+      navChoices.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.getAttribute('data-target');
+          const data = routeData[target];
+
+          navChoices.forEach(b => {
+            b.className = "nav-choice p-5 rounded-xl border border-white/10 bg-surface text-left transition-all";
+          });
+
+          btn.className = `nav-choice active p-5 rounded-xl border ${data.activeBorder} ${data.activeBg} text-left transition-all`;
+
+          navResBadge.innerText = data.badge;
+          navResText.innerHTML = data.text;
+          navResLink.href = data.url;
+          navResLink.innerText = data.btnText;
+          navResLink.className = `px-5 py-2.5 rounded-lg ${data.btnClass} font-mono text-xs font-bold whitespace-nowrap hover:opacity-90 transition-opacity`;
+          navResultBox.className = `p-6 bg-surface rounded-xl border ${data.borderClass} flex flex-col sm:flex-row items-center justify-between gap-4`;
+        });
+      });
+
+      // IMPRESSUM MODAL
+      const impressumModal = document.getElementById('impressum-modal');
+      const navImpBtn = document.getElementById('nav-impressum-btn');
+      const footerImpBtn = document.getElementById('footer-impressum-btn');
+      const closeImpBtn = document.getElementById('close-impressum-btn');
+
+      function openImpressum() {
+        impressumModal.classList.remove('pointer-events-none', 'opacity-0');
+        impressumModal.classList.add('opacity-100');
+      }
+
+      function closeImpressum() {
+        impressumModal.classList.add('opacity-0');
+        impressumModal.classList.remove('opacity-100');
+        setTimeout(() => {
+          impressumModal.classList.add('pointer-events-none');
+        }, 300);
+      }
+
+      navImpBtn.addEventListener('click', openImpressum);
+      footerImpBtn.addEventListener('click', openImpressum);
+      closeImpBtn.addEventListener('click', closeImpressum);
+      impressumModal.addEventListener('click', (e) => {
+        if (e.target === impressumModal) closeImpressum();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeImpressum();
+      });
+
+    });
+  </script>
+</body>
+</html>
