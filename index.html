@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SYNTAXIS - Ein interdisziplinäres Buchprojekt und Fiction-Serie">
+    <title>SYNTAXIS | Projektübersicht</title>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #e0e0e0;
+            --accent-color: #5a5a5a;
+            --link-color: #ffffff;
+            --font-main: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            margin-top: 5rem;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-family: var(--font-sans);
+            font-size: 3rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            color: var(--link-color);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent-color);
+            margin-bottom: 3rem;
+        }
+
+        main {
+            max-width: 800px;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+        }
+
+        h2 {
+            font-family: var(--font-sans);
+            font-size: 1.5rem;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            color: var(--link-color);
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .book-card {
+            background-color: #1a1a1a;
+            padding: 1.5rem;
+            border: 1px solid #333;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .book-card h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem;
+            text-align: center;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            border-top: 1px solid #333;
+            width: 100%;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent-color);
+        }
+
+        a:hover {
+            border-bottom-style: solid;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SYNTAXIS</h1>
+        <div class="subtitle">Kritisches Denken. Wissenschaftliches Debunking. Ontological Noir.</div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Das Projekt</h2>
+            <p>SYNTAXIS ist ein interdisziplinäres Mehrbänder-Buchprojekt, das die Grenzen zwischen rigoroser Faktenprüfung und fiktionaler Erzählkunst auslotet. Es dient als Werkzeugkasten für den Verstand und gleichzeitig als narratives Labyrinth, in dem urbane Legenden, historische Mythen und parawissenschaftliche Behauptungen durch die Linse des kritischen Zweifels seziert werden.</p>
+        </section>
+
+        <section id="volumes">
+            <h2>Die Werke</h2>
+            <div class="book-grid">
+                
+                <div class="book-card">
+                    <h3>Die Landkarte der Realität</h3>
+                    <p>Eine fundamentale Untersuchung unserer kognitiven Grenzen und der Mechanismen, mit denen wir uns die Welt erklären.</p>
+                </div>
+
+                <div class="book-card">
+                    <h3>Geschichten des Zweifels</h3>
+                    <p>Narrative Dekonstruktionen bekannter Mythen und scheinbar unerklärlicher Phänomene – von historischen Fällen bis zur Kryptozoologie.</p>
+                </div>
+
+                <div class="book-card">
+                    <h3>Chroniken von Neocortex City</h3>
+                    <p>Ein Ontological Noir-Mysterium. Eine tiefgehende fiktionale Erkundung von Wahrheit, Täuschung und den Schattenseiten der menschlichen Erkenntnis.</p>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="workflow">
+            <h2>Methodik & Formate</h2>
+            <p>Die Manuskripte entstehen plattformübergreifend und werden mittels Markdown und Open-Source-Tools (Pandoc, LibreOffice) verarbeitet. Ein besonderer Fokus liegt auf der haptischen Archivierung durch Handbuchbindung sowie der Bereitstellung ausgewählter Inhalte unter Creative Commons (CC BY 4.0) Lizenzen.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SYNTAXIS Projekt | <a href="https://github.com/dein-github-name/dein-repo-name">GitHub Repository ansehen</a></p>
+    </footer>
+
+</body>
+</html>
