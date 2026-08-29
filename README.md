@@ -1,2 +1,2 @@
 # Syntaxis
-Eine Ökosystem zur den Syntaxis Buchreihen
+Eine Ökosystem zu Syntaxis Buchreihen
