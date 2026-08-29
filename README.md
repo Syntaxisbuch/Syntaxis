@@ -4,21 +4,16 @@ Eine Ökosystem zu Syntaxis Buchreihen
 
 
 ## Impressum
-
 **Syntaxis**
 
-**Herausgeber & Urheber**
-
+**Herausgeber & Urheber**: 
 Gerald Glaser
 
-**Anschrift**
+**Anschrift**: 
 
 Gerald Glaser – Syntaxis
-
 c/o Autorenglück #13444
-
 Albert-Einstein-Straße 47
-
 02977 Hoyerswerda
 
 **Kontakt**
