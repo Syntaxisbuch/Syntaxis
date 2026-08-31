@@ -12,6 +12,6 @@ Interdisziplinäres Gesamtkorpus für Erkenntnistheorie, wissenschaftliche Falsi
 - `app.js`: Audio-Player, Dojo-Engine und Autopsien-Filter
 
 ## Lizenzen
-- **Wissenschaft & Sachbuch:** CC BY 4.0
+- **Wissenschaft & Sachbuch:** CC BY-NC-SA 4.0
 - **Meister-Autopsien:** CC BY-NC-SA 4.0
 - **Belletristik:** CC BY-NC-ND 4.0
