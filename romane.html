@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNTAXIS | Chroniken von Neocortex City</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand"><span class="brand-logo"></span><span>SYNTAXIS</span></a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Hub</a>
+                <a href="landkarte.html" class="nav-link">Landkarte</a>
+                <a href="autopsien.html" class="nav-link">Autopsien</a>
+                <a href="romane.html" class="nav-link active">Chroniken</a>
+                <a href="ueber-das-projekt.html" class="nav-link">Über das Projekt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <div class="badge-tag">Ontologischer Noir (CC BY-NC-ND 4.0)</div>
+            <h1>Chroniken von Neocortex City</h1>
+            <p class="lead">Literarische Fallakten am Grenzbereich zwischen Bewusstsein, Simulation und existenzieller Wahrheit.</p>
+        </div>
+
+        <div class="content-card" style="margin-bottom:2rem;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                <span style="font-family:var(--font-mono); color:var(--accent-amber);">FALLAKTE #088-NC</span>
+                <span class="license-pill">Spieldauer: 42 Min</span>
+            </div>
+            <h2 style="margin-bottom:0.75rem;">Der Mann ohne Echo</h2>
+            <p style="color:var(--text-secondary); margin-bottom:1.5rem;">
+                Dauerregen über den Monolithen des Neocortex-Distrikts. Wenn ein Gedanke kein neuronales Rauschen mehr erzeugt, ist er entweder die absolute Wahrheit – oder er wurde bereits rückstandslos aus dem Bewusstsein getilgt.
+            </p>
+            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                <a href="downloads/Chroniken_Band1.epub" class="btn btn-secondary" download> Band 1 als EPUB</a>
+            </div>
+        </div>
+    </main>
+
+    <aside class="audio-bar">
+        <div class="audio-info">
+            <span class="audio-pulse"></span>
+            <div class="audio-labels">
+                <span class="track-title" id="player-track-title">Fallakte 088</span>
+                <span class="track-meta" id="player-track-meta">CC BY-NC-ND 4.0</span>
+            </div>
+        </div>
+        <div class="audio-controls">
+            <button class="audio-btn" id="audio-prev"></button>
+            <button class="audio-btn btn-play" id="audio-toggle"></button>
+            <button class="audio-btn" id="audio-next"></button>
+            <div class="audio-progress-container">
+                <div class="audio-progress-fill" id="audio-progress"></div>
+            </div>
+            <span class="audio-time" id="audio-time-display">00:00</span>
+        </div>
+        <audio id="syntaxis-stream" preload="metadata"></audio>
+    </aside>
+
+    <script src="app.js"></script>
+</body>
+</html>

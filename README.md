@@ -1,36 +1,17 @@
-# Syntaxis
-Eine Ökosystem zu Syntaxis Buchreihen
+# SYNTAXIS – Die Landkarte der Realität & Meister-Autopsien
 
-https://syntaxisbuch.github.io/Syntaxis
+Interdisziplinäres Gesamtkorpus für Erkenntnistheorie, wissenschaftliche Falsifikation und Ontologischen Noir.
 
-## Impressum
-**Syntaxis**
+## Struktur
+- `index.html`: Startseite und interaktives Epistemisches Dojo
+- `landkarte.html`: Das Sachbuch „Die Landkarte der Realität“ (Downloads & Kapitel)
+- `autopsien.html`: 105 Meister-Autopsien (Sektion A #01–#10 vollständig freigegeben)
+- `romane.html`: „Chroniken von Neocortex City“ (Hörbücher & EPUBs)
+- `ueber-das-projekt.html`: Lizenzmatrix & Cusdis-Diskussionssystem
+- `style.css`: Zentrale Noir-Stylesheets
+- `app.js`: Audio-Player, Dojo-Engine und Autopsien-Filter
 
-**Herausgeber & Urheber**: <br>
-Gerald Glaser
-
-**Anschrift**: <br>
-Gerald Glaser – Syntaxis<br>
-c/o Autorenglück #13444<br>
-Albert-Einstein-Straße 47<br>
-02977 Hoyerswerda<br> <br>
-
-**Kontakt**
-E-Mail: [Syntaxis_Buch@pm.me](mailto:Syntaxis_Buch@pm.me)<br> <br>
-
-**Neurale Assistenz (Co-Prozessierung des Textes)**<br>
-Unterstützt durch neuronale Sprachsynthese-Systeme der künstlichen Intelligenz – Detektiv-Partner für Stil, Orthografie und wissenschaftliche Struktur.<br> <br>
-
-**Lizenzierung (Creative Commons)**<br>
-Diese Werke werden digital und kostenfrei zur Verfügung gestellt. Lizenziert unter der Creative Commons Namensnennung – Nicht kommerziell – Keine Bearbeitungen 4.0 International Lizenz (CC BY-NC-ND 4.0). Sie dürfen das Werk in jedem Format oder Medium vervielfältigen und weiterverbreiten, sofern Sie den Urheber nennen, es nicht für kommerzielle Zwecke nutzen und keine bearbeitete Fassung verbreiten. Ein Link zur Lizenz ist beizufügen.
-<br> <br>
-Abweichende Lizenzen sind im jeweiligen Buch aufgeführt. 
-<br> <br>
-Lizenztext: [https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de)<br>
-
-**Hinweis zu Bearbeitungen und Anfragen**<br>
-
-Bearbeitete oder abgeleitete Fassungen sind unter den Bedingungen der hier genannten Lizenz nicht gestattet. Zusätzliche Freigaben für Sondernutzungen, etwa Übersetzungen oder Kooperationen, können auf Anfrage per E-Mail erteilt werden.<br>
-
-**Haftungsausschluss (Disclaimer)**<br>
-Jede Ähnlichkeit mit lebenden oder verstorbenen Personen – ausgenommen namentlich erwähnte reale Personen und historische Akteure, laut dem jeweiligen Buch – ist rein zufällig.
+## Lizenzen
+- **Wissenschaft & Sachbuch:** CC BY 4.0
+- **Meister-Autopsien:** CC BY-NC-SA 4.0
+- **Belletristik:** CC BY-NC-ND 4.0

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNTAXIS | Über das Projekt & Lizenzen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand"><span class="brand-logo">◈</span><span>SYNTAXIS</span></a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Hub</a>
+                <a href="landkarte.html" class="nav-link">Landkarte</a>
+                <a href="autopsien.html" class="nav-link">Autopsien</a>
+                <a href="romane.html" class="nav-link">Chroniken</a>
+                <a href="ueber-das-projekt.html" class="nav-link active">Über das Projekt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <div class="badge-tag">Epistemisches Manifest</div>
+            <h1>Über das SYNTAXIS-Projekt</h1>
+            <p class="lead">Open-Access-Erkenntnistheorie, Unabhängigkeit und Schutz vor kognitiver Vereinnahmung.</p>
+        </div>
+
+        <div class="grid-3" style="margin-bottom:3rem;">
+            <div class="content-card">
+                <h3 style="color:#fff; margin-bottom:0.5rem;">Wissenschaft & Sachbuch</h3>
+                <p style="color:var(--text-secondary); margin-bottom:1rem;">„Die Landkarte der Realität“ unterliegt der <strong>CC BY 4.0</strong> Lizenz. Freie Weitergabe, Zitierung und didaktische Nutzung unter Namensnennung.</p>
+                <div class="license-pill">CC BY 4.0 International</div>
+            </div>
+
+            <div class="content-card">
+                <h3 style="color:#fff; margin-bottom:0.5rem;">Meister-Autopsien</h3>
+                <p style="color:var(--text-secondary); margin-bottom:1rem;">Das 105-teilige Autopsien-Kompendium unterliegt <strong>CC BY-NC-SA 4.0</strong>. Nicht-kommerziell, Weitergabe unter gleichen Bedingungen.</p>
+                <div class="license-pill">CC BY-NC-SA 4.0</div>
+            </div>
+
+            <div class="content-card">
+                <h3 style="color:#fff; margin-bottom:0.5rem;">Belletristik</h3>
+                <p style="color:var(--text-secondary); margin-bottom:1rem;">Die „Chroniken von Neocortex City“ unterliegen <strong>CC BY-NC-ND 4.0</strong>. Nicht-kommerziell, keine unverifizierten Bearbeitungen der Erzählwelt.</p>
+                <div class="license-pill">CC BY-NC-ND 4.0</div>
+            </div>
+        </div>
+
+        <section class="comments-section">
+            <h2>Diskurs & Notizen</h2>
+            <p style="color:var(--text-secondary); margin-bottom:1.5rem;">Trackerfreie Diskussion via Cusdis:</p>
+            <div id="cusdis_thread"
+                 data-host="https://cusdis.com"
+                 data-app-id="SYNTAXIS-PROJECT-APP"
+                 data-page-id="syntaxis-about"
+                 data-page-url="https://syntaxis.cc/ueber-das-projekt.html"
+                 data-page-title="Über SYNTAXIS">
+            </div>
+            <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+        </section>
+    </main>
+
+    <aside class="audio-bar">
+        <div class="audio-info">
+            <span class="audio-pulse"></span>
+            <div class="audio-labels">
+                <span class="track-title" id="player-track-title">Soundscape</span>
+                <span class="track-meta" id="player-track-meta">CC BY 4.0</span>
+            </div>
+        </div>
+        <div class="audio-controls">
+            <button class="audio-btn" id="audio-prev">⏮</button>
+            <button class="audio-btn btn-play" id="audio-toggle">▶</button>
+            <button class="audio-btn" id="audio-next">⏭</button>
+            <div class="audio-progress-container">
+                <div class="audio-progress-fill" id="audio-progress"></div>
+            </div>
+            <span class="audio-time" id="audio-time-display">00:00</span>
+        </div>
+        <audio id="syntaxis-stream" preload="metadata"></audio>
+    </aside>
+
+    <script src="app.js"></script>
+</body>
+</html>
