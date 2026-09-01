@@ -28,7 +28,7 @@
   <span class="hm-fuss">m</span>
 </nav>
 
-<header class="masthead">
+<header class="masthead" style="position:sticky">
   <div class="wrap masthead-in">
     <a class="logo" href="index.html">
       <span class="wortmarke">Syntaxis</span>
@@ -47,7 +47,16 @@
   <nav class="mobilnav" id="mobilnav" aria-label="Mobile Navigation">
     <div class="wrap"><ul id="mobilnavListe"></ul></div>
   </nav>
+  <span class="fortschritt" id="fortschritt" aria-hidden="true"></span>
 </header>
+
+<div class="reihenzeiger" id="reihenzeiger" aria-hidden="true">
+  <div class="wrap in">
+    <span class="pkt"></span>
+    <span class="nm">—</span>
+    <span class="kz">REIHE</span>
+  </div>
+</div>
 
 <main id="inhalt">
 <section class="hero">
@@ -68,49 +77,65 @@
   </div>
 </section>
 
-<section class="stratum" style="padding-block:2.5rem"><div class="wrap">
-          <div class="stratum-kopf"><h3 style="font-size:1.6rem">Die Landkarte der Realität</h3>
-          <span class="hoehe">CC BY-NC-SA 4.0</span></div>
-          <div class="werkliste"><div class="werk">
+<section class="stratum reihenblock" data-reihe="lr" data-reihenname="Die Landkarte der Realität" style="padding-block:2.75rem">
+          <div class="wrap">
+          <div class="stratum-kopf">
+            <span class="reihenmarke">LR</span>
+            <h3 style="font-size:1.7rem;margin:0">Die Landkarte der Realität</h3>
+            <span class="hoehe">CC BY-NC-SA 4.0</span>
+          </div>
+          <div class="werkliste"><div class="werk karte-werk">
           <span class="band">LR</span>
-          <div><h3 style="font-size:1.25rem">Die Landkarte der Realität</h3><p>Das Handwerk selbst: wie man eine Behauptung prüft, bevor man sie glaubt.</p><div class="dl"><a href="downloads/landkarte-der-realitaet.pdf" aria-disabled="true" download><span class="f">PDF</span>Landkarte der Realität — PDF</a><a href="downloads/landkarte-der-realitaet.epub" aria-disabled="true" download><span class="f">EPUB</span>Landkarte der Realität — EPUB</a></div><p class="kennung" style="margin-top:.6rem">Grau hinterlegte Formate sind noch nicht abgelegt.</p></div>
+          <div><h3 style="font-size:1.25rem">Die Landkarte der Realität</h3><p>Das Handwerk selbst: wie man eine Behauptung prüft, bevor man sie glaubt.</p><div class="dl"><a href="downloads/landkarte-der-realitaet.pdf" aria-disabled="true" download><span class="f">PDF</span>Landkarte der Realität — PDF</a><a href="downloads/landkarte-der-realitaet.epub" aria-disabled="true" download><span class="f">EPUB</span>Landkarte der Realität — EPUB</a></div><p class="dateihinweis">Grau hinterlegte Formate sind noch nicht abgelegt.</p></div>
           <span class="status">CC BY-NC-SA 4.0</span>
-        </div></div></div></section><section class="stratum" style="padding-block:2.5rem"><div class="wrap">
-          <div class="stratum-kopf"><h3 style="font-size:1.6rem">Chroniken von Neocortex City</h3>
-          <span class="hoehe">CC BY-NC-ND 4.0</span></div>
-          <div class="werkliste"><div class="werk">
+        </div></div></div></section><section class="stratum reihenblock" data-reihe="nc" data-reihenname="Chroniken von Neocortex City" style="padding-block:2.75rem">
+          <div class="wrap">
+          <div class="stratum-kopf">
+            <span class="reihenmarke">NC</span>
+            <h3 style="font-size:1.7rem;margin:0">Chroniken von Neocortex City</h3>
+            <span class="hoehe">CC BY-NC-ND 4.0</span>
+          </div>
+          <div class="werkliste"><div class="werk karte-werk">
           <span class="band">NC</span>
-          <div><h3 style="font-size:1.25rem">Band I — Der Schatten über Dreamland</h3><p>Area 51 und Bob Lazar</p><div class="dl"><a href="downloads/chroniken-1-schatten-ueber-dreamland.pdf" aria-disabled="true" download><span class="f">PDF</span>Band I — Der Schatten über Dreamland PDF</a><a href="downloads/chroniken-1-schatten-ueber-dreamland.epub" aria-disabled="true" download><span class="f">EPUB</span>Band I — Der Schatten über Dreamland EPUB</a></div><p class="kennung" style="margin-top:.6rem">Grau hinterlegte Formate sind noch nicht abgelegt.</p></div>
+          <div><h3 style="font-size:1.25rem">Band I — Der Schatten über Dreamland</h3><p>Area 51 und Bob Lazar</p><div class="dl"><a href="downloads/chroniken-1-schatten-ueber-dreamland.pdf" aria-disabled="true" download><span class="f">PDF</span>Band I — Der Schatten über Dreamland PDF</a><a href="downloads/chroniken-1-schatten-ueber-dreamland.epub" aria-disabled="true" download><span class="f">EPUB</span>Band I — Der Schatten über Dreamland EPUB</a></div><p class="dateihinweis">Grau hinterlegte Formate sind noch nicht abgelegt.</p></div>
           <span class="status">CC BY-NC-ND 4.0</span>
-        </div><div class="werk">
+        </div><div class="werk karte-werk">
           <span class="band">NC</span>
-          <div><h3 style="font-size:1.25rem">Band II — Der König des dichten Unterholzes</h3><p>Bigfoot und das Patterson-Gimlin-Filmmaterial</p><div class="dl"><a href="downloads/chroniken-2-koenig-des-dichten-unterholzes.pdf" aria-disabled="true" download><span class="f">PDF</span>Band II — Der König des dichten Unterholzes PDF</a><a href="downloads/chroniken-2-koenig-des-dichten-unterholzes.epub" aria-disabled="true" download><span class="f">EPUB</span>Band II — Der König des dichten Unterholzes EPUB</a></div><p class="kennung" style="margin-top:.6rem">Grau hinterlegte Formate sind noch nicht abgelegt.</p></div>
+          <div><h3 style="font-size:1.25rem">Band II — Der König des dichten Unterholzes</h3><p>Bigfoot und das Patterson-Gimlin-Filmmaterial</p><div class="dl"><a href="downloads/chroniken-2-koenig-des-dichten-unterholzes.pdf" aria-disabled="true" download><span class="f">PDF</span>Band II — Der König des dichten Unterholzes PDF</a><a href="downloads/chroniken-2-koenig-des-dichten-unterholzes.epub" aria-disabled="true" download><span class="f">EPUB</span>Band II — Der König des dichten Unterholzes EPUB</a></div><p class="dateihinweis">Grau hinterlegte Formate sind noch nicht abgelegt.</p></div>
           <span class="status">CC BY-NC-ND 4.0</span>
-        </div><div class="werk">
+        </div><div class="werk karte-werk">
           <span class="band">NC</span>
-          <div><h3 style="font-size:1.25rem">Band III — Das Tier im Menschen</h3><p>Werwolf und Vampirismus</p><div class="dl"><a href="downloads/chroniken-3-das-tier-im-menschen.pdf" aria-disabled="true" download><span class="f">PDF</span>Band III — Das Tier im Menschen PDF</a><a href="downloads/chroniken-3-das-tier-im-menschen.epub" aria-disabled="true" download><span class="f">EPUB</span>Band III — Das Tier im Menschen EPUB</a></div><p class="kennung" style="margin-top:.6rem">Grau hinterlegte Formate sind noch nicht abgelegt.</p></div>
+          <div><h3 style="font-size:1.25rem">Band III — Das Tier im Menschen</h3><p>Werwolf und Vampirismus</p><div class="dl"><a href="downloads/chroniken-3-das-tier-im-menschen.pdf" aria-disabled="true" download><span class="f">PDF</span>Band III — Das Tier im Menschen PDF</a><a href="downloads/chroniken-3-das-tier-im-menschen.epub" aria-disabled="true" download><span class="f">EPUB</span>Band III — Das Tier im Menschen EPUB</a></div><p class="dateihinweis">Grau hinterlegte Formate sind noch nicht abgelegt.</p></div>
           <span class="status">CC BY-NC-ND 4.0</span>
-        </div><div class="werk">
+        </div><div class="werk karte-werk">
           <span class="band">NC</span>
-          <div><h3 style="font-size:1.25rem">Band IV — Was das Licht verspricht</h3><p>Spuk, Séance und Ideomotorik</p><p class="kennung" style="margin-top:.9rem">Noch keine Datei hinterlegt — dieser Band ist in Arbeit.</p></div>
+          <div><h3 style="font-size:1.25rem">Band IV — Was das Licht verspricht</h3><p>Spuk, Séance und Ideomotorik</p><p class="dateihinweis">Noch keine Datei hinterlegt — dieser Band ist in Arbeit.</p></div>
           <span class="status">CC BY-NC-ND 4.0</span>
-        </div><div class="werk">
+        </div><div class="werk karte-werk">
           <span class="band">NC</span>
-          <div><h3 style="font-size:1.25rem">Band V — Der Nullpunkt</h3><p>Pseudomedizin</p><p class="kennung" style="margin-top:.9rem">Noch keine Datei hinterlegt — dieser Band ist in Arbeit.</p></div>
+          <div><h3 style="font-size:1.25rem">Band V — Der Nullpunkt</h3><p>Pseudomedizin</p><p class="dateihinweis">Noch keine Datei hinterlegt — dieser Band ist in Arbeit.</p></div>
           <span class="status">CC BY-NC-ND 4.0</span>
-        </div></div></div></section><section class="stratum" style="padding-block:2.5rem"><div class="wrap">
-          <div class="stratum-kopf"><h3 style="font-size:1.6rem">Autopsien der Schatten</h3>
-          <span class="hoehe">CC BY-NC-SA 4.0</span></div>
-          <div class="werkliste"><div class="werk">
+        </div></div></div></section><section class="stratum reihenblock" data-reihe="au" data-reihenname="Autopsien der Schatten" style="padding-block:2.75rem">
+          <div class="wrap">
+          <div class="stratum-kopf">
+            <span class="reihenmarke">AU</span>
+            <h3 style="font-size:1.7rem;margin:0">Autopsien der Schatten</h3>
+            <span class="hoehe">CC BY-NC-SA 4.0</span>
+          </div>
+          <div class="werkliste"><div class="werk karte-werk">
           <span class="band">AU</span>
-          <div><h3 style="font-size:1.25rem">Autopsien der Schatten</h3><p>Jeder Mythos einzeln auf dem Tisch, nach immer demselben Protokoll. Zehn sind fertig, 105 sind geplant.</p><div class="dl"><a href="downloads/autopsien-der-schatten-sektion-a.pdf" aria-disabled="true" download><span class="f">PDF</span>Autopsien der Schatten, Sektion A — PDF</a><a href="downloads/autopsien-der-schatten-sektion-a.epub" aria-disabled="true" download><span class="f">EPUB</span>Autopsien der Schatten, Sektion A — EPUB</a></div><p class="kennung" style="margin-top:.6rem">Grau hinterlegte Formate sind noch nicht abgelegt.</p></div>
+          <div><h3 style="font-size:1.25rem">Autopsien der Schatten, Sektion A</h3><p>Jeder Mythos einzeln auf dem Tisch, nach immer demselben Protokoll. Zehn sind fertig, 105 sind geplant.</p><div class="dl"><a href="downloads/autopsien-der-schatten-sektion-a.pdf" aria-disabled="true" download><span class="f">PDF</span>Autopsien der Schatten, Sektion A — PDF</a><a href="downloads/autopsien-der-schatten-sektion-a.epub" aria-disabled="true" download><span class="f">EPUB</span>Autopsien der Schatten, Sektion A — EPUB</a></div><p class="dateihinweis">Grau hinterlegte Formate sind noch nicht abgelegt.</p><div class="enthalten"><span class="kennung">ENTHÄLT ZEHN FALLAKTEN</span><ol class="inhaltsliste"><li><span class="n">01</span><span class="tt">Die flache Erde <span class="leise">— Das Großprojekt der Selbstverblendung</span></span></li><li><span class="n">02</span><span class="tt">Die Mondlandungs-Lüge <span class="leise">— Wie ein Triumph zur Verschwörung wurde</span></span></li><li><span class="n">03</span><span class="tt">Chemtrails <span class="leise">— Der Krieg über unseren Köpfen</span></span></li><li><span class="n">04</span><span class="tt">Klimawandel <span class="leise">— Desinformation und die thermodynamische Realität</span></span></li><li><span class="n">05</span><span class="tt">Die Hohl-Erde <span class="leise">— Das Leben im Inneren</span></span></li><li><span class="n">06</span><span class="tt">Astrologie <span class="leise">— Der kosmische Spiegel, der jedem schmeichelt</span></span></li><li><span class="n">07</span><span class="tt">Prä-Astronautik <span class="leise">— Als die Götter Astronauten waren</span></span></li><li><span class="n">08</span><span class="tt">Roswell und die stillen Götter <span class="leise">— Der Zwischenfall, der nie endet</span></span></li><li><span class="n">09</span><span class="tt">Die Planet-Nibiru-Panik <span class="leise">— Der Planet, der immer kommt und nie ankommt</span></span></li><li><span class="n">10</span><span class="tt">Die Simulation <span class="leise">— Leben wir in einer Matrix?</span></span></li></ol></div></div>
           <span class="status">CC BY-NC-SA 4.0</span>
-        </div></div></div></section><section class="stratum" style="padding-block:2.5rem"><div class="wrap">
-          <div class="stratum-kopf"><h3 style="font-size:1.6rem">Licht der Realität</h3>
-          <span class="hoehe">CC BY-NC-SA 4.0</span></div>
-          <div class="werkliste"><div class="werk">
+        </div></div></div></section><section class="stratum reihenblock" data-reihe="ld" data-reihenname="Licht der Realität" style="padding-block:2.75rem">
+          <div class="wrap">
+          <div class="stratum-kopf">
+            <span class="reihenmarke">LD</span>
+            <h3 style="font-size:1.7rem;margin:0">Licht der Realität</h3>
+            <span class="hoehe">CC BY-NC-SA 4.0</span>
+          </div>
+          <div class="werkliste"><div class="werk karte-werk">
           <span class="band">LD</span>
-          <div><h3 style="font-size:1.25rem">Licht der Realität</h3><p>Ein Mythos als Türöffner, dahinter die Wissenschaft, die ihn auflöst.</p><p class="kennung" style="margin-top:.9rem">Noch keine Datei hinterlegt — dieser Band ist in Arbeit.</p></div>
+          <div><h3 style="font-size:1.25rem">Licht der Realität</h3><p>Ein Mythos als Türöffner, dahinter die Wissenschaft, die ihn auflöst.</p><p class="dateihinweis">Noch keine Datei hinterlegt — dieser Band ist in Arbeit.</p></div>
           <span class="status">CC BY-NC-SA 4.0</span>
         </div></div></div></section>
 
