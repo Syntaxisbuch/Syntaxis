@@ -42,10 +42,11 @@
   --radius: 2px;
 }
 
-body[data-reihe="lr"] { --akzent: var(--lr); --akzent-weich: rgba(63,168,160,.14); }
-body[data-reihe="nc"] { --akzent: var(--nc); --akzent-weich: rgba(217,138,43,.14); }
-body[data-reihe="au"] { --akzent: var(--au); --akzent-weich: rgba(192,69,62,.14); }
-body[data-reihe="ld"] { --akzent: var(--ld); --akzent-weich: rgba(141,155,166,.14); }
+[data-reihe="lr"] { --akzent: var(--lr); --akzent-weich: rgba(63,168,160,.14); --akzent-hauch: rgba(63,168,160,.055); }
+[data-reihe="nc"] { --akzent: var(--nc); --akzent-weich: rgba(217,138,43,.14); --akzent-hauch: rgba(217,138,43,.055); }
+[data-reihe="au"] { --akzent: var(--au); --akzent-weich: rgba(192,69,62,.14); --akzent-hauch: rgba(192,69,62,.055); }
+[data-reihe="ld"] { --akzent: var(--ld); --akzent-weich: rgba(141,155,166,.14); --akzent-hauch: rgba(141,155,166,.05); }
+:root { --akzent-hauch: rgba(63,168,160,.05); }
 
 /* ---------- 2. Grundlagen ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -234,14 +235,15 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 3rem 0; }
   display: flex; flex-direction: column; gap: .6rem; position: relative; overflow: hidden;
   transition: background .22s ease;
 }
-.pforte::after { content: ""; position: absolute; inset: auto 0 0 0; height: 2px; background: var(--f); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
-.pforte:hover { background: var(--ink-2); }
+.pforte::after { content: ""; position: absolute; inset: auto 0 0 0; height: 2px; background: var(--akzent); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+.pforte::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 2px; background: var(--akzent); opacity: .4; }
+.pforte:hover { background: color-mix(in srgb, var(--akzent) 5%, var(--ink-2)); }
 .pforte:hover::after { transform: scaleX(1); }
 .pforte .zeile { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
-.pforte .marke { font-family: var(--data); font-size: .72rem; letter-spacing: .1em; color: var(--f); }
+.pforte .marke { font-family: var(--data); font-size: .72rem; letter-spacing: .1em; color: var(--akzent); }
 .pforte h3 { margin: 0; font-size: clamp(1.45rem, 1.2rem + 1vw, 1.95rem); }
 .pforte p { margin: 0; color: var(--fog); font-size: .95rem; }
-.pforte .fuss { margin-top: auto; padding-top: .9rem; font-family: var(--data); font-size: .7rem; color: var(--fog-dim); }
+.pforte .meta { margin-top: auto; padding-top: .9rem; font-family: var(--data); font-size: .7rem; color: var(--fog-dim); }
 
 /* ---------- 10. Schnittzeichnung ---------- */
 .schnitt { width: 100%; height: auto; display: block; }
@@ -522,3 +524,47 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
 .betrieb button { background: transparent; border: 0; color: var(--fog); font-family: var(--body); font-size: .86rem; padding: .35rem .8rem; cursor: pointer; }
 .betrieb button + button { border-left: 1px solid var(--line); }
 .betrieb button[aria-pressed="true"] { background: var(--akzent); color: var(--ink); }
+
+/* ---------- 22. Reihenblöcke, Karten und Orientierung ---------- */
+.reihenblock { position: relative; background: linear-gradient(180deg, var(--akzent-hauch), transparent 42%); }
+.reihenblock::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--akzent); opacity: .5; }
+@media (min-width: 1180px) { .reihenblock::before { width: 4px; } }
+.reihenmarke {
+  font-family: var(--data); font-size: .64rem; letter-spacing: .12em; color: var(--ink);
+  background: var(--akzent); padding: .22rem .5rem; align-self: center;
+}
+
+.karte-werk { border: 1px solid var(--line); border-top: 1px solid var(--line); background: var(--ink-2); padding: 1.4rem 1.5rem; margin-bottom: .85rem; position: relative; }
+.karte-werk:last-child { border-bottom: 1px solid var(--line); margin-bottom: 0; }
+.karte-werk::after { content: ""; position: absolute; inset: 0 auto 0 0; width: 2px; background: var(--akzent); opacity: .55; }
+.karte-werk:hover { border-color: color-mix(in srgb, var(--akzent) 40%, var(--line)); background: color-mix(in srgb, var(--akzent) 4%, var(--ink-2)); }
+@media (min-width: 820px) { .karte-werk { grid-template-columns: 5rem 1fr auto; } }
+
+.enthalten { margin-top: 1.15rem; padding-top: .9rem; border-top: 1px dashed var(--line); }
+.inhaltsliste { list-style: none; margin: .6rem 0 0; padding: 0; }
+@media (min-width: 700px) { .inhaltsliste { columns: 2; column-gap: 2rem; } }
+.inhaltsliste li { display: flex; gap: .6rem; padding: .22rem 0; font-size: .9rem; break-inside: avoid; }
+.inhaltsliste .n { font-family: var(--data); font-size: .68rem; color: var(--akzent); padding-top: .2rem; flex: none; }
+.inhaltsliste .tt { flex: 1; }
+
+/* Reihenanzeige beim Scrollen */
+.reihenzeiger {
+  position: sticky; top: 60px; z-index: 25; display: none;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--ink) 92%, transparent); backdrop-filter: blur(8px);
+}
+.reihenzeiger.an { display: block; }
+.reihenzeiger .in { display: flex; align-items: center; gap: .7rem; min-height: 38px; font-size: .88rem; }
+.reihenzeiger .pkt { width: 8px; height: 8px; border-radius: 50%; background: var(--akzent); flex: none; transition: background .3s ease; }
+.reihenzeiger .nm { transition: opacity .2s ease; }
+.reihenzeiger .kz { font-family: var(--data); font-size: .64rem; letter-spacing: .1em; color: var(--fog-dim); margin-left: auto; }
+
+/* Lesefortschritt */
+.fortschritt { position: absolute; left: 0; bottom: -1px; height: 1px; background: var(--akzent); width: 0; transition: width .12s linear; }
+
+/* Sanftes Auftauchen beim Scrollen */
+.js-reveal .auf { opacity: 0; transform: translateY(14px); }
+.js-reveal .auf.da { opacity: 1; transform: none; transition: opacity .55s cubic-bezier(.2,.6,.2,1), transform .55s cubic-bezier(.2,.6,.2,1); }
+@media (prefers-reduced-motion: reduce) { .js-reveal .auf { opacity: 1; transform: none; } }
+
+.dateihinweis { margin: .6rem 0 0; font-size: .84rem; color: var(--fog-dim); font-style: italic; }
