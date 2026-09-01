@@ -27,8 +27,7 @@ def reihe(rid):
 def dateiliste(dateien, prefix=""):
     """Downloadknöpfe. Fehlende Dateien werden sichtbar, aber inaktiv gesetzt."""
     if not dateien:
-        return ('<p class="kennung" style="margin-top:.9rem">Noch keine Datei hinterlegt — '
-                'dieser Band ist in Arbeit.</p>')
+        return '<p class="dateihinweis">Noch keine Datei hinterlegt — dieser Band ist in Arbeit.</p>'
     teile = []
     for d in dateien:
         extern = d["datei"].startswith(("http://", "https://"))
@@ -41,7 +40,7 @@ def dateiliste(dateien, prefix=""):
     def vorhanden(d):
         return d["datei"].startswith(("http://", "https://")) or (WURZEL / d["datei"]).exists()
     hinweis = "" if all(vorhanden(d) for d in dateien) else (
-        '<p class="kennung" style="margin-top:.6rem">Grau hinterlegte Formate sind noch nicht abgelegt.</p>')
+        '<p class="dateihinweis">Grau hinterlegte Formate sind noch nicht abgelegt.</p>')
     return f'<div class="dl">{"".join(teile)}</div>{hinweis}'
 
 
@@ -159,17 +158,31 @@ def rendere_downloads():
         eintraege = []
         if r["id"] == "nc":
             for b in r["baende"]:
-                eintraege.append((f'Band {b["nr"]} — {b["titel"]}', b.get("dateien"), b["fall"]))
+                eintraege.append((f'Band {b["nr"]} — {b["titel"]}', b.get("dateien"), b["fall"], None))
+        elif r["id"] == "au":
+            inhalt = "".join(
+                f'<li><span class="n">{f["nr"]:02d}</span>'
+                f'<span class="tt">{f["titel"]} <span class="leise">— {f["unter"]}</span></span>'
+                f'</li>' for f in r["faelle"])
+            inhalt = (f'<div class="enthalten"><span class="kennung">ENTHÄLT ZEHN FALLAKTEN</span>'
+                      f'<ol class="inhaltsliste">{inhalt}</ol></div>')
+            eintraege.append((r["titel"] + ", Sektion A", r.get("dateien"), r["claim"], inhalt))
         else:
-            eintraege.append((r["titel"], r.get("dateien"), r["claim"]))
-        rows = "".join(f'''<div class="werk">
+            eintraege.append((r["titel"], r.get("dateien"), r["claim"], None))
+
+        rows = "".join(f'''<div class="werk karte-werk">
           <span class="band">{r["kennung"]}</span>
-          <div><h3 style="font-size:1.25rem">{t}</h3><p>{u}</p>{dateiliste(d, t)}</div>
+          <div><h3 style="font-size:1.25rem">{t}</h3><p>{u}</p>{dateiliste(d, t)}{x or ""}</div>
           <span class="status">{liz["kurz"]}</span>
-        </div>''' for t, d, u in eintraege)
-        blöcke.append(f'''<section class="stratum" style="padding-block:2.5rem"><div class="wrap">
-          <div class="stratum-kopf"><h3 style="font-size:1.6rem">{r["titel"]}</h3>
-          <span class="hoehe">{liz["kurz"]}</span></div>
+        </div>''' for t, d, u, x in eintraege)
+
+        blöcke.append(f'''<section class="stratum reihenblock" data-reihe="{r["id"]}" data-reihenname="{r["titel"]}" style="padding-block:2.75rem">
+          <div class="wrap">
+          <div class="stratum-kopf">
+            <span class="reihenmarke">{r["kennung"]}</span>
+            <h3 style="font-size:1.7rem;margin:0">{r["titel"]}</h3>
+            <span class="hoehe">{liz["kurz"]}</span>
+          </div>
           <div class="werkliste">{rows}</div></div></section>''')
     return "".join(blöcke)
 
