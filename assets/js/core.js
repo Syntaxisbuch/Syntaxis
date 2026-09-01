@@ -62,6 +62,73 @@
     if (a.dataset.s === seite) a.setAttribute("aria-current", "page");
   });
 
+  /* ---------- Lesefortschritt ---------- */
+  const balken = document.getElementById("fortschritt");
+  let ticking = false;
+  function fortschritt() {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    balken.style.width = (max > 60 ? Math.min(100, (h.scrollTop / max) * 100) : 0) + "%";
+  }
+
+  /* ---------- Reihenzeiger: welche Reihe gerade sichtbar ist ---------- */
+  const zeiger = document.getElementById("reihenzeiger");
+  const bloecke = [...document.querySelectorAll("[data-reihenname]")];
+  let zeigeReihe = () => {};
+  if (zeiger && bloecke.length > 1) {
+    const nm = zeiger.querySelector(".nm"), kz = zeiger.querySelector(".kz");
+    let aktuell = null;
+    zeigeReihe = () => {
+      const linie = 130;                       // knapp unter Kopfleiste und Zeiger
+      let treffer = null;
+      for (const b of bloecke) {
+        const r = b.getBoundingClientRect();
+        if (r.top <= linie && r.bottom > linie) { treffer = b; break; }
+        if (r.top <= linie) treffer = b;       // letzter, dessen Oberkante passiert ist
+      }
+      const ersterOben = bloecke[0].getBoundingClientRect().top > linie;
+      if (ersterOben || !treffer) { zeiger.classList.remove("an"); aktuell = null; return; }
+      const letzter = bloecke[bloecke.length - 1].getBoundingClientRect();
+      if (letzter.bottom < linie) { zeiger.classList.remove("an"); aktuell = null; return; }
+      zeiger.classList.add("an");
+      if (treffer === aktuell) return;
+      aktuell = treffer;
+      zeiger.setAttribute("data-reihe", treffer.dataset.reihe);
+      nm.textContent = treffer.dataset.reihenname;
+      kz.textContent = treffer.dataset.reihe.toUpperCase();
+    };
+  }
+
+  /* ---------- Sanftes Auftauchen ---------- */
+  const sanft = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (sanft && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("js-reveal");
+    const ziele = document.querySelectorAll(
+      ".stratum > .wrap > *, .pforte, .werk, .fall, .zelle, .karte, .sektion, .kit > div");
+    ziele.forEach(el => el.classList.add("auf"));
+    const auf = new IntersectionObserver((es, o) => {
+      es.forEach(e => {
+        if (!e.isIntersecting) return;
+        const i = [...e.target.parentElement.children].indexOf(e.target);
+        e.target.style.transitionDelay = Math.min(i, 6) * 45 + "ms";
+        e.target.classList.add("da");
+        o.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: .04 });
+    ziele.forEach(el => auf.observe(el));
+    /* Was schon beim Laden im Bild ist, sofort zeigen */
+    setTimeout(() => ziele.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("da");
+    }), 60);
+  }
+
+  function beiScroll() { fortschritt(); zeigeReihe(); }
+  addEventListener("scroll", () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(() => { beiScroll(); ticking = false; }); }
+  }, { passive: true });
+  addEventListener("resize", beiScroll, { passive: true });
+  beiScroll();
+
   /* ---------- Suche ---------- */
   const fenster = document.getElementById("suchfenster");
   const eingabe = document.getElementById("suchEingabe");
