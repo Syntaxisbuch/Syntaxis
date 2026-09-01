@@ -10,15 +10,31 @@
       "kurz": "CC BY-NC-ND 4.0",
       "name": "Namensnennung — Nicht kommerziell — Keine Bearbeitungen 4.0 International",
       "url": "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de",
-      "darf": ["Kopieren und weitergeben, in jedem Format", "Ausdrucken, verschenken, im Unterricht austeilen", "Zitieren mit Quellenangabe"],
-      "bedingung": ["Nennung von Autor und Werk", "Keine kommerzielle Nutzung", "Keine bearbeiteten Fassungen verbreiten"]
+      "darf": [
+        "Kopieren und weitergeben, in jedem Format",
+        "Ausdrucken, verschenken, im Unterricht austeilen",
+        "Zitieren mit Quellenangabe"
+      ],
+      "bedingung": [
+        "Nennung von Autor und Werk",
+        "Keine kommerzielle Nutzung",
+        "Keine bearbeiteten Fassungen verbreiten"
+      ]
     },
     "by-nc-sa": {
       "kurz": "CC BY-NC-SA 4.0",
       "name": "Namensnennung — Nicht kommerziell — Weitergabe unter gleichen Bedingungen 4.0 International",
       "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de",
-      "darf": ["Kopieren und weitergeben, in jedem Format", "Bearbeiten, kürzen, übersetzen, remixen", "Eigene Materialien daraus bauen"],
-      "bedingung": ["Nennung von Autor und Werk", "Keine kommerzielle Nutzung", "Bearbeitungen wieder unter genau dieser Lizenz weitergeben"]
+      "darf": [
+        "Kopieren und weitergeben, in jedem Format",
+        "Bearbeiten, kürzen, übersetzen, remixen",
+        "Eigene Materialien daraus bauen"
+      ],
+      "bedingung": [
+        "Nennung von Autor und Werk",
+        "Keine kommerzielle Nutzung",
+        "Bearbeitungen wieder unter genau dieser Lizenz weitergeben"
+      ]
     }
   },
   "reihen": [
@@ -39,19 +55,63 @@
       "umfang": "rund 900 Seiten",
       "status": "verfügbar",
       "baende": [
-        { "nr": "I",    "titel": "Das Rüstzeug des Denkens",        "inhalt": "Falsifizierbarkeit, Ockham, Beweislast, Hanlon, die Hierarchie der Evidenz, die Anatomie einer guten Studie, die dreizehn Red Flags, Denkfehler, Statistik als Waffe." },
-        { "nr": "II",   "titel": "Die Maschine der Realität",       "inhalt": "Thermodynamik, Urknall, Kernfusion, DNA, Abiogenese, Evolution, Epigenetik. Die physikalischen und biologischen Grundlagen, gegen die jede Behauptung geprüft wird." },
-        { "nr": "III",  "titel": "Der Geist in der Welt",           "inhalt": "Wahrnehmung, Gedächtnis, Konformität, Gehorsam, Gruppendenken, Narrative, Blasen und die Aufmerksamkeits-Maschine." },
-        { "nr": "IV",   "titel": "Die Grenzen der Karte",           "inhalt": "Was die Methode nicht kann. Das harte Problem des Bewusstseins, die Ist-Soll-Lücke, die Replikationskrise — und wie man im Nebel navigiert." },
-        { "nr": "V",    "titel": "Die Architektur der Wahrheit",    "inhalt": "Die Schatten-Kathedrale der Irrationalität, gebaut aus Furcht, Gotik, Chrom und Serverraum. Und der Gegenentwurf: Dialog statt Belehrung." },
-        { "nr": "VI",   "titel": "Das Dojo",                        "inhalt": "Der Übungsteil. Werkstücke, Sparringsrunden, Katas für Familie, Arztbesuch und Kindererziehung." },
-        { "nr": "VII",  "titel": "Die Festung des Geistes",         "inhalt": "Mentale Modelle als tägliches Immunsystem, intellektuelle Hygiene, digitale Selbstverteidigung." },
-        { "nr": "VIII", "titel": "Die Anatomie eines Glaubenskrieges", "inhalt": "Was passiert, wenn Gewissheit auf Gewissheit trifft — und warum die erlebte Linse beider Seiten stimmig ist." },
-        { "nr": "IX",   "titel": "Die Anatomie der Chimäre",        "inhalt": "Die schwierigsten Fälle: Behauptungen, die zur Hälfte stimmen." }
+        {
+          "nr": "I",
+          "titel": "Das Rüstzeug des Denkens",
+          "inhalt": "Falsifizierbarkeit, Ockham, Beweislast, Hanlon, die Hierarchie der Evidenz, die Anatomie einer guten Studie, die dreizehn Red Flags, Denkfehler, Statistik als Waffe."
+        },
+        {
+          "nr": "II",
+          "titel": "Die Maschine der Realität",
+          "inhalt": "Thermodynamik, Urknall, Kernfusion, DNA, Abiogenese, Evolution, Epigenetik. Die physikalischen und biologischen Grundlagen, gegen die jede Behauptung geprüft wird."
+        },
+        {
+          "nr": "III",
+          "titel": "Der Geist in der Welt",
+          "inhalt": "Wahrnehmung, Gedächtnis, Konformität, Gehorsam, Gruppendenken, Narrative, Blasen und die Aufmerksamkeits-Maschine."
+        },
+        {
+          "nr": "IV",
+          "titel": "Die Grenzen der Karte",
+          "inhalt": "Was die Methode nicht kann. Das harte Problem des Bewusstseins, die Ist-Soll-Lücke, die Replikationskrise — und wie man im Nebel navigiert."
+        },
+        {
+          "nr": "V",
+          "titel": "Die Architektur der Wahrheit",
+          "inhalt": "Die Schatten-Kathedrale der Irrationalität, gebaut aus Furcht, Gotik, Chrom und Serverraum. Und der Gegenentwurf: Dialog statt Belehrung."
+        },
+        {
+          "nr": "VI",
+          "titel": "Das Dojo",
+          "inhalt": "Der Übungsteil. Werkstücke, Sparringsrunden, Katas für Familie, Arztbesuch und Kindererziehung."
+        },
+        {
+          "nr": "VII",
+          "titel": "Die Festung des Geistes",
+          "inhalt": "Mentale Modelle als tägliches Immunsystem, intellektuelle Hygiene, digitale Selbstverteidigung."
+        },
+        {
+          "nr": "VIII",
+          "titel": "Die Anatomie eines Glaubenskrieges",
+          "inhalt": "Was passiert, wenn Gewissheit auf Gewissheit trifft — und warum die erlebte Linse beider Seiten stimmig ist."
+        },
+        {
+          "nr": "IX",
+          "titel": "Die Anatomie der Chimäre",
+          "inhalt": "Die schwierigsten Fälle: Behauptungen, die zur Hälfte stimmen."
+        }
       ],
       "dateien": [
-        { "format": "PDF",  "datei": "downloads/landkarte-der-realitaet.pdf",   "label": "Landkarte der Realität — PDF" },
-        { "format": "EPUB", "datei": "downloads/landkarte-der-realitaet.epub",  "label": "Landkarte der Realität — EPUB" }
+        {
+          "format": "PDF",
+          "datei": "downloads/landkarte-der-realitaet.pdf",
+          "label": "Landkarte der Realität — PDF"
+        },
+        {
+          "format": "EPUB",
+          "datei": "downloads/landkarte-der-realitaet.epub",
+          "label": "Landkarte der Realität — EPUB"
+        }
       ]
     },
     {
@@ -59,76 +119,170 @@
       "kennung": "NC",
       "titel": "Chroniken von Neocortex City",
       "rolle": "Belletristik",
-      "claim": "Vier Kriminalfälle in einer Stadt, die gebaut ist wie ein Gehirn.",
+      "claim": "Eine Krimireihe in einer Stadt, die gebaut ist wie ein Gehirn — mit einem Fall, der über alle Bände läuft.",
       "terrasse": "untere",
       "z": 80,
       "hirn": "Limbisches System",
       "lizenz": "by-nc-nd",
       "signatur": "NC-[BAND]",
       "seite": "chroniken.html",
-      "beschreibung": "Hardboiled-Noir mit Fußnoten. Valerian Trace, der Hausmeister der Realität, und der Physiker Dr. Ratio bearbeiten Fälle für einen Klienten, der das Kollektive Unbewusste ist. Jede Randnotiz des Archivars Janus verweist auf ein echtes Beweisstück im Anhang: was belegt ist, was rekonstruiert wurde, was bewusst dramatisiert ist.",
+      "beschreibung": "Hardboiled-Noir mit Fußnoten. Valerian Trace, der Hausmeister der Realität, und der Physiker Dr. Ratio bearbeiten Fälle für einen Klienten, der das Kollektive Unbewusste ist. Jede Randnotiz des Archivars Janus verweist auf ein echtes Beweisstück im Anhang: was belegt ist, was rekonstruiert wurde, was bewusst dramatisiert ist. Die Bände bauen aufeinander auf.",
       "form": "Roman",
-      "umfang": "vier Bände",
+      "umfang": "fünf Bände",
       "status": "verfügbar",
       "figuren": [
-        { "name": "Valerian Trace", "rolle": "Der Hausmeister der Realität", "ort": "Exekutive Reizfilterung, DLPFC", "notiz": "Fällt zu Beginn jedes Bandes auf genau den Fehler herein, den er zwei Wochen zuvor seziert hat." },
-        { "name": "Dr. Ratio", "rolle": "Der Mann der Zahlen", "ort": "Naturgesetzliche Konstante, Parietallappen", "notiz": "Der Akteur mit den meisten öffentlich zurückgenommenen Sätzen. Er nennt das nicht Demut, sondern Vorbereitung." },
-        { "name": "Janus", "rolle": "Der Archivar der Detektei", "ort": "Bewusst nie verortet", "notiz": "Verfasser des Manifests, Hüter der Asservate, Urheber der Marginalien, die Fakt von Fiktion trennen. Was er ist, bleibt ungeklärt." },
-        { "name": "Mnemosyne", "rolle": "Der Archivar der Stadt", "ort": "Hippocampus", "notiz": "Trocken, papieren, kategorisiert alles und deutet nichts. Drei Außenstellen in drei Klimazonen." },
-        { "name": "Das Kollektive Unbewusste", "rolle": "Der Klient", "ort": "Limbisches System", "notiz": "Seine direkteste Selbstauskunft: dass es Hunger sei und keine Moral." },
-        { "name": "Sylvia Krone", "rolle": "Die Feldbiologin", "ort": "Extern, Feld", "notiz": "Die Bremse. Ihre wiederkehrende Frage gilt der Quelle, nicht der Plausibilität." },
-        { "name": "Dr. Vera Tempel", "rolle": "Die Parapsychologin", "ort": "Institut für Anomalistik", "notiz": "Hat selbst geglaubt, bis die eigenen Nullresultate ihr die Antwort gaben, die sie nicht hören wollte." }
+        {
+          "name": "Valerian Trace",
+          "rolle": "Der Hausmeister der Realität",
+          "ort": "Exekutive Reizfilterung, DLPFC",
+          "notiz": "Ermittelt seit Band I für einen Klienten, den niemand vorladen kann. Durch die Reihe zieht sich ein zweiter Fall, den er nicht angenommen hat und der ihn in Band V einholt."
+        },
+        {
+          "name": "Dr. Ratio",
+          "rolle": "Der Mann der Zahlen",
+          "ort": "Naturgesetzliche Konstante, Parietallappen",
+          "notiz": "Der Akteur mit den meisten öffentlich zurückgenommenen Sätzen. Er nennt das nicht Demut, sondern Vorbereitung. In Band IV zerbricht zum ersten Mal nicht der Detektiv, sondern der Mann, der die Gleichungen hält."
+        },
+        {
+          "name": "Janus",
+          "rolle": "Der Archivar der Detektei",
+          "ort": "Bewusst nie verortet",
+          "notiz": "Verfasser des Manifests, Hüter der Asservate, Urheber der Marginalien, die Fakt von Fiktion trennen. Kommentiert jeden Fall, betritt keinen."
+        },
+        {
+          "name": "Mnemosyne",
+          "rolle": "Der Archivar der Stadt",
+          "ort": "Hippocampus",
+          "notiz": "Trocken, papieren, kategorisiert alles und deutet nichts. Drei Außenstellen in drei Klimazonen."
+        },
+        {
+          "name": "Das Kollektive Unbewusste",
+          "rolle": "Der Klient",
+          "ort": "Limbisches System",
+          "notiz": "Seine direkteste Selbstauskunft: dass es Hunger sei und keine Moral."
+        },
+        {
+          "name": "Sylvia Krone",
+          "rolle": "Die Feldbiologin",
+          "ort": "Extern, Feld",
+          "notiz": "Die Bremse. Ihre wiederkehrende Frage gilt der Quelle, nicht der Plausibilität."
+        },
+        {
+          "name": "Dr. Vera Tempel",
+          "rolle": "Die Parapsychologin",
+          "ort": "Institut für Anomalistik",
+          "notiz": "Hat selbst geglaubt, bis die eigenen Nullresultate ihr die Antwort gaben, die sie nicht hören wollte."
+        }
       ],
       "baende": [
         {
-          "nr": "I", "titel": "Der Schatten über Dreamland", "jahr": "2026", "kapitel": 24,
+          "nr": "I",
+          "titel": "Der Schatten über Dreamland",
+          "jahr": "2026",
+          "kapitel": 24,
           "fall": "Area 51 und Bob Lazar",
           "ort": "Administrativer Kortex, Wüste, Route 375",
           "text": "Ein vergilbtes Steuerformular aus dem Jahr 1989, seziert im Sektor des Administrativen Kortex. Darunter kein kosmisches Wunder, sondern ein Netzwerk aus Spionage, Medienmythos und der menschlichen Sehnsucht nach dem Wunderbaren. Kein Buch, das den Himmel leerräumt — das Werkzeug, um das echte Staunen zurückzugewinnen.",
-          "tags": ["Area 51", "Ufologie", "Kalter Krieg", "Epistemologie"],
+          "tags": [
+            "Area 51",
+            "Ufologie",
+            "Kalter Krieg",
+            "Epistemologie"
+          ],
           "dateien": [
-            { "format": "PDF",  "datei": "downloads/chroniken-1-schatten-ueber-dreamland.pdf" },
-            { "format": "EPUB", "datei": "downloads/chroniken-1-schatten-ueber-dreamland.epub" }
+            {
+              "format": "PDF",
+              "datei": "downloads/chroniken-1-schatten-ueber-dreamland.pdf"
+            },
+            {
+              "format": "EPUB",
+              "datei": "downloads/chroniken-1-schatten-ueber-dreamland.epub"
+            }
           ]
         },
         {
-          "nr": "II", "titel": "Der König des dichten Unterholzes", "jahr": "2026", "kapitel": 29,
+          "nr": "II",
+          "titel": "Der König des dichten Unterholzes",
+          "jahr": "2026",
+          "kapitel": 29,
           "fall": "Bigfoot und das Patterson-Gimlin-Filmmaterial",
           "ort": "Nadelwald-Archiv, Insula-Distrikt",
           "text": "Die Ermittlung führt in die limbischen Wälder des Pazifischen Nordwestens. Gejagt wird ein Phantom, das größer ist als Bigfoot: die Gips-Falle, der Mann im Affenanzug, der Coelacanth-Irrtum und die Statistik des Verschwindens.",
-          "tags": ["Kryptozoologie", "Bigfoot", "Hoax", "Wahrnehmung"],
+          "tags": [
+            "Kryptozoologie",
+            "Bigfoot",
+            "Hoax",
+            "Wahrnehmung"
+          ],
           "dateien": [
-            { "format": "PDF",  "datei": "downloads/chroniken-2-koenig-des-dichten-unterholzes.pdf" },
-            { "format": "EPUB", "datei": "downloads/chroniken-2-koenig-des-dichten-unterholzes.epub" }
+            {
+              "format": "PDF",
+              "datei": "downloads/chroniken-2-koenig-des-dichten-unterholzes.pdf"
+            },
+            {
+              "format": "EPUB",
+              "datei": "downloads/chroniken-2-koenig-des-dichten-unterholzes.epub"
+            }
           ]
         },
         {
-          "nr": "III", "titel": "Das Tier im Menschen", "jahr": "2026", "kapitel": 39,
+          "nr": "III",
+          "titel": "Das Tier im Menschen",
+          "jahr": "2026",
+          "kapitel": 39,
           "fall": "Werwolf und Vampirismus",
           "ort": "Parietales Grenzland, Limbische Altstadt",
           "text": "Zwei Fälle, eine Wahrheit. Ein Waldrand, der das Fürchten lehrt, und eine Agrar-Holding, die davon lebt. Danach ein Online-Raubtier, das vierzehn Menschen in derselben jahrhundertealten Lüge hält. Dazwischen vier Jahrtausende Aktenarbeit: ein Hirtenjunge, den ein Gericht 1603 für krank statt für besessen erklärte, ein Dorf in Rhode Island, das 1892 ein Mädchen ausgrub, und ein slawisches Wort aus zwei Silben.",
-          "tags": ["Werwolf", "Vampirismus", "Virologie", "Online-Sicherheit"],
+          "tags": [
+            "Werwolf",
+            "Vampirismus",
+            "Virologie",
+            "Online-Sicherheit"
+          ],
           "dateien": [
-            { "format": "PDF",  "datei": "downloads/chroniken-3-das-tier-im-menschen.pdf" },
-            { "format": "EPUB", "datei": "downloads/chroniken-3-das-tier-im-menschen.epub" }
+            {
+              "format": "PDF",
+              "datei": "downloads/chroniken-3-das-tier-im-menschen.pdf"
+            },
+            {
+              "format": "EPUB",
+              "datei": "downloads/chroniken-3-das-tier-im-menschen.epub"
+            }
           ]
         },
         {
-          "nr": "IV", "titel": "Was das Licht verspricht", "jahr": "in Arbeit", "kapitel": 45,
+          "nr": "IV",
+          "titel": "Was das Licht verspricht",
+          "jahr": "in Arbeit",
+          "kapitel": 45,
           "fall": "Spuk, Séance und Ideomotorik",
           "ort": "Registratur der Fürbitten, Verwaltungsflügel Ost, Die Bögen, Halbergs Zirkel",
           "text": "Vier Räume, ein Täter — und der Täter ist keiner. Sechs Stimmen aus einem einzigen Hals. Physiker, die eine neue Naturkraft lieber glauben als den naheliegendsten Trick. Ein Gewölbe, in dem niemand einen Namen braucht, um Angst zu haben. Und ein Tisch, an dem vier fremde Hände sich bewegen, ohne dass eine es zugibt. Zum ersten Mal zerbricht nicht der Detektiv an der Versuchung, sondern der Mann, der die Gleichungen hält.",
-          "tags": ["Spuk", "Séance", "Ideomotorik", "Kaltlesen", "Parapsychologie"],
+          "tags": [
+            "Spuk",
+            "Séance",
+            "Ideomotorik",
+            "Kaltlesen",
+            "Parapsychologie"
+          ],
           "status": "Entwurf",
           "dateien": []
         },
         {
-          "nr": "V", "titel": "Der Nullpunkt", "jahr": "in Konzeption", "kapitel": 0,
-          "fall": "noch nicht öffentlich",
-          "ort": "noch nicht verortet",
-          "text": "Der fünfte Fall. Titel steht fest, die Konzeption läuft. Mehr wird hier eingetragen, sobald der Band so weit ist — bis dahin gilt für Neugierige der kürzeste aller Hinweise: Das Stadt-Basisdatum liegt bei null Metern, und alles Interessante darunter braucht den archaischen Hebel-Aufzug.",
-          "tags": [],
-          "status": "in Konzeption",
+          "nr": "V",
+          "titel": "Der Nullpunkt",
+          "jahr": "in Arbeit",
+          "kapitel": 0,
+          "fall": "Pseudomedizin",
+          "ort": "die ganze Stadt — zum ersten Mal ermitteln alle vier Disziplinen gemeinsam",
+          "text": "Eine Epidemie treibt die Stadt zu Scharlatanen. Der Gegner ist kein Betrüger, sondern ein Überzeugungstäter: einer, der an sein eigenes System glaubt, weil es bei ihm selbst einmal funktioniert zu haben schien. Trace, Ratio, Krone und Tempel arbeiten erstmals zu viert am selben Fall — Kognition, Physik, Biologie und Glaube. Der Titel hat zwei Böden: den Nullpunkt der Wirkstoffkonzentration und einen zweiten, über den hier nichts steht.",
+          "tags": [
+            "Pseudomedizin",
+            "Homöopathie",
+            "Überzeugungstäter",
+            "Placebo und Nocebo"
+          ],
+          "status": "in Arbeit",
           "dateien": []
         }
       ]
@@ -138,7 +292,7 @@
       "kennung": "AU",
       "titel": "Autopsien der Schatten",
       "rolle": "Forensik",
-      "claim": "Jeder Mythos einzeln auf dem Tisch, nach immer demselben Protokoll.",
+      "claim": "Jeder Mythos einzeln auf dem Tisch, nach immer demselben Protokoll. Zehn sind fertig, 105 sind geplant.",
       "terrasse": "sub-unterste",
       "z": -60,
       "hirn": "Sonderzugang unter dem Basisdatum",
@@ -147,50 +301,200 @@
       "seite": "autopsien.html",
       "beschreibung": "Kein Spott, kein Rabatt. Jede Autopsie legt den Mythos in seiner stärksten Fassung auf den Tisch, nicht in seiner dümmsten, und führt ihn durch zwölf Punkte: Verführung, Genealogie, Verwandtschaft, kultureller Fußabdruck, Toleranz-Zone, ökonomisches Röntgenbild, Beweisführung, naturwissenschaftliche Autopsie, psychologische Anatomie, Gegenprobe, historischer Spiegel, Dialog-Leitfaden. Der Mensch, der irrt, wird nie zum Gegenstand.",
       "form": "Fallakte",
-      "umfang": "zehn Autopsien, Sektion A",
+      "umfang": "Sektion A abgeschlossen, zehn von 105 geplanten Fällen",
       "status": "verfügbar",
-      "sektionen": [ { "id": "A", "name": "Der Kosmos voller Lügen", "status": "abgeschlossen" } ],
+      "sektionen": [
+        {
+          "id": "A",
+          "name": "Der Kosmos voller Lügen",
+          "status": "abgeschlossen"
+        }
+      ],
       "gefahrenskala": [
-        { "level": 1, "name": "Harmlos",    "zeichen": "🤔", "text": "Kein körperlicher Schaden. Der Irrtum kostet Zeit und Selbstbild." },
-        { "level": 2, "name": "Bedenklich", "zeichen": "😬", "text": "Nahezu kein direkter Schaden, aber die Abwehr gegen gefährlichere Mythen wird abgeschaltet." },
-        { "level": 3, "name": "Ernst",      "zeichen": "⚠️", "text": "Gesundheitliche und soziale Folgen, dokumentierte Bedrohungen, Einfallstor zur Radikalisierung." },
-        { "level": 4, "name": "Gefährlich", "zeichen": "🛑", "text": "Direkter Schaden an Leib, Vermögen oder Rechtsstaat." },
-        { "level": 5, "name": "Tödlich",    "zeichen": "💀", "text": "Menschen sterben — an unterlassener Behandlung, an Verzögerung, an Gewalt." }
+        {
+          "level": 1,
+          "name": "Harmlos",
+          "zeichen": "🤔",
+          "text": "Kein körperlicher Schaden. Der Irrtum kostet Zeit und Selbstbild."
+        },
+        {
+          "level": 2,
+          "name": "Bedenklich",
+          "zeichen": "😬",
+          "text": "Nahezu kein direkter Schaden, aber die Abwehr gegen gefährlichere Mythen wird abgeschaltet."
+        },
+        {
+          "level": 3,
+          "name": "Ernst",
+          "zeichen": "⚠️",
+          "text": "Gesundheitliche und soziale Folgen, dokumentierte Bedrohungen, Einfallstor zur Radikalisierung."
+        },
+        {
+          "level": 4,
+          "name": "Gefährlich",
+          "zeichen": "🛑",
+          "text": "Direkter Schaden an Leib, Vermögen oder Rechtsstaat."
+        },
+        {
+          "level": 5,
+          "name": "Tödlich",
+          "zeichen": "💀",
+          "text": "Menschen sterben — an unterlassener Behandlung, an Verzögerung, an Gewalt."
+        }
       ],
       "faelle": [
-        { "nr": 1,  "titel": "Die flache Erde",            "unter": "Das Großprojekt der Selbstverblendung",       "level": 2, "ton": "Satirisch-ironisch",     "kern": "Traue nur deinen eigenen Augen — der Satz, der wie Unabhängigkeit klingt und ihr Gegenteil ist.", "ursprung": "England, 1865" },
-        { "nr": 2,  "titel": "Die Mondlandungs-Lüge",       "unter": "Wie ein Triumph zur Verschwörung wurde",      "level": 2, "ton": "Sachlich-ehrfürchtig",   "kern": "Wer das Werk von vierhunderttausend Menschen eine Filmproduktion nennt, widerlegt keine Theorie.", "ursprung": "USA, 1976" },
-        { "nr": 3,  "titel": "Chemtrails",                  "unter": "Der Krieg über unseren Köpfen",               "level": 3, "ton": "Beruhigend-erdend",      "kern": "Eine echte Angst um die unsichtbare Umwelt, die sich am Himmel ein Bild sucht.", "ursprung": "USA, 1996–1999" },
-        { "nr": 4,  "titel": "Klimawandel",                 "unter": "Desinformation und die thermodynamische Realität", "level": 5, "ton": "Kalt und belegt",   "kern": "Der Zweifel war ein Produkt, hergestellt und verkauft. Die Kurve war nie in Zweifel.", "ursprung": "USA, ab 1989" },
-        { "nr": 5,  "titel": "Die Hohl-Erde",               "unter": "Das Leben im Inneren",                        "level": 1, "ton": "Warm-neugierig",         "kern": "Wo die Leugnung das vermessene Außen verweigert, erfindet dieser Mythos ein unvermessenes Innen.", "ursprung": "England, 1692" },
-        { "nr": 6,  "titel": "Astrologie",                  "unter": "Der kosmische Spiegel, der jedem schmeichelt", "level": 1, "ton": "Freundlich-präzise",    "kern": "Der Barnum-Effekt in Reinform: eine Aussage, die auf jeden passt, gelesen als eine über einen selbst.", "ursprung": "Mesopotamien, Antike" },
-        { "nr": 7,  "titel": "Prä-Astronautik",             "unter": "Als die Götter Astronauten waren",            "level": 2, "ton": "Historisch-nüchtern",    "kern": "Der Mythos nimmt außereuropäischen Kulturen ihre eigene Ingenieursleistung weg und schenkt sie dem All.", "ursprung": "Schweiz, 1968" },
-        { "nr": 8,  "titel": "Roswell und die stillen Götter", "unter": "Der Zwischenfall, der nie endet",          "level": 2, "ton": "Aktenkundig",            "kern": "Ein Ereignis von 1947, das erst dreißig Jahre später zu dem wurde, was heute erzählt wird.", "ursprung": "USA, 1947 / 1978" },
-        { "nr": 9,  "titel": "Die Planet-Nibiru-Panik",     "unter": "Der Planet, der immer kommt und nie ankommt", "level": 2, "ton": "Geduldig",               "kern": "Eine Prophezeiung, die jedes Scheitern überlebt, weil sie sich nur ein neues Datum sucht.", "ursprung": "USA, 1976 / 1995" },
-        { "nr": 10, "titel": "Die Simulation",              "unter": "Leben wir in einer Matrix?",                  "level": 1, "ton": "Philosophisch-offen",    "kern": "Die einzige Autopsie, deren Gegenstand nicht falsch ist, sondern unprüfbar — und genau darum interessant.", "ursprung": "Oxford, 2003" }
+        {
+          "nr": 1,
+          "titel": "Die flache Erde",
+          "unter": "Das Großprojekt der Selbstverblendung",
+          "level": 2,
+          "ton": "Satirisch-ironisch",
+          "kern": "Traue nur deinen eigenen Augen — der Satz, der wie Unabhängigkeit klingt und ihr Gegenteil ist.",
+          "ursprung": "England, 1865"
+        },
+        {
+          "nr": 2,
+          "titel": "Die Mondlandungs-Lüge",
+          "unter": "Wie ein Triumph zur Verschwörung wurde",
+          "level": 2,
+          "ton": "Sachlich-ehrfürchtig",
+          "kern": "Wer das Werk von vierhunderttausend Menschen eine Filmproduktion nennt, widerlegt keine Theorie.",
+          "ursprung": "USA, 1976"
+        },
+        {
+          "nr": 3,
+          "titel": "Chemtrails",
+          "unter": "Der Krieg über unseren Köpfen",
+          "level": 3,
+          "ton": "Beruhigend-erdend",
+          "kern": "Eine echte Angst um die unsichtbare Umwelt, die sich am Himmel ein Bild sucht.",
+          "ursprung": "USA, 1996–1999"
+        },
+        {
+          "nr": 4,
+          "titel": "Klimawandel",
+          "unter": "Desinformation und die thermodynamische Realität",
+          "level": 5,
+          "ton": "Kalt und belegt",
+          "kern": "Der Zweifel war ein Produkt, hergestellt und verkauft. Die Kurve war nie in Zweifel.",
+          "ursprung": "USA, ab 1989"
+        },
+        {
+          "nr": 5,
+          "titel": "Die Hohl-Erde",
+          "unter": "Das Leben im Inneren",
+          "level": 1,
+          "ton": "Warm-neugierig",
+          "kern": "Wo die Leugnung das vermessene Außen verweigert, erfindet dieser Mythos ein unvermessenes Innen.",
+          "ursprung": "England, 1692"
+        },
+        {
+          "nr": 6,
+          "titel": "Astrologie",
+          "unter": "Der kosmische Spiegel, der jedem schmeichelt",
+          "level": 1,
+          "ton": "Freundlich-präzise",
+          "kern": "Der Barnum-Effekt in Reinform: eine Aussage, die auf jeden passt, gelesen als eine über einen selbst.",
+          "ursprung": "Mesopotamien, Antike"
+        },
+        {
+          "nr": 7,
+          "titel": "Prä-Astronautik",
+          "unter": "Als die Götter Astronauten waren",
+          "level": 2,
+          "ton": "Historisch-nüchtern",
+          "kern": "Der Mythos nimmt außereuropäischen Kulturen ihre eigene Ingenieursleistung weg und schenkt sie dem All.",
+          "ursprung": "Schweiz, 1968"
+        },
+        {
+          "nr": 8,
+          "titel": "Roswell und die stillen Götter",
+          "unter": "Der Zwischenfall, der nie endet",
+          "level": 2,
+          "ton": "Aktenkundig",
+          "kern": "Ein Ereignis von 1947, das erst dreißig Jahre später zu dem wurde, was heute erzählt wird.",
+          "ursprung": "USA, 1947 / 1978"
+        },
+        {
+          "nr": 9,
+          "titel": "Die Planet-Nibiru-Panik",
+          "unter": "Der Planet, der immer kommt und nie ankommt",
+          "level": 2,
+          "ton": "Geduldig",
+          "kern": "Eine Prophezeiung, die jedes Scheitern überlebt, weil sie sich nur ein neues Datum sucht.",
+          "ursprung": "USA, 1976 / 1995"
+        },
+        {
+          "nr": 10,
+          "titel": "Die Simulation",
+          "unter": "Leben wir in einer Matrix?",
+          "level": 1,
+          "ton": "Philosophisch-offen",
+          "kern": "Die einzige Autopsie, deren Gegenstand nicht falsch ist, sondern unprüfbar — und genau darum interessant.",
+          "ursprung": "Oxford, 2003"
+        }
       ],
       "dateien": [
-        { "format": "PDF",  "datei": "downloads/autopsien-der-schatten-sektion-a.pdf",  "label": "Autopsien der Schatten, Sektion A — PDF" },
-        { "format": "EPUB", "datei": "downloads/autopsien-der-schatten-sektion-a.epub", "label": "Autopsien der Schatten, Sektion A — EPUB" }
+        {
+          "format": "PDF",
+          "datei": "downloads/autopsien-der-schatten-sektion-a.pdf",
+          "label": "Autopsien der Schatten, Sektion A — PDF"
+        },
+        {
+          "format": "EPUB",
+          "datei": "downloads/autopsien-der-schatten-sektion-a.epub",
+          "label": "Autopsien der Schatten, Sektion A — EPUB"
+        }
       ]
     },
     {
       "id": "ld",
       "kennung": "LD",
       "titel": "Licht der Realität",
-      "rolle": "Experiment",
-      "claim": "Die Methode selbst auf dem Prüfstand der Natur.",
+      "rolle": "Populärwissenschaft",
+      "claim": "Ein Mythos als Türöffner, dahinter die Wissenschaft, die ihn auflöst.",
       "terrasse": "obere-mittlere",
       "z": 400,
       "hirn": "Parietallappen",
       "lizenz": "by-nc-sa",
-      "signatur": "LD-[BAND]-[VERSUCH]",
+      "signatur": "LD-[BAND]-[FALL]",
       "seite": "licht.html",
-      "beschreibung": "Die naturwissenschaftliche und experimentelle Reihe. Hier bleiben die Geschichten zurück. Was gezeigt wird, wird nachgemacht: mit Haushaltsmitteln, einem Maßband, einer Waage und Geduld. Noch nicht erschienen.",
-      "form": "Versuchsreihe",
-      "umfang": "in Vorbereitung",
+      "beschreibung": "Jeder Band nimmt sich ein wissenschaftliches Fachgebiet vor und erklärt es entlang der Mythen, die es betreffen. Der Verschwörungserzählung wird nicht widersprochen — sie wird als Einstieg benutzt und dann durch die Sache selbst ersetzt. Wer wissen will, warum die Türme fielen, lernt dabei, was mit Stahl bei 600 Grad passiert. Wer wissen will, ob die Pyramiden von Besuchern gebaut wurden, lernt Statik, Hebelgesetze und Rampenbau. Das Ziel ist nicht die Widerlegung, sondern das bessere Bild dahinter.",
+      "form": "Sachbuchreihe, ein Fachgebiet je Band",
+      "umfang": "in Vorbereitung, ein Band je Fachgebiet",
       "status": "vorbereitung",
-      "baende": [],
+      "baende": [
+        {
+          "nr": "I",
+          "titel": "Physik",
+          "inhalt": "Kräfte, Material, Energie und Einsturz. Der 11. September ist hier der Türöffner: Stahl bricht nicht, er verliert bei Hitze seine Festigkeit — und der dritte Turm fiel nicht aus dem Nichts, sondern nach Stunden Feuer in einem Gebäude, das Trümmer des Nordturms abbekommen hatte."
+        },
+        {
+          "nr": "II",
+          "titel": "Chemie",
+          "inhalt": "Stoffe, Konzentrationen, Nachweisgrenzen. Was in einer Verdünnung noch drin ist, was eine Bleiche im Körper tut und warum die Nachweisbarkeit einer Substanz nichts über ihre Wirkung sagt."
+        },
+        {
+          "nr": "III",
+          "titel": "Biologie und Medizin",
+          "inhalt": "Immunsystem, Krankheitsverlauf, Wirkung und Einbildung. Warum die meisten Beschwerden von selbst vergehen und warum genau das jede Methode gut aussehen lässt, die zum richtigen Zeitpunkt beginnt."
+        },
+        {
+          "nr": "IV",
+          "titel": "Astronomie und Raumfahrt",
+          "inhalt": "Entfernungen, Bahnmechanik, Beobachtung. Was ein Teleskop kann, was ein Rückstrahler auf dem Mond beweist und warum ein herannahender Planet nicht zu verstecken wäre."
+        },
+        {
+          "nr": "V",
+          "titel": "Archäologie und Technikgeschichte",
+          "inhalt": "Werkzeug, Statik, Logistik. Die Prä-Astronautik als Einstieg in die tatsächliche Ingenieursleistung früher Kulturen — Rampen, Hebel, Seile, Arbeitsteilung und die Zeit, die man dafür hatte."
+        },
+        {
+          "nr": "VI",
+          "titel": "Erd- und Klimawissenschaft",
+          "inhalt": "Messreihen, Modelle, Unsicherheiten. Wie eine Temperaturkurve entsteht, was ein Konfidenzintervall aussagt und wo die Forschung tatsächlich streitet."
+        }
+      ],
       "dateien": []
     }
   ]

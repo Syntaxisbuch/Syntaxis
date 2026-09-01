@@ -1,74 +1,682 @@
 {
-  "quelle": "Neocortex City — Koordinatensystem & physische Eckwerte, konsolidierte Arbeitsfassung v9",
-  "hinweis": "X/Y in Kilometern, jeweils relativ zum lokalen Nullpunkt der Terrasse. Z in Metern über dem Stadt-Basisdatum (Unterste Terrasse = 0).",
-  "terrassen": [
-    { "id": "oberste", "name": "Oberste Terrasse", "z": 500, "hirn": "Präfrontaler Kortex", "funktion": "Vernunft, Planung, Hemmung", "nullpunkt": "Tower of Reason" },
-    { "id": "obere-mittlere", "name": "Obere-Mittlere Terrasse", "z": 400, "hirn": "Parietallappen", "funktion": "Raum und sensorische Integration", "nullpunkt": "Schmiede des Hephaistos" },
-    { "id": "mittlere", "name": "Mittlere Terrasse", "z": 280, "hirn": "Verwaltung", "funktion": "Bürokratie, Zuständigkeit, Ablage", "nullpunkt": "Administrativer Kortex" },
-    { "id": "mittlere-untere", "name": "Mittlere-Untere Terrasse", "z": 180, "hirn": "Hippocampus", "funktion": "Gedächtnis, Konsolidierung", "nullpunkt": "Archiv der verbrannten Träume" },
-    { "id": "untere", "name": "Untere Terrasse", "z": 80, "hirn": "Temporallappen und limbisches System", "funktion": "Trieb, Emotion, Mythos", "nullpunkt": "Medienviertel" },
-    { "id": "unterste", "name": "Unterste Terrasse", "z": 0, "hirn": "Hirnstamm", "funktion": "Grundfunktionen, Basisdatum der Stadt", "nullpunkt": "Maschinenhalle" },
-    { "id": "sub-unterste", "name": "Sub-Unterste Ebene", "z": -60, "hirn": "Sonderzugänge", "funktion": "Unterhalb des Basisdatums, nur über den Hebel-Aufzug erreichbar", "nullpunkt": "Maschinenhalle (fortgeführt)" },
-    { "id": "grenzlage", "name": "Grenzlagen und Zentralachse", "z": 130, "hirn": "Nicht an eine Terrasse gebunden", "funktion": "Orte an der vertikalen Achse und an den Schaltstellen", "nullpunkt": "Tower of Reason" }
-  ],
-  "sektoren": [
-    { "id": "T-00", "name": "Tower of Reason", "terrasse": "oberste", "x": 0, "y": 0, "z": 500, "sektor": null, "hirn": "Präfrontaler Kortex, durchgehende Achse", "notiz": "Neunzig Stockwerke. Kein Gebäude der Obersten Terrasse, sondern die vertikale Wirbelsäule der Stadt: Erdgeschoss auf Höhe der Plaza (Z 0), Penthouse bei Z 520. Deshalb gilt das Aufzugs-Richtungsgesetz — abwärts Trieb, aufwärts Kontrolle — für die ganze Fahrt.", "band": [1,2,3,4] },
-    { "id": "VC-01", "name": "Vane & Co.", "terrasse": "oberste", "x": 0.8, "y": 0.3, "z": 500, "sektor": null, "hirn": "Präfrontal, angrenzend", "notiz": "Eigenständiges Gebäude neben dem Tower.", "band": [1] },
-    { "id": "FL-01", "name": "Geometrischer Kortex", "terrasse": "oberste", "x": -2.5, "y": 1.0, "z": 500, "sektor": null, "hirn": "Frontallappen", "notiz": "Ratios Zuhause liegt an der unruhigen Ost-Kante nahe (−0,8 / 0,4), direkt an der Grenze zur Thalamus Central Station. Nachts hört er das rhythmische Rauschen der durchlaufenden Reize — ein Verstand, der neben der Schaltstelle wohnt, die ihn abschalten sollte.", "band": [1,2,3] },
-    { "id": "OB-01", "name": "Observatorium der Wahrnehmung", "terrasse": "oberste", "x": 2.0, "y": 1.5, "z": 500, "sektor": null, "hirn": "Fasciculus longitudinalis superior (Anbindung)", "notiz": "Nur per Sky Bridge erreichbar.", "band": [1] },
-    { "id": "PH-01", "name": "Park der Heldenmythen", "terrasse": "oberste", "x": 1.0, "y": -2.0, "z": 500, "sektor": null, "hirn": "Präfrontal", "notiz": "Band I, Kapitel 17.", "band": [1] },
-
-    { "id": "PL-01", "name": "Schmiede des Hephaistos", "terrasse": "obere-mittlere", "x": 0, "y": 0, "z": 400, "sektor": null, "hirn": "Parietallappen", "notiz": "Ratios Arbeitsplatz und lokaler Fixpunkt der Terrasse.", "band": [1,2,3,4] },
-    { "id": "PGL-01", "name": "Parietales Grenzland", "terrasse": "obere-mittlere", "x": 4.5, "y": 2.0, "z": 400, "sektor": 23, "hirn": "Parietale Außenkante", "notiz": "Äußerste Kante der Terrasse, ehemals Werwolf-Territorium. Der Fall gilt seit Band III als gelöst; die Horizont-Struktur verblasst, die Randfläche wird wieder frei.", "band": [3] },
-    { "id": "BG-01", "name": "Broca-Gürtel", "terrasse": "obere-mittlere", "x": 4.8, "y": 3.2, "z": 400, "sektor": 26, "hirn": "Broca-Areal (Peripherie)", "notiz": "Randbezirk zu Sektor 23, direkt benachbart zum Parietalen Grenzland.", "band": [3] },
-    { "id": "BH-01", "name": "Bereitschaftshalle", "terrasse": "obere-mittlere", "x": 5.6, "y": 0.9, "z": 400, "sektor": 29, "hirn": "Bereitschaftspotential (Libet 1983)", "notiz": "Ein Raum, in dem Dinge sich bewegen, bevor die Entscheidung dazu bewusst gefallen ist: Vorhänge heben sich kurz vor dem Windstoß, ein Zeiger rückt einen Sekundenbruchteil zu früh. Körperliche Kosten: ein unwillkürliches Zucken in den Fingerspitzen. Nutzt den frei gewordenen Rand des verblassenden Werwolf-Territoriums.", "band": [4] },
-
-    { "id": "AK-01", "name": "Administrativer Kortex", "terrasse": "mittlere", "x": 0, "y": 0, "z": 280, "sektor": null, "hirn": "Verwaltung", "notiz": "Band I, Kapitel 18. Lokaler Fixpunkt der Mittleren Terrasse.", "band": [1] },
-    { "id": "INS-01", "name": "Insula-Distrikt", "terrasse": "mittlere", "x": 1.5, "y": -1.0, "z": 280, "sektor": 11, "hirn": "Insula", "notiz": "Sektor des Ekels. Band II.", "band": [2] },
-    { "id": "VWB-01", "name": "Verwaltungsflügel Ost", "terrasse": "mittlere", "x": -2.1, "y": 1.6, "z": 280, "sektor": 6, "hirn": "Verwaltung, kompartimentiert", "notiz": "Fluoreszenzlicht statt Gaslicht, Aktenschränke in geraden Reihen, ein Summen in der Decke, das erst auffällt, wenn man aufhört, an etwas anderes zu denken. Körperliche Kosten: ein leichtes Druckgefühl hinter den Augen, wie vor einer Steuererklärung.", "band": [4] },
-
-    { "id": "HC-01", "name": "Archiv der verbrannten Träume", "terrasse": "mittlere-untere", "x": 0, "y": 0, "z": 180, "sektor": 7, "hirn": "Hippocampus", "notiz": "Mnemosynes Hauptstelle in der Wüstenfassung. Lokaler Fixpunkt.", "band": [1,3] },
-    { "id": "RF-01", "name": "Registratur der Fürbitten", "terrasse": "mittlere-untere", "x": 1.6, "y": -1.9, "z": 180, "sektor": 7, "hirn": "Hippocampus (dritte Außenstelle)", "notiz": "Dieselbe Funktion wie das Archiv, anderes Klima: Kerzenrauch statt Wüstenstaub, Regale aus dunklem Kirchenholz, gebogen unter handgeschriebenen Bittzetteln, deren Ordnungsprinzip die Verzweiflung ist und nicht das Alphabet. Körperliche Kosten: ein Kratzen im Hals, das an Weihrauch erinnert.", "band": [4] },
-
-    { "id": "TL-01", "name": "Medienviertel", "terrasse": "untere", "x": 0, "y": 0, "z": 80, "sektor": 5, "hirn": "Temporallappen", "notiz": "Lokaler Fixpunkt der Unteren Terrasse. Haus Corvain liegt hier als Adresse.", "band": [1,3] },
-    { "id": "LA-01", "name": "Limbische Altstadt", "terrasse": "untere", "x": 1.2, "y": 0.5, "z": 80, "sektor": 8, "hirn": "Limbisches System", "notiz": "Bias' Schänke. Benachbart zum Medienviertel.", "band": [1,3,4] },
-    { "id": "NW-01", "name": "Nadelwald-Archiv", "terrasse": "untere", "x": -3.0, "y": 3.0, "z": 80, "sektor": null, "hirn": "Assoziationsbahnen (Mykorrhiza-Analogie)", "notiz": "Peripher und großflächig, 15 bis 20 km Durchmesser. Eigenes Fünf-Geräte-Sinnessystem: Vogelchor-Wandel statt Aufzugsanzeige, Mycel-Netzwerk statt Sky Bridge, Nebel als Mustervakuum, Nieselregen als Indizienwissen, Frösteln als der Moment, in dem eine Erkenntnis den Körper vor dem Verstand erreicht.", "band": [2] },
-    { "id": "CEM-01", "name": "Friedhofsareal", "terrasse": "untere", "x": 2.8, "y": -1.5, "z": 80, "sektor": null, "hirn": "Limbische Peripherie", "notiz": "Zwischen Nadelwald-Archiv und Amygdala-Peripherie.", "band": [3] },
-    { "id": "AMY-01", "name": "Amygdala-Peripherie", "terrasse": "untere", "x": 3.5, "y": -2.0, "z": 80, "sektor": null, "hirn": "Amygdala", "notiz": "Der Tote Winkel. In seinem Schatten liegen die Medulla-Oblongata-Pumpwerke, umgangssprachlich die subkortikalen Pumpwerke.", "band": [1,3] },
-    { "id": "NAC-01", "name": "Halbergs Zirkel", "terrasse": "untere", "x": 2.4, "y": -1.5, "z": 80, "sektor": null, "hirn": "Nucleus accumbens", "notiz": "Teure Kerzen, Vanille und Zimt, warmes Licht. Eine Kerze flackert unregelmäßig auf — realer Luftzug —, nie synchron mit den Kaltlese-Treffern und nie ganz unabhängig davon. Körperliche Kosten: ein Ziehen in der Brust wie die Erwartung vor einer guten Nachricht, das sich nie ganz auflöst.", "band": [4], "flagge": "Die Quelle nennt für diesen Ort Z 6 statt der Terrassenbasis 80 m. Hier auf die Basis normalisiert." },
-
-    { "id": "MH-01", "name": "Maschinenhalle", "terrasse": "unterste", "x": 0, "y": 0, "z": 0, "sektor": null, "hirn": "Hirnstamm", "notiz": "Stadt-Basisdatum und lokaler Nullpunkt. Wo Trace schläft.", "band": [1,2,3,4] },
-
-    { "id": "NK-01", "name": "Die Naturkonstante", "terrasse": "sub-unterste", "x": 0.2, "y": 0.1, "z": -60, "sektor": null, "hirn": "Unterhalb des Hirnstamms", "notiz": "Echter Sonderabstieg unter das Stadt-Basisdatum, nur über den archaischen Hebel-Aufzug (2 bis 3 m/s) erreichbar. Der Begriff Medulla-Oblongata-Pumpen fällt hier wörtlich in Band I, Kapitel 8.", "band": [1] },
-    { "id": "GWB-01", "name": "Die Bögen", "terrasse": "sub-unterste", "x": 0.35, "y": -0.25, "z": -45, "sektor": null, "hirn": "Unterhalb des Hirnstamms", "notiz": "Ehemalige Lagergewölbe unter einer Brücke, mangelhaft abgedichtet, im 19. Jahrhundert zu Elendswohnungen verfallen, jahrzehntelang versiegelt, kürzlich wiedereröffnet. Reale Grundlage: die South Bridge Vaults in Edinburgh und Wisemans Feldstudien.", "band": [4] },
-
-    { "id": "PSI-01", "name": "Institut für Parasomnie-Forschung", "terrasse": "grenzlage", "x": 0.5, "y": -0.5, "z": 130, "sektor": null, "hirn": "Grenzlage nahe der Turmachse", "notiz": "Trägt Hirnstamm- und Scheitellappen-Charakter zugleich, weil es nicht auf einem horizontalen Terrassenweg liegt, sondern nahe dem vertikalen Verbindungsschacht.", "band": [1,3] },
-    { "id": "TCS-01", "name": "Thalamus Central Station", "terrasse": "grenzlage", "x": 5.0, "y": 0, "z": 20, "sektor": 17, "hirn": "Thalamus", "notiz": "Die zentrale Schaltstelle. Praktisch jeder Sinnesreiz läuft hier durch, bevor der Kortex zur Ruhe kommt.", "band": [1,2,3] },
-    { "id": "SYN-01", "name": "Synapsen-Pässe", "terrasse": "grenzlage", "x": 6.5, "y": 1.5, "z": 50, "sektor": 20, "hirn": "Synaptischer Spalt", "notiz": "Grenze zwischen Alt- und Neustadt, nahe der Thalamus Central Station.", "band": [2] },
-    { "id": "TPK-01", "name": "Schattenpässe", "terrasse": "grenzlage", "x": 0.3, "y": -0.4, "z": 230, "sektor": null, "hirn": "Temporoparietale Kreuzung", "notiz": "Keine reguläre Terrassenbrücke, sondern eine selten genutzte Nebenlandung der Innen-Route zwischen Etage 20 und Etage 50, wo zwei Aufzugsstrecken für Sekunden parallel laufen. Reale Grundlage: Olaf Blankes Forschung zu Präsenzhalluzinationen.", "band": [4] },
-    { "id": "IFA-01", "name": "Institut für Anomalistik", "terrasse": "grenzlage", "x": 0.8, "y": -0.2, "z": 100, "sektor": null, "hirn": "Grenzlage nahe der Turmachse", "notiz": "Tempels Arbeitsplatz, über einen zweiten Aufzugswechsel erreicht. Ein Korridorwechsel von Metall zu blankem Beton markiert den Übergang aus Ratios Zuständigkeit in eine andere. Körperliche Kosten: ein Brennen hinter den Augen vom Starren auf Monitore, die ständig kurz davor scheinen, ein Muster zu zeigen, und es nie tun.", "band": [4] }
-  ],
-  "bruecken": [
-    { "name": "Corpus Callosum Bridge", "von": "T-00", "nach": "Wüste / Route 375 / Area 51", "real": "Corpus callosum" },
-    { "name": "Uncinatus-Brücke", "von": "T-00", "nach": "Altstadt und Nadelwald-Archiv", "real": "Fasciculus uncinatus" },
-    { "name": "Observatoriums-Querung", "von": "T-00", "nach": "Observatorium der Wahrnehmung", "real": "Fasciculus longitudinalis superior" },
-    { "name": "Frontallappen-Querung", "von": "T-00", "nach": "Geometrischer Kortex", "real": "—" },
-    { "name": "Fornix-Brücke", "von": "RF-01", "nach": "Gasse ohne Namen", "real": "Fornix" },
-    { "name": "Fusiformis-Brücke", "von": "LA-01", "nach": "Die Bögen", "real": "Gyrus fusiformis" }
-  ],
-  "verkehr": [
-    { "id": "aufzug-a", "name": "Aufzug Typ A (Tower)", "wert": 17, "einheit": "m/s", "achse": "vertikal", "notiz": "Hochgeschwindigkeits-Transmitter auf Myelin-Schienen, 15 bis 20 m/s." },
-    { "id": "aufzug-b", "name": "Aufzug Typ B (Hebel)", "wert": 2.5, "einheit": "m/s", "achse": "vertikal", "notiz": "Archaischer als Typ A, 2 bis 3 m/s. Einziger Zugang zur Sub-Untersten Ebene." },
-    { "id": "pontiac", "name": "Pontiac Catalina", "wert": 80, "einheit": "km/h", "achse": "horizontal", "notiz": "60 bis 80 km/h im Wald, bis 120 km/h auf der Ausfallstraße." },
-    { "id": "skybridge", "name": "Sky Bridge", "wert": 15, "einheit": "km/h", "achse": "horizontal", "notiz": "Fußgänger- und kleinfahrzeugtauglich." }
-  ],
-  "turm": [
-    { "etage": "90", "name": "Penthouse — Brodmann-Areal 10", "z": 520 },
-    { "etage": "87–89", "name": "Unbenannte Spitze, unbewohnt", "z": 512 },
-    { "etage": "86", "name": "Traces Büro (Lamina IV)", "z": 500 },
-    { "etage": "80", "name": "Arbeitsgedächtnis-Großraumbüro", "z": 460 },
-    { "etage": "50", "name": "Broca-Areal — Die Druckerei", "z": 340 },
-    { "etage": "20", "name": "Sensorischer Kortex — Die Schwelle", "z": 150 },
-    { "etage": "EG", "name": "Plaza of Perception", "z": 0 }
+ "quelle": "Neocortex City — Koordinatensystem & physische Eckwerte, konsolidierte Arbeitsfassung v9",
+ "hinweis": "X/Y in Kilometern, jeweils relativ zum lokalen Nullpunkt der Terrasse. Z in Metern über dem Stadt-Basisdatum (Unterste Terrasse = 0).",
+ "terrassen": [
+  {
+   "id": "oberste",
+   "name": "Oberste Terrasse",
+   "z": 500,
+   "hirn": "Präfrontaler Kortex",
+   "funktion": "Vernunft, Planung, Hemmung",
+   "nullpunkt": "Tower of Reason"
+  },
+  {
+   "id": "obere-mittlere",
+   "name": "Obere-Mittlere Terrasse",
+   "z": 400,
+   "hirn": "Parietallappen",
+   "funktion": "Raum und sensorische Integration",
+   "nullpunkt": "Schmiede des Hephaistos"
+  },
+  {
+   "id": "mittlere",
+   "name": "Mittlere Terrasse",
+   "z": 280,
+   "hirn": "Verwaltung",
+   "funktion": "Bürokratie, Zuständigkeit, Ablage",
+   "nullpunkt": "Administrativer Kortex"
+  },
+  {
+   "id": "mittlere-untere",
+   "name": "Mittlere-Untere Terrasse",
+   "z": 180,
+   "hirn": "Hippocampus",
+   "funktion": "Gedächtnis, Konsolidierung",
+   "nullpunkt": "Archiv der verbrannten Träume"
+  },
+  {
+   "id": "untere",
+   "name": "Untere Terrasse",
+   "z": 80,
+   "hirn": "Temporallappen und limbisches System",
+   "funktion": "Trieb, Emotion, Mythos",
+   "nullpunkt": "Medienviertel"
+  },
+  {
+   "id": "unterste",
+   "name": "Unterste Terrasse",
+   "z": 0,
+   "hirn": "Hirnstamm",
+   "funktion": "Grundfunktionen, Basisdatum der Stadt",
+   "nullpunkt": "Maschinenhalle"
+  },
+  {
+   "id": "sub-unterste",
+   "name": "Sub-Unterste Ebene",
+   "z": -60,
+   "hirn": "Sonderzugänge",
+   "funktion": "Unterhalb des Basisdatums, nur über den Hebel-Aufzug erreichbar",
+   "nullpunkt": "Maschinenhalle (fortgeführt)"
+  },
+  {
+   "id": "grenzlage",
+   "name": "Grenzlagen und Zentralachse",
+   "z": 130,
+   "hirn": "Nicht an eine Terrasse gebunden",
+   "funktion": "Orte an der vertikalen Achse und an den Schaltstellen",
+   "nullpunkt": "Tower of Reason"
+  }
+ ],
+ "sektoren": [
+  {
+   "id": "T-00",
+   "name": "Tower of Reason",
+   "terrasse": "oberste",
+   "x": 0,
+   "y": 0,
+   "z": 500,
+   "sektor": null,
+   "hirn": "Präfrontaler Kortex, durchgehende Achse",
+   "notiz": "Neunzig Stockwerke. Kein Gebäude der Obersten Terrasse, sondern die vertikale Wirbelsäule der Stadt: Erdgeschoss auf Höhe der Plaza (Z 0), Penthouse bei Z 520. Deshalb gilt das Aufzugs-Richtungsgesetz — abwärts Trieb, aufwärts Kontrolle — für die ganze Fahrt.",
+   "band": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "VC-01",
+   "name": "Vane & Co.",
+   "terrasse": "oberste",
+   "x": 0.8,
+   "y": 0.3,
+   "z": 500,
+   "sektor": null,
+   "hirn": "Präfrontal, angrenzend",
+   "notiz": "Eigenständiges Gebäude neben dem Tower.",
+   "band": [
+    1
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "FL-01",
+   "name": "Geometrischer Kortex",
+   "terrasse": "oberste",
+   "x": -2.5,
+   "y": 1.0,
+   "z": 500,
+   "sektor": null,
+   "hirn": "Frontallappen",
+   "notiz": "Ratios Zuhause liegt an der unruhigen Ost-Kante nahe (−0,8 / 0,4), direkt an der Grenze zur Thalamus Central Station. Nachts hört er das rhythmische Rauschen der durchlaufenden Reize — ein Verstand, der neben der Schaltstelle wohnt, die ihn abschalten sollte.",
+   "band": [
+    1,
+    2,
+    3
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "OB-01",
+   "name": "Observatorium der Wahrnehmung",
+   "terrasse": "oberste",
+   "x": 2.0,
+   "y": 1.5,
+   "z": 500,
+   "sektor": null,
+   "hirn": "Fasciculus longitudinalis superior (Anbindung)",
+   "notiz": "Nur per Sky Bridge erreichbar.",
+   "band": [
+    1
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "PH-01",
+   "name": "Park der Heldenmythen",
+   "terrasse": "oberste",
+   "x": 1.0,
+   "y": -2.0,
+   "z": 500,
+   "sektor": null,
+   "hirn": "Präfrontal",
+   "notiz": "Band I, Kapitel 17.",
+   "band": [
+    1
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "PL-01",
+   "name": "Schmiede des Hephaistos",
+   "terrasse": "obere-mittlere",
+   "x": 0,
+   "y": 0,
+   "z": 400,
+   "sektor": null,
+   "hirn": "Parietallappen",
+   "notiz": "Ratios Arbeitsplatz und lokaler Fixpunkt der Terrasse.",
+   "band": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "PGL-01",
+   "name": "Parietales Grenzland",
+   "terrasse": "obere-mittlere",
+   "x": 4.5,
+   "y": 2.0,
+   "z": 400,
+   "sektor": 23,
+   "hirn": "Parietale Außenkante",
+   "notiz": "Äußerste Kante der Terrasse, ehemals Werwolf-Territorium. Der Fall gilt seit Band III als gelöst; die Horizont-Struktur verblasst, die Randfläche wird wieder frei.",
+   "band": [
+    3
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "BG-01",
+   "name": "Broca-Gürtel",
+   "terrasse": "obere-mittlere",
+   "x": 4.8,
+   "y": 3.2,
+   "z": 400,
+   "sektor": 26,
+   "hirn": "Broca-Areal (Peripherie)",
+   "notiz": "Randbezirk zu Sektor 23, direkt benachbart zum Parietalen Grenzland.",
+   "band": [
+    3
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "BH-01",
+   "name": "Bereitschaftshalle",
+   "terrasse": "obere-mittlere",
+   "x": 5.6,
+   "y": 0.9,
+   "z": 400,
+   "sektor": 29,
+   "hirn": "Bereitschaftspotential (Libet 1983)",
+   "notiz": "Ein Raum, in dem Dinge sich bewegen, bevor die Entscheidung dazu bewusst gefallen ist: Vorhänge heben sich kurz vor dem Windstoß, ein Zeiger rückt einen Sekundenbruchteil zu früh. Körperliche Kosten: ein unwillkürliches Zucken in den Fingerspitzen. Nutzt den frei gewordenen Rand des verblassenden Werwolf-Territoriums.",
+   "band": [
+    4
+   ],
+   "kosten": "Ein unwillkürliches Zucken in den Fingerspitzen."
+  },
+  {
+   "id": "AK-01",
+   "name": "Administrativer Kortex",
+   "terrasse": "mittlere",
+   "x": 0,
+   "y": 0,
+   "z": 280,
+   "sektor": null,
+   "hirn": "Verwaltung",
+   "notiz": "Band I, Kapitel 18. Lokaler Fixpunkt der Mittleren Terrasse.",
+   "band": [
+    1
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "INS-01",
+   "name": "Insula-Distrikt",
+   "terrasse": "mittlere",
+   "x": 1.5,
+   "y": -1.0,
+   "z": 280,
+   "sektor": 11,
+   "hirn": "Insula",
+   "notiz": "Sektor des Ekels. Band II.",
+   "band": [
+    2
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "VWB-01",
+   "name": "Verwaltungsflügel Ost",
+   "terrasse": "mittlere",
+   "x": -2.1,
+   "y": 1.6,
+   "z": 280,
+   "sektor": 6,
+   "hirn": "Verwaltung, kompartimentiert",
+   "notiz": "Fluoreszenzlicht statt Gaslicht, Aktenschränke in geraden Reihen, ein Summen in der Decke, das erst auffällt, wenn man aufhört, an etwas anderes zu denken. Körperliche Kosten: ein leichtes Druckgefühl hinter den Augen, wie vor einer Steuererklärung.",
+   "band": [
+    4
+   ],
+   "kosten": "Ein leichtes Druckgefühl hinter den Augen, wie vor einer Steuererklärung."
+  },
+  {
+   "id": "HC-01",
+   "name": "Archiv der verbrannten Träume",
+   "terrasse": "mittlere-untere",
+   "x": 0,
+   "y": 0,
+   "z": 180,
+   "sektor": 7,
+   "hirn": "Hippocampus",
+   "notiz": "Mnemosynes Hauptstelle in der Wüstenfassung. Lokaler Fixpunkt.",
+   "band": [
+    1,
+    3
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "RF-01",
+   "name": "Registratur der Fürbitten",
+   "terrasse": "mittlere-untere",
+   "x": 1.6,
+   "y": -1.9,
+   "z": 180,
+   "sektor": 7,
+   "hirn": "Hippocampus (dritte Außenstelle)",
+   "notiz": "Dieselbe Funktion wie das Archiv, anderes Klima: Kerzenrauch statt Wüstenstaub, Regale aus dunklem Kirchenholz, gebogen unter handgeschriebenen Bittzetteln, deren Ordnungsprinzip die Verzweiflung ist und nicht das Alphabet. Körperliche Kosten: ein Kratzen im Hals, das an Weihrauch erinnert.",
+   "band": [
+    4
+   ],
+   "kosten": "Ein Kratzen im Hals, das an Weihrauch erinnert."
+  },
+  {
+   "id": "TL-01",
+   "name": "Medienviertel",
+   "terrasse": "untere",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "sektor": 5,
+   "hirn": "Temporallappen",
+   "notiz": "Lokaler Fixpunkt der Unteren Terrasse. Haus Corvain liegt hier als Adresse.",
+   "band": [
+    1,
+    3
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "LA-01",
+   "name": "Limbische Altstadt",
+   "terrasse": "untere",
+   "x": 1.2,
+   "y": 0.5,
+   "z": 80,
+   "sektor": 8,
+   "hirn": "Limbisches System",
+   "notiz": "Bias' Schänke. Benachbart zum Medienviertel.",
+   "band": [
+    1,
+    3,
+    4
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "NW-01",
+   "name": "Nadelwald-Archiv",
+   "terrasse": "untere",
+   "x": -3.0,
+   "y": 3.0,
+   "z": 80,
+   "sektor": null,
+   "hirn": "Assoziationsbahnen (Mykorrhiza-Analogie)",
+   "notiz": "Peripher und großflächig, 15 bis 20 km Durchmesser. Eigenes Fünf-Geräte-Sinnessystem: Vogelchor-Wandel statt Aufzugsanzeige, Mycel-Netzwerk statt Sky Bridge, Nebel als Mustervakuum, Nieselregen als Indizienwissen, Frösteln als der Moment, in dem eine Erkenntnis den Körper vor dem Verstand erreicht.",
+   "band": [
+    2
+   ],
+   "kosten": "Ein Frösteln — der Moment, in dem eine Erkenntnis den Körper vor dem Verstand erreicht."
+  },
+  {
+   "id": "CEM-01",
+   "name": "Friedhofsareal",
+   "terrasse": "untere",
+   "x": 2.8,
+   "y": -1.5,
+   "z": 80,
+   "sektor": null,
+   "hirn": "Limbische Peripherie",
+   "notiz": "Zwischen Nadelwald-Archiv und Amygdala-Peripherie.",
+   "band": [
+    3
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "AMY-01",
+   "name": "Amygdala-Peripherie",
+   "terrasse": "untere",
+   "x": 3.5,
+   "y": -2.0,
+   "z": 80,
+   "sektor": null,
+   "hirn": "Amygdala",
+   "notiz": "Der Tote Winkel. In seinem Schatten liegen die Medulla-Oblongata-Pumpwerke, umgangssprachlich die subkortikalen Pumpwerke.",
+   "band": [
+    1,
+    3
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "NAC-01",
+   "name": "Halbergs Zirkel",
+   "terrasse": "untere",
+   "x": 2.4,
+   "y": -1.5,
+   "z": 80,
+   "sektor": null,
+   "hirn": "Nucleus accumbens",
+   "notiz": "Teure Kerzen, Vanille und Zimt, warmes Licht. Eine Kerze flackert unregelmäßig auf — realer Luftzug —, nie synchron mit den Kaltlese-Treffern und nie ganz unabhängig davon. Körperliche Kosten: ein Ziehen in der Brust wie die Erwartung vor einer guten Nachricht, das sich nie ganz auflöst.",
+   "band": [
+    4
+   ],
+   "flagge": "Die Quelle nennt für diesen Ort Z 6 statt der Terrassenbasis 80 m. Hier auf die Basis normalisiert.",
+   "kosten": "Ein Ziehen in der Brust wie die Erwartung vor einer guten Nachricht, das sich nie ganz auflöst."
+  },
+  {
+   "id": "MH-01",
+   "name": "Maschinenhalle",
+   "terrasse": "unterste",
+   "x": 0,
+   "y": 0,
+   "z": 0,
+   "sektor": null,
+   "hirn": "Hirnstamm",
+   "notiz": "Stadt-Basisdatum und lokaler Nullpunkt. Wo Trace schläft.",
+   "band": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "NK-01",
+   "name": "Die Naturkonstante",
+   "terrasse": "sub-unterste",
+   "x": 0.2,
+   "y": 0.1,
+   "z": -60,
+   "sektor": null,
+   "hirn": "Unterhalb des Hirnstamms",
+   "notiz": "Echter Sonderabstieg unter das Stadt-Basisdatum, nur über den archaischen Hebel-Aufzug (2 bis 3 m/s) erreichbar. Der Begriff Medulla-Oblongata-Pumpen fällt hier wörtlich in Band I, Kapitel 8.",
+   "band": [
+    1
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "GWB-01",
+   "name": "Die Bögen",
+   "terrasse": "sub-unterste",
+   "x": 0.35,
+   "y": -0.25,
+   "z": -45,
+   "sektor": null,
+   "hirn": "Unterhalb des Hirnstamms",
+   "notiz": "Ehemalige Lagergewölbe unter einer Brücke, mangelhaft abgedichtet, im 19. Jahrhundert zu Elendswohnungen verfallen, jahrzehntelang versiegelt, kürzlich wiedereröffnet. Reale Grundlage: die South Bridge Vaults in Edinburgh und Wisemans Feldstudien.",
+   "band": [
+    4
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "PSI-01",
+   "name": "Institut für Parasomnie-Forschung",
+   "terrasse": "grenzlage",
+   "x": 0.5,
+   "y": -0.5,
+   "z": 130,
+   "sektor": null,
+   "hirn": "Grenzlage nahe der Turmachse",
+   "notiz": "Trägt Hirnstamm- und Scheitellappen-Charakter zugleich, weil es nicht auf einem horizontalen Terrassenweg liegt, sondern nahe dem vertikalen Verbindungsschacht.",
+   "band": [
+    1,
+    3
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "TCS-01",
+   "name": "Thalamus Central Station",
+   "terrasse": "grenzlage",
+   "x": 5.0,
+   "y": 0,
+   "z": 20,
+   "sektor": 17,
+   "hirn": "Thalamus",
+   "notiz": "Die zentrale Schaltstelle. Praktisch jeder Sinnesreiz läuft hier durch, bevor der Kortex zur Ruhe kommt.",
+   "band": [
+    1,
+    2,
+    3
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "SYN-01",
+   "name": "Synapsen-Pässe",
+   "terrasse": "grenzlage",
+   "x": 6.5,
+   "y": 1.5,
+   "z": 50,
+   "sektor": 20,
+   "hirn": "Synaptischer Spalt",
+   "notiz": "Grenze zwischen Alt- und Neustadt, nahe der Thalamus Central Station.",
+   "band": [
+    2
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "TPK-01",
+   "name": "Schattenpässe",
+   "terrasse": "grenzlage",
+   "x": 0.3,
+   "y": -0.4,
+   "z": 230,
+   "sektor": null,
+   "hirn": "Temporoparietale Kreuzung",
+   "notiz": "Keine reguläre Terrassenbrücke, sondern eine selten genutzte Nebenlandung der Innen-Route zwischen Etage 20 und Etage 50, wo zwei Aufzugsstrecken für Sekunden parallel laufen. Reale Grundlage: Olaf Blankes Forschung zu Präsenzhalluzinationen.",
+   "band": [
+    4
+   ],
+   "kosten": ""
+  },
+  {
+   "id": "IFA-01",
+   "name": "Institut für Anomalistik",
+   "terrasse": "grenzlage",
+   "x": 0.8,
+   "y": -0.2,
+   "z": 100,
+   "sektor": null,
+   "hirn": "Grenzlage nahe der Turmachse",
+   "notiz": "Tempels Arbeitsplatz, über einen zweiten Aufzugswechsel erreicht. Ein Korridorwechsel von Metall zu blankem Beton markiert den Übergang aus Ratios Zuständigkeit in eine andere. Körperliche Kosten: ein Brennen hinter den Augen vom Starren auf Monitore, die ständig kurz davor scheinen, ein Muster zu zeigen, und es nie tun.",
+   "band": [
+    4
+   ],
+   "kosten": "Ein Brennen hinter den Augen vom Starren auf Monitore, die nie ein Muster zeigen."
+  }
+ ],
+ "bruecken": [
+  {
+   "name": "Corpus Callosum Bridge",
+   "von": "T-00",
+   "nach": "Wüste / Route 375 / Area 51",
+   "real": "Corpus callosum"
+  },
+  {
+   "name": "Uncinatus-Brücke",
+   "von": "T-00",
+   "nach": "Altstadt und Nadelwald-Archiv",
+   "real": "Fasciculus uncinatus"
+  },
+  {
+   "name": "Observatoriums-Querung",
+   "von": "T-00",
+   "nach": "Observatorium der Wahrnehmung",
+   "real": "Fasciculus longitudinalis superior"
+  },
+  {
+   "name": "Frontallappen-Querung",
+   "von": "T-00",
+   "nach": "Geometrischer Kortex",
+   "real": "—"
+  },
+  {
+   "name": "Fornix-Brücke",
+   "von": "RF-01",
+   "nach": "Gasse ohne Namen",
+   "real": "Fornix"
+  },
+  {
+   "name": "Fusiformis-Brücke",
+   "von": "LA-01",
+   "nach": "Die Bögen",
+   "real": "Gyrus fusiformis"
+  }
+ ],
+ "verkehr": [
+  {
+   "id": "aufzug-a",
+   "name": "Aufzug Typ A",
+   "wert": 17,
+   "einheit": "m/s",
+   "achse": "vertikal",
+   "beschleunigung": 1.2,
+   "notiz": "Hochgeschwindigkeits-Transmitter auf Myelin-Schienen, 15 bis 20 m/s. Erreicht die Spitzengeschwindigkeit erst nach rund 120 Höhenmetern."
+  },
+  {
+   "id": "aufzug-b",
+   "name": "Aufzug Typ B (Hebel)",
+   "wert": 2.5,
+   "einheit": "m/s",
+   "achse": "vertikal",
+   "beschleunigung": 0.6,
+   "notiz": "Archaischer als Typ A, 2 bis 3 m/s. Einziger Zugang zur Sub-Untersten Ebene."
+  },
+  {
+   "id": "pontiac",
+   "name": "Pontiac Catalina",
+   "wert": 80,
+   "einheit": "km/h",
+   "achse": "horizontal",
+   "notiz": "60 bis 80 km/h im Wald, bis 120 km/h auf der Ausfallstraße."
+  },
+  {
+   "id": "skybridge",
+   "name": "Sky Bridge",
+   "wert": 15,
+   "einheit": "km/h",
+   "achse": "horizontal",
+   "notiz": "Fußgänger- und kleinfahrzeugtauglich."
+  },
+  {
+   "id": "fussweg",
+   "name": "Zu Fuß",
+   "wert": 4.8,
+   "einheit": "km/h",
+   "achse": "horizontal",
+   "notiz": "Unter dem Basisdatum und auf kurzen Wegen. Es gibt dort keine Straßen für den Wagen."
+  }
+ ],
+ "turm": [
+  {
+   "etage": "90",
+   "name": "Penthouse — Brodmann-Areal 10",
+   "z": 520
+  },
+  {
+   "etage": "87–89",
+   "name": "Unbenannte Spitze, unbewohnt",
+   "z": 512
+  },
+  {
+   "etage": "86",
+   "name": "Traces Büro (Lamina IV)",
+   "z": 500
+  },
+  {
+   "etage": "80",
+   "name": "Arbeitsgedächtnis-Großraumbüro",
+   "z": 460
+  },
+  {
+   "etage": "50",
+   "name": "Broca-Areal — Die Druckerei",
+   "z": 340
+  },
+  {
+   "etage": "20",
+   "name": "Sensorischer Kortex — Die Schwelle",
+   "z": 150
+  },
+  {
+   "etage": "EG",
+   "name": "Plaza of Perception",
+   "z": 0
+  }
+ ],
+ "reise": {
+  "hinweis": "Die Stadt folgt der Funktion des Gehirns, und dort wird nicht gepuffert. Wer nicht durchkommt, wird nicht später zugestellt, sondern abgeschwächt oder verworfen. Deshalb wartet in Neocortex City niemand auf den Aufzug: Die Schächte laufen alle gleichzeitig, so wie der Balken zwischen den Hemisphären keine einzelne Leitung ist, sondern eine Wand aus Leitungen. Teuer ist nicht die Fahrt, sondern der Umstieg.",
+  "richtungsgesetz": {
+   "ab": "Abwärts wird der Trieb lauter. Jede Etage nimmt ein Stück Aufsicht heraus.",
+   "auf": "Aufwärts zieht die Kontrolle an. Jede Etage legt ein Stück Aufsicht zurück.",
+   "quer": "Waagerecht gilt das Richtungsgesetz nicht. Man bleibt, wer man beim Losgehen war."
+  },
+  "umstieg": {
+   "text": "Umstieg. Die einzige Stelle, an der die Stadt tatsächlich Zeit nimmt — wie jede Übergabe im synaptischen Spalt.",
+   "gewicht": 2.0
+  },
+  "betrieb": {
+   "tag": {
+    "name": "Tagbetrieb",
+    "text": "Die Schaltstelle gibt einzeln und getreu weiter. Jeder Reiz kommt an, wie er losgeschickt wurde.",
+    "faktor": 1.0
+   },
+   "nacht": {
+    "name": "Nachtbetrieb",
+    "text": "Die Schaltstelle feuert in Salven statt einzeln. Es geht schneller und es kommt mehr an — aber gröber. Was nachts durch den Thalamus läuft, kommt vollständiger und unschärfer an als am Tag. Trace kennt beide Betriebsarten.",
+    "faktor": 0.72
+   }
+  },
+  "baender": [
+   {
+    "ab": 0,
+    "text": "Ein kurzer Weg",
+    "zusatz": "Zwei Türen und ein Flur."
+   },
+   {
+    "ab": 1.2,
+    "text": "Eine halbe Zigarette",
+    "zusatz": "Lang genug, um einen Gedanken zu Ende zu bringen."
+   },
+   {
+    "ab": 3.0,
+    "text": "Eine Zigarette",
+    "zusatz": "Lang genug, um einen Gedanken zu bereuen."
+   },
+   {
+    "ab": 6.0,
+    "text": "Eine lange Fahrt",
+    "zusatz": "Der Wagen wird warm, das Radio findet einen Sender."
+   },
+   {
+    "ab": 10.0,
+    "text": "Der halbe Abend",
+    "zusatz": "Man kommt an einem anderen Tag an, als man losgefahren ist."
+   }
   ]
+ }
 }
