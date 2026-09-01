@@ -90,6 +90,7 @@ Ein neues Objekt in `reihen` anlegen. Wichtig sind `id`, `kennung`, `titel`, `te
 │   ├── werke.json             ► Werkregister, steuert die ganze Seite
 │   ├── stadt.json             27 Sektoren, Brücken, Turm, Geschwindigkeiten
 │   ├── werkzeuge.json         Red Flags, Autopsie-Protokoll, Kartenkasten
+│   ├── autopsie-plan.json     die 105 geplanten Fälle in zehn Sektionen
 │   └── gegenfragen.json       115 Karten aus den Quick-Reference-Tabellen
 └── downloads/                 hier kommen PDF und EPUB hinein
 ```
@@ -119,11 +120,13 @@ GitHub Pages im Repository unter *Settings → Pages* auf Branch `main`, Ordner 
 
 - **Höhenmesser-Navigation** — die Ebenen der Stadt als Seitenstruktur, mit Tastaturbedienung
 - **Suche** — `/` oder `Strg`+`K`; findet Werke, Sektoren, Denkwerkzeuge und Signaturen wie `LR-I-1.2.3` oder `NK-01`
-- **Kartographischer Atlas** — Grundriss je Terrasse aus den echten X/Y-Koordinaten, Sektordetails mit neuroanatomischer Entsprechung und körperlichen Kosten, Wegzeitrechner nach den Geschwindigkeiten aus dem Kanon
+- **Kartographischer Atlas** — Grundriss je Terrasse aus den echten X/Y-Koordinaten, Sektordetails mit neuroanatomischer Entsprechung, Wegbeschreibung mit Stationen, Richtungsgesetz und körperlichen Kosten
 - **Red-Flag-Prüfung** — dreizehn Warnzeichen als Prüfliste mit Befund
 - **Autopsie-Protokoll** — neunzehn Punkte als Arbeitsbogen, mit Textexport
 - **Kartenkasten** — 32 Denkwerkzeuge mit Signatur, filterbar
 - **Gegenfragen-Kartei** — 115 Karten, durchsuchbar und nach Fall filterbar
+- **Detector-Kit** — die neun Fragen als Kurzform zum Mitnehmen
+- **Landkarte des Werkes** — alle 105 geplanten Autopsien in zehn aufklappbaren Sektionen
 - **Einstiegs-Assistent** — zwei Fragen, ein Lesevorschlag
 
 Ohne Konten, ohne Werbung, ohne Analysewerkzeuge, ohne Cookies. Die Eingaben in den Werkzeugen bleiben im Browser (`localStorage`) und werden nicht übertragen.
@@ -143,3 +146,36 @@ Chroniken von Neocortex City: CC BY-NC-ND 4.0.
 **Quelltext dieser Website** (HTML, CSS, JavaScript, Generator): MIT, siehe `LICENSE`.
 
 Neurale Assistenz bei Werken und Website: Anthropic Claude und Google Gemini. Cover und Stadtkarte: ChatGPT.
+
+---
+
+## Redaktionelle Festlegungen
+
+Damit sie bei künftigen Änderungen nicht verloren gehen:
+
+- **Traces persönlicher Riss bleibt auf der Website mysteriös.** Angedeutet wird nur, dass über die Bände I bis V ein zweiter Fall mitläuft, den er nie angenommen hat. Keine Namen, keine Vorgeschichte, kein Ausgang.
+- **Was Janus ist, wird nicht verraten.** Er wird ausschließlich über seine Funktion beschrieben: Manifest, Asservate, Marginalien.
+- **Die Chroniken bauen aufeinander auf.** Einzeln lesbar ja, aber der Hinweis auf die durchlaufende Linie gehört dazu.
+- **Licht der Realität ist keine Experimentierreihe.** Ein Mythos ist der Türöffner, dahinter steht das Fachgebiet, ein Band je Gebiet.
+- **Autopsien:** zehn fertig (Sektion A), 105 geplant. Die Titel in `data/autopsie-plan.json` sind Arbeitsstand.
+- **In der Stadt wird nicht gewartet.** Keine Warteschlangen an den Aufzügen — das Gehirn puffert nicht. Teuer sind Umstiege.
+
+---
+
+## Die Wegbeschreibung im Atlas
+
+Der Atlas rechnet keine Minuten aus, sondern beschreibt den Weg. Das ist eine bewusste Entscheidung und folgt der Funktion, der die Stadt nachgebaut ist.
+
+**Es wird nicht gewartet.** Das Gehirn puffert nicht: Wer nicht durchkommt, wird nicht später zugestellt, sondern abgeschwächt oder verworfen. Der Balken zwischen den Hemisphären ist keine Leitung, sondern rund 200 Millionen gleichzeitig laufende Fasern — kein Schacht, sondern eine Wand aus Schächten. Und myelinisierte Bahnen springen von Knoten zu Knoten, statt auf jeder Etage zu halten. Deshalb gibt es in Neocortex City keine Wartezeit auf den Aufzug.
+
+**Teuer ist der Umstieg.** Ein Aktionspotential läuft mit bis zu 120 Metern je Sekunde über den Fortsatz, aber jede Übergabe an der Synapse kostet eine halbe bis eine Millisekunde. Auf langen Strecken summieren sich die Übergaben, nicht die Strecke. Die Beschreibung zählt deshalb Umstiege und gewichtet sie schwer.
+
+**Die Dauer ist ein Band, keine Zahl.** Von *„Ein kurzer Weg"* bis *„Der halbe Abend"*. Eine Sekundenangabe würde eine Genauigkeit behaupten, die die Quelle nicht hergibt.
+
+**Bezahlt wird körperlich.** Die eigentliche Währung der Stadt sind die dokumentierten körperlichen Kosten eines Ortes — das Kratzen im Hals in der Registratur, der Druck hinter den Augen im Verwaltungsflügel. Die Beschreibung sammelt sie ein. Wo im Kanon noch keine festgelegt sind, sagt sie das ausdrücklich; das macht die weißen Flecken sichtbar, statt sie zu füllen.
+
+**Tag- und Nachtbetrieb.** Der Thalamus schaltet zwischen zwei Betriebsarten um: wach gibt er einzeln und getreu weiter, im Schlaf feuert er in Salven. Dasselbe Signal, anderer Rhythmus. Der Schalter über der Beschreibung bildet das ab — nachts geht es schneller und es kommt mehr an, aber gröber. Trace kennt beide Betriebsarten (Band I, die Heimfahrt bei Nacht).
+
+Alle Texte, Bänder und Gewichte stehen in `data/stadt.json` unter `reise`. Sie werden zur Laufzeit gelesen — ändern, Seite neu laden, fertig.
+
+**Die Turmachse ist die Nabe.** Der lokale Nullpunkt jeder Terrasse ist der Punkt, an dem der Tower durch die Ebene stößt. Wege zwischen zwei Terrassen laufen deshalb waagerecht zur Achse, senkrecht durch den Turm — vorbei an den namentlich genannten Etagen und Terrassenkanten — und dann waagerecht zum Ziel. Das schließt die Lücke, dass X und Y pro Terrasse an einem eigenen Nullpunkt hängen.
