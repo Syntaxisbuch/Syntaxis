@@ -45,6 +45,42 @@ def dateiliste(dateien, prefix=""):
     return f'<div class="dl">{"".join(teile)}</div>{hinweis}'
 
 
+def rendere_baende_ld():
+    r = reihe("ld")
+    zeilen = []
+    for b in r["baende"]:
+        zeilen.append(f'''<div class="werk">
+        <span class="band">BAND {b["nr"]}</span>
+        <div><h3>{b["titel"]}</h3><p>{b["inhalt"]}</p></div>
+        <span class="status">geplant</span>
+      </div>''')
+    return '<div class="werkliste">' + "".join(zeilen) + "</div>"
+
+
+def rendere_au_plan():
+    plan = json.loads((WURZEL / "data" / "autopsie-plan.json").read_text(encoding="utf-8"))
+    blöcke = []
+    for s in plan["sektionen"]:
+        fertig = s.get("status") == "abgeschlossen"
+        eintraege = []
+        for f in s["faelle"]:
+            u = '<span class="u">— ' + f["unter"] + "</span>" if f["unter"] else ""
+            h = '<span class="hw">' + f["notiz"] + "</span>" if f["notiz"] else ""
+            eintraege.append(
+                '<li><span class="n">%03d</span><span class="t">%s %s%s</span></li>'
+                % (f["nr"], f["titel"], u, h))
+        offen = " open" if fertig else ""
+        stand = "abgeschlossen" if fertig else "geplant"
+        blöcke.append(
+            '<details class="sektion"%s><summary>'
+            '<span class="mark">SEKTION %s</span><span class="nm">%s</span>'
+            '<span class="zz">%d Fälle · %s</span></summary>'
+            '<p class="unter-s">%s</p><ol class="planliste">%s</ol></details>'
+            % (offen, s["id"], s["name"], len(s["faelle"]), stand,
+               s.get("unter", ""), "".join(eintraege)))
+    return "".join(blöcke)
+
+
 def rendere_baende_lr():
     r = reihe("lr")
     zeilen = []
@@ -140,6 +176,8 @@ def rendere_downloads():
 
 BAUSTEINE = {
     "{{LR_BAENDE}}": rendere_baende_lr,
+    "{{LD_BAENDE}}": rendere_baende_ld,
+    "{{AU_PLAN}}": rendere_au_plan,
     "{{NC_BAENDE}}": rendere_baende_nc,
     "{{NC_FIGUREN}}": rendere_figuren,
     "{{AU_FAELLE}}": rendere_faelle,
@@ -156,9 +194,9 @@ SEITEN = {
     "chroniken":   ("Chroniken von Neocortex City — Syntaxis",
                     "Vier Kriminalromane in einer Stadt, die gebaut ist wie ein menschliches Gehirn. Noir mit belegtem Anhang.", "nc", ""),
     "autopsien":   ("Autopsien der Schatten — Syntaxis",
-                    "Zehn Mythen, seziert nach einem festen Protokoll. Von der flachen Erde bis zur Simulationshypothese.", "au", ""),
+                    "Mythen, seziert nach einem festen Protokoll. Zehn Fallakten sind fertig, 105 in zehn Sektionen sind geplant.", "au", ""),
     "licht":       ("Licht der Realität — Syntaxis",
-                    "Die naturwissenschaftliche und experimentelle Reihe. In Vorbereitung.", "ld", ""),
+                    "Ein Mythos als Türöffner, dahinter die Wissenschaft, die ihn auflöst — ein Band je Fachgebiet. In Vorbereitung.", "ld", ""),
     "atlas":       ("Kartographischer Atlas von Neocortex City — Syntaxis",
                     "Die Stadt als begehbares Gehirn: 27 Sektoren mit echten Koordinaten, Höhenschnitt, Wegzeiten und neuroanatomischer Entsprechung.", "",
                     '<script src="assets/js/atlas.js"></script>'),
