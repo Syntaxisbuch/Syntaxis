@@ -123,7 +123,7 @@
     if (history.replaceState) history.replaceState(null, "", "#" + id);
   }
 
-  /* ---------- Rechner ---------- */
+  /* ---------- Wegbeschreibung ---------- */
   const von = document.getElementById("vonSektor"), nach = document.getElementById("nachSektor");
   const erg = document.getElementById("rechnerErgebnis");
   const sortiert = [...D.sektoren].sort((a, b) => b.z - a.z || a.name.localeCompare(b.name, "de"));
@@ -131,49 +131,163 @@
   von.innerHTML = optionen; nach.innerHTML = optionen;
   von.value = "T-00"; nach.value = "NK-01";
 
-  const v = id => D.verkehr.find(x => x.id === id);
+  const RE = D.reise;
+  let betrieb = "tag";
 
-  function zeit(sek) {
-    if (sek < 90) return `${Math.round(sek)} Sekunden`;
-    if (sek < 5400) return `${(sek / 60).toFixed(1).replace(".", ",")} Minuten`;
-    return `${(sek / 3600).toFixed(1).replace(".", ",")} Stunden`;
+  /* Marken auf der Senkrechten: Turmetagen und Terrassenkanten, nach Höhe geordnet */
+  const marken = [
+    ...D.turm.map(e => ({ z: e.z, art: "Etage", name: e.name, zusatz: "Etage " + e.etage })),
+    ...D.terrassen.filter(t => t.id !== "grenzlage")
+      .map(t => ({ z: t.z, art: "Ebene", name: t.name, zusatz: t.hirn }))
+  ];
+
+  function dazwischen(z1, z2) {
+    const u = Math.min(z1, z2), o = Math.max(z1, z2);
+    const l = marken.filter(m => m.z > u && m.z < o);
+    l.sort((a, b) => z2 < z1 ? b.z - a.z : a.z - b.z);
+    /* Doppelmarken auf gleicher Höhe zusammenfassen */
+    const raus = [];
+    l.forEach(m => {
+      const vorh = raus.find(x => x.z === m.z);
+      if (vorh) vorh.name += " · " + m.name; else raus.push({ ...m });
+    });
+    return raus;
   }
 
-  function rechne() {
+  function band(aufwand) {
+    const b = [...RE.baender].reverse().find(x => aufwand >= x.ab) || RE.baender[0];
+    return b;
+  }
+
+  function beschreibe() {
     const a = nachId[von.value], b = nachId[nach.value];
     if (!a || !b) return;
-    const dz = Math.abs(b.z - a.z);
+    if (a.id === b.id) {
+      erg.innerHTML = '<p class="leise" style="margin:0">Start und Ziel sind derselbe Ort.</p>';
+      return;
+    }
+
+    const halte = [];
+    const kostenliste = [];
+    let aufwand = 0, umstiege = 0;
     const gleicheEbene = a.terrasse === b.terrasse;
-    const dxy = gleicheEbene ? Math.hypot(b.x - a.x, b.y - a.y) : null;
+    const dz = b.z - a.z;
+    const runter = dz < 0;
 
-    const tiefer = Math.min(a.z, b.z) < 0;
-    const aufzug = tiefer ? v("aufzug-b") : v("aufzug-a");
-    const tAufzug = dz > 0 ? dz / aufzug.wert : 0;
+    const merkeKosten = o => { if (o.kosten) kostenliste.push({ ort: o.name, text: o.kosten }); };
 
-    let zeilen = "";
-    if (dxy !== null) {
-      zeilen += `<tr><td>Waagerechte Entfernung</td><td class="w">${zahl(dxy)} km</td></tr>`;
-      if (dxy > 0) {
-        zeilen += `<tr><td>Fahrt mit dem Pontiac Catalina</td><td class="w">${zeit(dxy * 1000 / (v("pontiac").wert / 3.6))}</td></tr>`;
-        zeilen += `<tr><td>Querung per Sky Bridge</td><td class="w">${zeit(dxy * 1000 / (v("skybridge").wert / 3.6))}</td></tr>`;
+    halte.push({ typ: "start", name: a.name, unter: a.hirn, zusatz: `${a.id} · Z ${zahl(a.z)} m` });
+    merkeKosten(a);
+
+    if (gleicheEbene) {
+      const km = Math.hypot(b.x - a.x, b.y - a.y);
+      aufwand += km;
+      const t = D.terrassen.find(x => x.id === a.terrasse);
+      if (km > 0) halte.push({
+        typ: "weg",
+        name: km < 0.5 ? "Zu Fuß quer über die Ebene" : "Mit dem Pontiac über die Ebene",
+        unter: t ? t.hirn : "",
+        zusatz: `${zahl(km)} km durch ${t ? t.name : "die Ebene"}`
+      });
+      if (dz !== 0) {
+        aufwand += Math.abs(dz) / 100;
+        halte.push({ typ: "achse", name: (runter ? "Abstieg" : "Aufstieg") + " um " + zahl(Math.abs(dz)) + " m", unter: "", zusatz: "" });
       }
     } else {
-      zeilen += `<tr><td>Waagerechte Entfernung</td><td class="w">nicht bestimmbar</td></tr>`;
+      const tA = D.terrassen.find(x => x.id === a.terrasse);
+      const tB = D.terrassen.find(x => x.id === b.terrasse);
+      const kmA = Math.hypot(a.x, a.y), kmB = Math.hypot(b.x, b.y);
+
+      if (kmA > 0) {
+        aufwand += kmA;
+        halte.push({
+          typ: "weg",
+          name: kmA < 0.5 ? "Zu Fuß zur Turmachse" : "Mit dem Pontiac zur Turmachse",
+          unter: tA ? tA.hirn : "",
+          zusatz: `${zahl(kmA)} km bis ${tA ? tA.nullpunkt : "zur Achse"}`
+        });
+      }
+
+      umstiege++;
+      halte.push({ typ: "umstieg", name: "Einstieg in den Tower of Reason", unter: "Die Achse läuft durchgehend — kein Warten, die Schächte fahren alle zugleich.", zusatz: "" });
+
+      const unterNull = Math.min(a.z, b.z) < 0;
+      const wende = unterNull ? 0 : b.z;
+      dazwischen(a.z, wende).forEach(m => halte.push({ typ: "vorbei", name: m.name, unter: m.zusatz, zusatz: `Z ${m.z} m` }));
+
+      if (unterNull) {
+        umstiege++;
+        const mh = nachId["MH-01"];
+        halte.push({ typ: "umstieg", name: "Umstieg auf den Hebel-Aufzug", unter: RE.umstieg.text, zusatz: mh ? "an der " + mh.name + " · Z 0 m" : "Z 0 m" });
+        halte.push({ typ: "vorbei", name: "Unter das Stadt-Basisdatum", unter: "Der archaische Schacht. Zwei bis drei Meter je Sekunde, und man hört jeden davon.", zusatz: `${zahl(Math.abs(Math.min(a.z, b.z)))} m` });
+      }
+
+      aufwand += Math.abs(dz) / 100;
+
+      umstiege++;
+      halte.push({ typ: "umstieg", name: "Ausstieg", unter: "", zusatz: (tB ? tB.name : "") + " · Z " + zahl(b.z) + " m" });
+
+      if (kmB > 0) {
+        aufwand += kmB;
+        halte.push({
+          typ: "weg",
+          name: kmB < 0.5 || b.z < 0 ? "Zu Fuß ans Ziel" : "Mit dem Pontiac ans Ziel",
+          unter: tB && tB.id !== "sub-unterste" ? tB.hirn : "",
+          zusatz: `${zahl(kmB)} km ab ${tB ? tB.nullpunkt : "der Achse"}`
+        });
+      }
     }
-    zeilen += `<tr><td>Höhendifferenz</td><td class="w">${zahl(dz)} m</td></tr>`;
-    if (dz > 0) zeilen += `<tr><td>${aufzug.name}</td><td class="w">${zeit(tAufzug)}</td></tr>`;
 
-    const gesamt = tAufzug + (dxy ? dxy * 1000 / (v("pontiac").wert / 3.6) : 0);
-    if (gesamt > 0) zeilen += `<tr><td><strong>Gesamt, Aufzug und Fahrzeug</strong></td><td class="w"><strong>${zeit(gesamt)}</strong></td></tr>`;
+    halte.push({ typ: "ziel", name: b.name, unter: b.hirn, zusatz: `${b.id} · Z ${zahl(b.z)} m` });
+    merkeKosten(b);
 
-    const hinweis = dxy === null
-      ? `<p class="kennung" style="margin:.8rem 0 0">${a.terrasse === b.terrasse ? "" : "Beide Orte liegen auf verschiedenen Ebenen mit eigenen Nullpunkten. Nur die Höhendifferenz ist belastbar."}</p>`
-      : (tiefer ? `<p class="kennung" style="margin:.8rem 0 0">Unter dem Basisdatum fährt nur der archaische Hebel-Aufzug. Die spürbar längere Fahrzeit ist gewollt.</p>` : "");
+    aufwand = (aufwand + umstiege * RE.umstieg.gewicht) * RE.betrieb[betrieb].faktor;
+    const bd = band(aufwand);
+    const rg = dz === 0 ? RE.richtungsgesetz.quer : (runter ? RE.richtungsgesetz.ab : RE.richtungsgesetz.auf);
 
-    erg.innerHTML = `<table><thead><tr><th>Strecke</th><th>${a.name} → ${b.name}</th></tr></thead><tbody>${zeilen}</tbody></table>${hinweis}`;
+    const zeilen = halte.map(h => `
+      <li class="halt" data-typ="${h.typ}">
+        <span class="pkt"></span>
+        <span class="txt">
+          <span class="nm">${h.name}</span>
+          ${h.unter ? `<span class="un">${h.unter}</span>` : ""}
+        </span>
+        ${h.zusatz ? `<span class="zs">${h.zusatz}</span>` : ""}
+      </li>`).join("");
+
+    const kosten = `<div class="kostenblock">
+        <span class="kennung">KÖRPERLICHE KOSTEN</span>
+        ${kostenliste.length
+          ? kostenliste.map(k => `<p><strong>${k.ort}.</strong> ${k.text}</p>`).join("")
+          : `<p class="offen">Für Start und Ziel ist im Kanon noch kein körperlicher Preis festgelegt. Bezahlt wird auf diesem Weg nur mit der Richtung: ${dz === 0 ? "gar nicht" : (runter ? "Trieb" : "Kontrolle")}.</p>`}
+      </div>`;
+
+    erg.innerHTML = `
+      <div class="wegkopf">
+        <div>
+          <span class="kennung">DAUER</span>
+          <p class="dauer">${bd.text}</p>
+          <p class="dauer-zusatz">${bd.zusatz}</p>
+        </div>
+        <div>
+          <span class="kennung">RICHTUNGSGESETZ</span>
+          <p class="richtung">${rg}</p>
+        </div>
+      </div>
+      <ol class="route">${zeilen}</ol>
+      ${kosten}
+      <p class="kennung" style="margin:1rem 0 0">${umstiege} Umstieg${umstiege === 1 ? "" : "e"} · ${RE.betrieb[betrieb].name} · ${RE.betrieb[betrieb].text}</p>`;
   }
-  von.addEventListener("change", rechne);
-  nach.addEventListener("change", rechne);
+
+  von.addEventListener("change", beschreibe);
+  nach.addEventListener("change", beschreibe);
+  document.getElementById("betriebSchalter")?.addEventListener("click", e => {
+    const k = e.target.closest("[data-betrieb]");
+    if (!k) return;
+    betrieb = k.dataset.betrieb;
+    [...e.currentTarget.children].forEach(c => c.setAttribute("aria-pressed", String(c.dataset.betrieb === betrieb)));
+    beschreibe();
+  });
 
   /* ---------- Tabellen ---------- */
   document.querySelector("#turmTabelle tbody").innerHTML =
@@ -189,5 +303,5 @@
   const ziel = decodeURIComponent(location.hash.slice(1));
   if (nachId[ziel]) { aktiveTerrasse = nachId[ziel].terrasse; aktiverSektor = ziel; }
   zeichne();
-  rechne();
+  beschreibe();
 })();
