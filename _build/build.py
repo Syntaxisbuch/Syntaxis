@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Syntaxis — Seitengenerator.
+Syntaxis - Ein Projekt &uuml;ber kritisches Denken — Seitengenerator.
 
 Setzt die fertigen HTML-Dateien im Wurzelverzeichnis aus
 _build/layout.html und den Fragmenten in _build/pages/ zusammen.
