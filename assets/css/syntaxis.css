@@ -569,43 +569,14 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
 
 .dateihinweis { margin: .6rem 0 0; font-size: .84rem; color: var(--fog-dim); font-style: italic; }
 
-/* ============================================================
-   CHRONIKEN — Coverlayout
-   Nur auf chroniken.html verwenden.
-   ============================================================ */
-
-.chroniken-hero {
-  display: grid;
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
-}
-
-.chroniken-seriencover {
-  margin: 0;
-  width: min(100%, 22rem);
-  justify-self: center;
-  border: 1px solid var(--line);
-  background: var(--ink-2);
-  box-shadow: 0 18px 45px rgba(0,0,0,.28);
-}
-
-.chroniken-seriencover img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.chroniken-seriencover figcaption {
-  padding: .55rem .7rem .65rem;
-  border-top: 1px solid var(--line);
-}
+/* ---------- Chroniken: Bandcover ---------- */
 
 .chroniken-bandcover {
   margin: 0;
   width: 8rem;
+  flex: none;
   background: var(--ink-2);
   border: 1px solid var(--line);
-  flex: none;
 }
 
 .chroniken-bandcover img {
@@ -623,18 +594,8 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
   color: var(--fog-dim);
 }
 
-@media (min-width: 980px) {
-  .chroniken-hero {
-    grid-template-columns: minmax(0, 1fr) minmax(15rem, 22rem);
-  }
-
-  .chroniken-seriencover {
-    justify-self: end;
-  }
-
-  /* Cover sitzt innerhalb des bestehenden Fallrasters,
-     nicht als eigener langer Abschnitt. */
-  .chroniken-fall {
+@media (min-width: 820px) {
+  [data-reihe="nc"] .werk {
     grid-template-columns: 7.5rem 8rem minmax(0, 1fr) auto;
     column-gap: 1.5rem;
   }
