@@ -1,4 +1,4 @@
-# Syntaxis — Website
+# Syntaxis - Ein Projekt &uuml;ber kritisches Denken — Website
 
 Die Projektseite zu **Syntaxis** von Gerald Glaser: vier Reihen über das Prüfen von Behauptungen, kostenfrei als PDF und EPUB, unter Creative-Commons-Lizenz.
 
