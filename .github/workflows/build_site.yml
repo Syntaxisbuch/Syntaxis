@@ -1,0 +1,42 @@
+name: Syntaxis Site Builder
+
+# Wann soll der Generator laufen?
+on:
+  push:
+    branches:
+      - main
+    # EXTREM WICHTIG: Das Skript läuft NUR, wenn Dateien in diesen Ordnern geändert wurden.
+    paths:
+      - 'data/**'
+      - '_build/**'
+      - 'assets/**'
+  workflow_dispatch: # Erlaubt manuelles Starten
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    # Der Bot braucht Schreibrechte für das Repository
+    permissions:
+      contents: write
+
+    steps:
+      - name: 1. Syntaxis-Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: 2. Python 3 einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 3. Seiten-Generator (build.py) ausführen
+        # Hier rufen wir exakt dein Skript auf
+        run: python3 _build/build.py
+
+      - name: 4. Generierte HTML-Seiten committen und pushen
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Auto-Build: HTML-Seiten aus aktuellen Daten generiert"
+          branch: main
+          # Der Bot darf nur Dateien im Hauptverzeichnis committen, die auf .html enden
+          file_pattern: "*.html" 
