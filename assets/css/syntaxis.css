@@ -568,3 +568,106 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
 @media (prefers-reduced-motion: reduce) { .js-reveal .auf { opacity: 1; transform: none; } }
 
 .dateihinweis { margin: .6rem 0 0; font-size: .84rem; color: var(--fog-dim); font-style: italic; }
+
+
+
+/* ---------- Chroniken: Serien- und Bandcover auf der Startseite ---------- */
+.chroniken-serie {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.chroniken-seriencover {
+  display: block;
+  width: min(100%, 24rem);
+  justify-self: center;
+  border: 1px solid var(--line);
+  background: var(--ink-2);
+  box-shadow: 0 18px 45px rgba(0,0,0,.30);
+  transition: border-color .16s ease, transform .16s ease, box-shadow .16s ease;
+}
+
+.chroniken-seriencover:hover,
+.chroniken-seriencover:focus-visible,
+.chroniken-bandcover:hover,
+.chroniken-bandcover:focus-visible {
+  border-color: var(--akzent);
+  transform: translateY(-2px);
+  box-shadow: 0 22px 55px rgba(0,0,0,.38);
+}
+
+.chroniken-seriencover img,
+.chroniken-bandcover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chroniken-serieninfo {
+  max-width: 62ch;
+}
+
+.chroniken-serieninfo h3 {
+  margin: .45rem 0 .8rem;
+  font-size: clamp(1.9rem, 1.4rem + 1.4vw, 2.8rem);
+}
+
+.chroniken-baende {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.chroniken-bandcover {
+  display: block;
+  border: 1px solid var(--line);
+  background: var(--ink-2);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .16s ease, transform .16s ease, box-shadow .16s ease;
+}
+
+.chroniken-bandmeta {
+  display: block;
+  padding: .7rem .8rem .85rem;
+  border-top: 1px solid var(--line);
+  font-size: .84rem;
+  color: var(--fog);
+}
+
+.chroniken-bandmeta b {
+  font-family: var(--data);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  color: var(--akzent);
+  margin-right: .45rem;
+}
+
+@media (min-width: 700px) {
+  .chroniken-baende {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 980px) {
+  .chroniken-serie {
+    grid-template-columns: minmax(16rem, 24rem) 1fr;
+  }
+
+  .chroniken-seriencover {
+    justify-self: start;
+  }
+
+  .chroniken-baende {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .chroniken-baende {
+    grid-template-columns: 1fr;
+  }
+}
