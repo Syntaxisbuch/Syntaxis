@@ -318,53 +318,6 @@
   zeige("start");
 })();
 </script>
-<!-- START: LESERBRIEF / BEOBACHTUNGSPROTOKOLL -->
-<section class="stratum" id="kontakt">
-  <div class="wrap">
-    <div class="stratum-kopf">
-      <h2>Anlage: Beobachtungsprotokoll</h2>
-      <span class="hoehe">Einreichung zur Akte — Leserbrief und Kontakt</span>
-    </div>
-    
-    <div style="max-width: 800px; padding: 2rem 0;">
-      <p class="gross" style="margin-bottom: 2.5rem;">Reichen Sie Ihre Analysen, Zweifel oder Ergänzungen zur Akte ein. Kuratierte Einträge werden nach Prüfung in das Hauptdokument überführt oder privat beantwortet.</p>
-      
-      <!-- Web3Forms API -->
-      <form action="https://api.web3forms.com/submit" method="POST" style="font-family: 'Azeret Mono', monospace;">
-        
-        <!-- WICHTIG: Hier deinen Key einfügen! -->
-        <input type="hidden" name="access_key" value="584c8a1f-102e-4d8f-80f0-0aceacd0f188">
-        
-        <!-- Weiterleitung zur neuen Danke-Seite -->
-        <input type="hidden" name="redirect" value="https://syntaxisbuch.github.io/Syntaxis/danke.html">
-        
-        <!-- Honeypot zur Spam-Abwehr -->
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-        <div style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 1.5rem;">
-          <div>
-            <label for="name" class="kennung" style="display: block; margin-bottom: 0.5rem; color: inherit;">Identifikation (Optional)</label>
-            <input type="text" id="name" name="Name" placeholder="Pseudonym oder 'Anonym'" style="width: 100%; padding: 0.8rem; font-family: inherit; border: 1px solid rgba(126,147,158,.55); background: transparent; color: inherit; box-sizing: border-box;">
-          </div>
-          <div>
-            <label for="email" class="kennung" style="display: block; margin-bottom: 0.5rem; color: inherit;">Rückkanal (Optional)</label>
-            <input type="email" id="email" name="Email" placeholder="e-mail@adresse.xyz" style="width: 100%; padding: 0.8rem; font-family: inherit; border: 1px solid rgba(126,147,158,.55); background: transparent; color: inherit; box-sizing: border-box;">
-          </div>
-        </div>
-
-        <div style="margin-bottom: 2rem;">
-          <label for="message" class="kennung" style="display: block; margin-bottom: 0.5rem; color: inherit;">Protokolleintrag</label>
-          <textarea id="message" name="Nachricht" rows="7" required placeholder="Ihre Ausführungen..." style="width: 100%; padding: 0.8rem; font-family: inherit; border: 1px solid rgba(126,147,158,.55); background: transparent; color: inherit; box-sizing: border-box; resize: vertical;"></textarea>
-        </div>
-
-        <div>
-          <button type="submit" class="knopf voll" style="font-family: inherit;">[ DATEN ÜBERMITTELN ]</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-<!-- ENDE: LESERBRIEF -->
 
 </main>
 
