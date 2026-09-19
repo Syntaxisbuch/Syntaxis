@@ -200,7 +200,7 @@ BAUSTEINE = {
 
 # slug: (Titel, Beschreibung, Reihenfarbe, zusätzliche Skripte)
 SEITEN = {
-    "index":       ("Syntaxis — Vier Reihen über das Prüfen von Behauptungen",
+    "index":       ("Syntaxis — Ein Projekt &uuml;ber kritisches Denken",
                     "Kostenlose Bücher über kritisches Denken, Mythen und eine Stadt, die gebaut ist wie ein Gehirn. PDF und EPUB unter Creative-Commons-Lizenz.", "", ""),
     "landkarte":   ("Die Landkarte der Realität — Syntaxis",
                     "Das Hauptwerk: neun Bände über das Handwerk des Prüfens, vom Rüstzeug des Denkens bis zur Anatomie der Chimäre.", "lr", ""),
