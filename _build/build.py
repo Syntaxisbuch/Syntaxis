@@ -95,11 +95,24 @@ def rendere_baende_lr():
 def rendere_baende_nc():
     r = reihe("nc")
     zeilen = []
+
     for b in r["baende"]:
         tags = " · ".join(b.get("tags", []))
         st = b.get("status", "verfügbar")
+
+        cover = ""
+        if b.get("cover"):
+            cover = f'''<figure class="chroniken-bandcover">
+            <img src="{b["cover"]}"
+                 alt="Band {b["nr"]} – {b["titel"]}"
+                 loading="lazy">
+          </figure>'''
+
+        verfuegbar = "verfuegbar" if st == "verfügbar" else ""
+
         zeilen.append(f'''<article class="werk" id="nc-{b["nr"].lower()}">
         <span class="band">BAND {b["nr"]}<br>{b["jahr"]}</span>
+        {cover}
         <div>
           <h3>{b["titel"]}</h3>
           <p style="color:var(--bone);margin-bottom:.6rem"><strong>{b["fall"]}</strong> — {b["ort"]}</p>
@@ -107,10 +120,10 @@ def rendere_baende_nc():
           <p class="kennung" style="margin-top:.7rem">{b["kapitel"]} Kapitel · {tags}</p>
           {dateiliste(b.get("dateien"), b["titel"])}
         </div>
-        <span class="status" data-s="{"verfuegbar" if st == "verfügbar" else ""}">{st}</span>
+        <span class="status" data-s="{verfuegbar}">{st}</span>
       </article>''')
-    return '<div class="werkliste">' + "".join(zeilen) + "</div>"
 
+    return '<div class="werkliste">' + "".join(zeilen) + "</div>"
 
 def rendere_figuren():
     r = reihe("nc")
