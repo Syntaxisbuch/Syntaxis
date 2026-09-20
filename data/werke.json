@@ -54,6 +54,7 @@
       "form": "Sachbuch mit Übungsteil",
       "umfang": "rund 900 Seiten",
       "status": "verfügbar",
+      "cover": "assets/img/landkarte-der-realitaet.png",
       "baende": [
         {
           "nr": "I",
