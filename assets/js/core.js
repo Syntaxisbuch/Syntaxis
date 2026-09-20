@@ -7,8 +7,10 @@
   const EBENEN = [
     { z:  520, slug: "index",       titel: "Turmspitze",              unter: "Start und Übersicht",             href: "index.html" },
     { z:  500, slug: "landkarte",   titel: "Landkarte der Realität",  unter: "Oberste Terrasse — Vernunft",     href: "landkarte.html", c: "lr" },
+    { z:  500, slug: "quellen",     titel: "Quellenverzeichnis",      unter: "Reale Institutionen und Bücher",  href: "quellen.html", c: "lr", sub: true },
     { z:  400, slug: "licht",       titel: "Licht der Realität",      unter: "Obere-Mittlere — Messung",        href: "licht.html",     c: "ld" },
     { z:  280, slug: "downloads",   titel: "Ausgabestelle",           unter: "Mittlere Terrasse — Verwaltung",  href: "downloads.html" },
+    { z:  280, slug: "neuigkeiten", titel: "Neuigkeiten",             unter: "Änderungsverlauf mit RSS",        href: "neuigkeiten.html", sub: true },
     { z:  280, slug: "glossar",     titel: "Glossar",                  unter: "Begriffe und Signaturen",         href: "glossar.html", sub: true },
     { z:  180, slug: "atlas",       titel: "Kartographischer Atlas",  unter: "Mittlere-Untere — Gedächtnis",    href: "atlas.html" },
     { z:  180, slug: "bildband",    titel: "Das Bildarchiv",           unter: "Mnemosynes Aufnahmen",             href: "bildband.html", sub: true },
