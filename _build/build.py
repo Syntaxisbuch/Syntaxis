@@ -166,37 +166,84 @@ def rendere_gefahrenskala():
 
 def rendere_downloads():
     blöcke = []
+
     for r in WERKE["reihen"]:
         liz = WERKE["lizenzen"][r["lizenz"]]
         eintraege = []
+
         if r["id"] == "nc":
             for b in r["baende"]:
-                eintraege.append((f'Band {b["nr"]} — {b["titel"]}', b.get("dateien"), b["fall"], None))
+                eintraege.append((
+                    f'Band {b["nr"]} — {b["titel"]}',
+                    b.get("dateien"),
+                    b["fall"],
+                    None,
+                    b.get("cover")
+                ))
+
         elif r["id"] == "au":
             inhalt = "".join(
                 f'<li><span class="n">{f["nr"]:02d}</span>'
-                f'<span class="tt">{f["titel"]} <span class="leise">— {f["unter"]}</span></span>'
-                f'</li>' for f in r["faelle"])
-            inhalt = (f'<div class="enthalten"><span class="kennung">ENTHÄLT ZEHN FALLAKTEN</span>'
-                      f'<ol class="inhaltsliste">{inhalt}</ol></div>')
-            eintraege.append((r["titel"] + ", Sektion A", r.get("dateien"), r["claim"], inhalt))
+                f'<span class="tt">{f["titel"]} '
+                f'<span class="leise">— {f["unter"]}</span></span>'
+                f'</li>'
+                for f in r["faelle"]
+            )
+            inhalt = (
+                f'<div class="enthalten">'
+                f'<span class="kennung">ENTHÄLT ZEHN FALLAKTEN</span>'
+                f'<ol class="inhaltsliste">{inhalt}</ol>'
+                f'</div>'
+            )
+
+            eintraege.append((
+                r["titel"] + ", Sektion A",
+                r.get("dateien"),
+                r["claim"],
+                inhalt,
+                r.get("cover")
+            ))
+
         else:
-            eintraege.append((r["titel"], r.get("dateien"), r["claim"], None))
+            eintraege.append((
+                r["titel"],
+                r.get("dateien"),
+                r["claim"],
+                None,
+                r.get("cover")
+            ))
 
-        rows = "".join(f'''<div class="werk karte-werk">
-          <span class="band">{r["kennung"]}</span>
-          <div><h3 style="font-size:1.25rem">{t}</h3><p>{u}</p>{dateiliste(d, t)}{x or ""}</div>
-          <span class="status">{liz["kurz"]}</span>
-        </div>''' for t, d, u, x in eintraege)
+        rows = "".join(
+            f'''<div class="werk karte-werk{" mit-cover" if cover else ""}">
+              <span class="band">{r["kennung"]}</span>
+              {f'<div class="download-cover"><img src="{cover}" alt="{t}" loading="lazy"></div>' if cover else ""}
+              <div>
+                <h3 style="font-size:1.25rem">{t}</h3>
+                <p>{u}</p>
+                {dateiliste(d, t)}
+                {x or ""}
+              </div>
+              <span class="status">{liz["kurz"]}</span>
+            </div>'''
+            for t, d, u, x, cover in eintraege
+        )
 
-        blöcke.append(f'''<section class="stratum reihenblock" data-reihe="{r["id"]}" data-reihenname="{r["titel"]}" style="padding-block:2.75rem">
-          <div class="wrap">
-          <div class="stratum-kopf">
-            <span class="reihenmarke">{r["kennung"]}</span>
-            <h3 style="font-size:1.7rem;margin:0">{r["titel"]}</h3>
-            <span class="hoehe">{liz["kurz"]}</span>
-          </div>
-          <div class="werkliste">{rows}</div></div></section>''')
+        blöcke.append(
+            f'''<section class="stratum reihenblock"
+                data-reihe="{r["id"]}"
+                data-reihenname="{r["titel"]}"
+                style="padding-block:2.75rem">
+              <div class="wrap">
+                <div class="stratum-kopf">
+                  <span class="reihenmarke">{r["kennung"]}</span>
+                  <h3 style="font-size:1.7rem;margin:0">{r["titel"]}</h3>
+                  <span class="hoehe">{liz["kurz"]}</span>
+                </div>
+                <div class="werkliste">{rows}</div>
+              </div>
+            </section>'''
+        )
+
     return "".join(blöcke)
 
 
