@@ -303,39 +303,6 @@ def rendere_downloads():
     return "".join(blöcke)
 
 
-def rendere_f404():
-    D = json.loads((WURZEL / "data" / "frequenz404.json").read_text(encoding="utf-8"))
-    aus = []
-    for f in D["folgen"]:
-        zeilen = []
-        for s in f["transkript"]:
-            werbung = s["sprecher"] == "WERBUNG"
-            regie = f'<span class="regie">{s["regie"]}</span>' if s["regie"] else ""
-            zeilen.append(
-                '<div class="funkzeile%s"><span class="sprecher">%s</span>'
-                '<div class="rede">%s<p>%s</p></div></div>'
-                % (" werbeblock" if werbung else "", s["sprecher"], regie, s["text"]))
-        au = next((x for x in reihe("au")["faelle"] if x["nr"] == f.get("autopsie")), None)
-        shownote = ""
-        if au:
-            shownote = ('<div class="shownotes"><span class="kennung">SHOWNOTES</span>'
-                        '<p>Die vollständige Akte zu dieser Sendung: '
-                        f'<a href="autopsien.html#au-{au["nr"]}">Autopsie #{au["nr"]:02d} — {au["titel"]}</a>. '
-                        'Dort stehen die Belege, die Cassidy im Studio nur behauptet.</p></div>')
-        aus.append(f'''<article class="sendung" id="{f["id"]}">
-          <header class="sendungskopf">
-            <span class="kennung">SENDUNG {f["nummer"]} · {f["zeit"]} · {f["dauer"]}</span>
-            <h3>{f["titel"]}</h3>
-            <p class="setting">{f["setting"]}</p>
-            <p class="signal">[{f["signal"]}]</p>
-          </header>
-          <div class="funkprotokoll">{"".join(zeilen)}</div>
-          <p class="signal ende">[{f["ausklang"]}]</p>
-          {shownote}
-        </article>''')
-    return "".join(aus)
-
-
 def rendere_f404_stimmen():
     D = json.loads((WURZEL / "data" / "frequenz404.json").read_text(encoding="utf-8"))
     z = "".join(
@@ -399,7 +366,6 @@ BAUSTEINE = {
     "{{AU_FAELLE}}": rendere_faelle,
     "{{AU_SKALA}}": rendere_gefahrenskala,
     "{{DOWNLOADS}}": rendere_downloads,
-    "{{F404}}": rendere_f404,
     "{{F404_STIMMEN}}": rendere_f404_stimmen,
     "{{F404_BAENDE}}": rendere_f404_baende,
     "{{QUELLEN}}": rendere_quellen,
@@ -434,7 +400,8 @@ SEITEN = {
     "impressum":   ("Impressum und Haftungsausschluss — Syntaxis",
                     "Herausgeber, Kontakt, neurale Assistenz und Haftungsausschluss.", "", ""),
     "frequenz-404": ("Frequenz 404 — Der Piratensender aus Neocortex City",
-                    "Cassidy Null, Kevin und Dr. Tacheles streiten sich um drei Uhr nachts durch die Mythen der Stadt. Bonus zu den Chroniken von Neocortex City.", "nc", ""),
+                    "Cassidy Null, Kevin und Dr. Tacheles streiten sich um drei Uhr nachts durch die Mythen der Stadt. Wöchentlich wechselnde Sendung plus Archiv.", "nc",
+                    '<script src="assets/js/frequenz404.js"></script>'),
     "bildband":    ("Das Bildarchiv — Syntaxis",
                     "Mnemosynes Bildarchiv: Stadtansichten und Schauplätze, an der Wand aufgereiht und mit rotem Faden verbunden.", "",
                     '<script src="assets/js/bildband.js"></script>'),
