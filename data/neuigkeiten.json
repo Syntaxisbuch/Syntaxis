@@ -1,0 +1,9 @@
+{
+  "hinweis": "Chronologischer Änderungsverlauf. Neueste zuerst. Speist die Neuigkeiten-Seite und den RSS-Feed.",
+  "eintraege": [
+    {"datum": "2026-09-20", "titel": "Quellenverzeichnis eröffnet", "text": "Die realen Institutionen, Podcasts und Bücher hinter dem Ansatz von Syntaxis, kuratiert und mit Beleg.", "link": "quellen.html"},
+    {"datum": "2026-09-20", "titel": "Frequenz 404 sendet", "text": "Der Piratensender aus dem Medienviertel: Cassidy Null, Kevin und Dr. Tacheles, mit Auftaktfolge und erster Fallakte.", "link": "frequenz-404.html"},
+    {"datum": "2026-09-20", "titel": "Das Bildarchiv ist eröffnet", "text": "Mnemosynes Sammlung: Stadtansichten und Fallszenen aus Neocortex City, nach Akten sortiert.", "link": "bildband.html"},
+    {"datum": "2026-09-20", "titel": "Glossar veröffentlicht", "text": "35 Begriffe aus den Werken und der Stadt an einem Ort — von der Signatur bis zur Toleranz-Zone.", "link": "glossar.html"}
+  ]
+}
