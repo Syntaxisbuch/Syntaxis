@@ -17,6 +17,20 @@ LAYOUT = (WURZEL / "_build" / "layout.html").read_text(encoding="utf-8")
 PAGES = WURZEL / "_build" / "pages"
 WERKE = json.loads((WURZEL / "data" / "werke.json").read_text(encoding="utf-8"))
 
+# ---------------------------------------------------------------------------
+# EINZIGE STELLE FÜR DIE DOMAIN.
+# Ändert sich der Hosting-Ort — Repository-Umzug, eigene Domain — genügt eine
+# Änderung hier. Sitemap, robots.txt, Formular-Weiterleitung und die
+# og:url/canonical-Angaben jeder Seite werden daraus abgeleitet.
+#
+# Aktuell: das Repository heißt "Syntaxisbuch.github.io" (umbenannt von
+# "Syntaxis"), GitHub Pages liefert es deshalb an der Wurzel aus, ohne
+# Unterordner. Für eine eigene Domain später: SITE_URL hier ändern und eine
+# Datei "CNAME" mit genau der Domain (ohne https://, ohne Pfad) ins
+# Wurzelverzeichnis legen — siehe README, Abschnitt "Domain".
+# ---------------------------------------------------------------------------
+SITE_URL = "https://syntaxisbuch.github.io"
+
 ROEM = {"1": "I", "2": "II", "3": "III", "4": "IV"}
 
 
@@ -316,7 +330,7 @@ def rendere_formular(betreff="Allgemeine Einreichung", titel="Anlage: Beobachtun
     <p class="gross schmal">{text}</p>
     <form class="protokollform" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="584c8a1f-102e-4d8f-80f0-0aceacd0f188">
-      <input type="hidden" name="redirect" value="https://syntaxisbuch.github.io/Syntaxis/danke.html">
+      <input type="hidden" name="redirect" value="{SITE_URL}/danke.html">
       <input type="hidden" name="subject" value="Syntaxis — {betreff}">
       <input type="hidden" name="Betreff" value="{betreff}">
       <input type="checkbox" name="botcheck" class="honigtopf" tabindex="-1" autocomplete="off">
@@ -384,12 +398,20 @@ SEITEN = {
                     "Herausgeber, Kontakt, neurale Assistenz und Haftungsausschluss.", "", ""),
     "frequenz-404": ("Frequenz 404 — Der Piratensender aus Neocortex City",
                     "Cassidy Null, Kevin und Dr. Tacheles streiten sich um drei Uhr nachts durch die Mythen der Stadt. Bonus zu den Chroniken von Neocortex City.", "nc", ""),
-    "bildband":    ("Die Asservatenkammer — Syntaxis",
-                    "Akten aus dem Schrank ziehen, Belege an die Pinnwand heften, den roten Faden spannen. Bildarchiv zu Neocortex City und den Fallakten.", "",
+    "bildband":    ("Das Bildarchiv — Syntaxis",
+                    "Mnemosynes Bildarchiv: Stadtansichten und Schauplätze, an der Wand aufgereiht und mit rotem Faden verbunden.", "",
                     '<script src="assets/js/bildband.js"></script>'),
+    "glossar":     ("Glossar — Syntaxis",
+                    "Signatur, Terrasse, Asservat, Toleranz-Zone: 35 Begriffe aus den Werken und der Stadt, durchsuchbar.", "",
+                    '<script src="assets/js/glossar.js"></script>'),
     "404":         ("Seite nicht gefunden — Syntaxis",
                     "Diese Adresse liegt außerhalb des Koordinatensystems.", "", ""),
 }
+
+
+def seiten_url(slug):
+    """Kanonische Adresse einer Seite. index.html liegt an der Wurzel ohne Dateinamen."""
+    return SITE_URL + "/" if slug == "index" else f"{SITE_URL}/{slug}.html"
 
 
 def baue():
@@ -412,13 +434,41 @@ def baue():
                 .replace("{{REIHE}}", reihenfarbe)
                 .replace("{{SLUG}}", slug)
                 .replace("{{SKRIPTE}}", skripte)
+                .replace("{{URL}}", seiten_url(slug))
+                .replace("{{OGBILD}}", SITE_URL + "/assets/img/og.png")
                 .replace("{{INHALT}}", inhalt))
         (WURZEL / f"{slug}.html").write_text(html, encoding="utf-8")
         gebaut += 1
         print(f"  {slug}.html")
     print(f"\n{gebaut} Seiten gebaut.")
+    return gebaut
+
+
+def schreibe_sitemap():
+    """sitemap.xml aus SEITEN — nie mehr von Hand nachpflegen, nie mehr veraltet."""
+    prio = {"index": "1.0", "downloads": "0.9", "atlas": "0.8",
+            "werkzeuge": "0.8", "gegenfragen": "0.8", "glossar": "0.6"}
+    zeilen = ['<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for slug in SEITEN:
+        if slug == "404":
+            continue
+        zeilen.append(
+            f"  <url><loc>{seiten_url(slug)}</loc><changefreq>monthly</changefreq>"
+            f"<priority>{prio.get(slug, '0.7')}</priority></url>")
+    zeilen.append("</urlset>")
+    (WURZEL / "sitemap.xml").write_text("\n".join(zeilen) + "\n", encoding="utf-8")
+    print("  sitemap.xml")
+
+
+def schreibe_robots():
+    (WURZEL / "robots.txt").write_text(
+        f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
+    print("  robots.txt")
 
 
 if __name__ == "__main__":
     print("Syntaxis — Seiten werden gebaut:\n")
     baue()
+    schreibe_sitemap()
+    schreibe_robots()
