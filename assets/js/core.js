@@ -11,6 +11,7 @@
     { z:  280, slug: "downloads",   titel: "Ausgabestelle",           unter: "Mittlere Terrasse — Verwaltung",  href: "downloads.html" },
     { z:  180, slug: "atlas",       titel: "Kartographischer Atlas",  unter: "Mittlere-Untere — Gedächtnis",    href: "atlas.html" },
     { z:   80, slug: "chroniken",   titel: "Chroniken von Neocortex City", unter: "Untere Terrasse — Trieb",    href: "chroniken.html", c: "nc" },
+    { z:   80, slug: "frequenz-404", titel: "Frequenz 404",              unter: "Medienviertel — Studio 6",        href: "frequenz-404.html", c: "nc", sub: true },
     { z:   20, slug: "gegenfragen", titel: "Gegenfragen-Kartei",      unter: "Thalamus Central Station",        href: "gegenfragen.html" },
     { z:    0, slug: "werkzeuge",   titel: "Das Rüstzeug",            unter: "Unterste Terrasse — Grundfunktionen", href: "werkzeuge.html" },
     { z:  -60, slug: "autopsien",   titel: "Autopsien der Schatten",  unter: "Sub-Unterste — Seziersaal",       href: "autopsien.html", c: "au" }
@@ -29,6 +30,7 @@
       a.href = e.href;
       a.style.top = (p * 100) + "%";
       if (e.c) a.dataset.c = e.c;
+      if (e.sub) a.dataset.sub = "1";
       if (e.slug === seite) a.setAttribute("aria-current", "page");
       a.innerHTML = `<span class="pkt"></span><span class="tip"><b>${e.titel}</b><span class="z">${e.z} m</span></span>`;
       a.setAttribute("aria-label", `${e.titel}, ${e.z} Meter`);
