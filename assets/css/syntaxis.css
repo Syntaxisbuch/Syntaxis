@@ -724,3 +724,74 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
   color: var(--bone); font-size: 1.5rem; line-height: 1; width: 2.4rem; height: 2.4rem; cursor: pointer;
 }
 .leuchtkasten .zu:hover { border-color: var(--akzent); color: var(--akzent); }
+
+/* Erkenntnisebene auf dem Beleg */
+.beleg .ebene {
+  position: absolute; top: 6px; left: 6px; z-index: 2;
+  font-family: var(--data); font-size: .46rem; letter-spacing: .1em;
+  background: rgba(12,21,25,.85); border: 1px solid var(--line-hard);
+  color: var(--fog); padding: .1rem .28rem;
+}
+.beleg[data-ebene="FALLSZENE"] .ebene { color: var(--nc); border-color: color-mix(in srgb, var(--nc) 55%, transparent); }
+.leuchtkasten figcaption .zeile { display: block; margin-bottom: .4rem; }
+.leuchtkasten figcaption .realbezug { color: var(--nc); border-left: 2px solid var(--nc); padding-left: .7rem; font-size: .89rem; }
+
+/* Reihen-Cover als Hintergrund im Seitenkopf */
+.hero[data-cover] { position: relative; overflow: hidden; }
+.hero[data-cover] .hero-bild {
+  position: absolute; inset: 0; z-index: 0;
+  background-size: cover; background-position: 50% 20%;
+  opacity: .30;
+  -webkit-mask-image: linear-gradient(100deg, transparent 8%, #000 62%, #000 100%);
+  mask-image: linear-gradient(100deg, transparent 8%, #000 62%, #000 100%);
+}
+.hero[data-cover]::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(95deg, var(--ink) 26%, color-mix(in srgb, var(--ink) 72%, transparent) 58%, color-mix(in srgb, var(--ink) 45%, transparent));
+}
+.hero[data-cover] > .wrap { position: relative; z-index: 2; }
+@media (max-width: 760px) { .hero[data-cover] .hero-bild { opacity: .16; background-position: 50% 12%; } }
+
+/* ---------- 26. Devise und Cover-Auszüge in den Pforten ---------- */
+.devise {
+  font-family: var(--data); font-size: .66rem; letter-spacing: .16em;
+  color: var(--fog-dim); margin: 0 0 1.1rem; text-transform: uppercase;
+}
+.pforte { padding-top: 0 !important; }
+.pforte-streifen {
+  display: block; margin: 0 calc(-1 * clamp(1.4rem, 3vw, 2.1rem)) clamp(1.1rem, 2.5vw, 1.5rem);
+  height: clamp(74px, 9vw, 104px); background-size: cover; background-position: 50% 50%;
+  border-bottom: 1px solid var(--line); position: relative; filter: saturate(.85);
+}
+.pforte-streifen::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 30%, transparent), color-mix(in srgb, var(--ink) 82%, transparent));
+}
+.pforte:hover .pforte-streifen { filter: saturate(1); }
+.pforte-streifen.leer {
+  background: repeating-linear-gradient(135deg, var(--ink-2) 0 6px, var(--ink) 6px 12px);
+  display: grid; place-items: center;
+}
+.pforte-streifen.leer .hinweis {
+  font-family: var(--data); font-size: .6rem; letter-spacing: .14em; color: var(--fog-dim);
+  text-transform: uppercase; position: relative; z-index: 1;
+}
+.pforte-streifen.leer::after { background: none; }
+.pforte > .zeile:first-of-type { padding-top: 0; }
+
+/* ---------- 27. Protokollformular ---------- */
+.protokollform { max-width: 780px; }
+.protokollform .honigtopf { position: absolute; left: -9999px; opacity: 0; }
+.feldpaar { display: grid; gap: 1.1rem; margin-bottom: 1.1rem; }
+@media (min-width: 640px) { .feldpaar { grid-template-columns: 1fr 1fr; } }
+.feldzeile { margin-bottom: 1.4rem; }
+.protokollform label { display: block; margin-bottom: .45rem; }
+.feld {
+  width: 100%; padding: .75rem .85rem; box-sizing: border-box;
+  font-family: var(--body); font-size: .97rem; color: var(--bone);
+  background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--radius);
+  resize: vertical;
+}
+.feld::placeholder { color: var(--fog-dim); }
+.feld:focus { outline: none; border-color: var(--akzent); }
+.protokollform button { font-size: 1rem; }

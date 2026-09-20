@@ -40,8 +40,9 @@
       <svg class="faeden" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${faeden}</svg>
       ${a.bilder.map((b, i) => `
         <figure class="beleg" style="left:${b.x}%;top:${b.y}%;--dreh:${b.dreh}deg;--verzug:${i * 40}ms"
-                tabindex="0" role="button" data-id="${b.id}" aria-label="${b.titel} vergrößern">
+                tabindex="0" role="button" data-id="${b.id}" data-ebene="${b.ebene || ""}" aria-label="${b.titel} vergrößern">
           <span class="nadel"></span>
+          ${b.ebene && b.ebene !== "COVER" ? `<span class="ebene">${b.ebene}</span>` : ""}
           <img src="${b.bild}" alt="${b.titel}" loading="lazy" decoding="async">
           <figcaption>${b.titel}<small>${b.unterschrift}</small></figcaption>
         </figure>`).join("")}`;
@@ -61,7 +62,11 @@
     if (!b) return;
     lkBild.src = b.gross || b.bild; lkBild.alt = b.titel;
     lkTitel.textContent = b.titel;
-    lkText.textContent = b.notiz || b.unterschrift || "";
+    lkText.innerHTML = [
+      b.unterschrift ? `<span class="zeile">${b.unterschrift}</span>` : "",
+      b.notiz ? `<span class="zeile">${b.notiz}</span>` : "",
+      b.realbezug ? `<span class="zeile realbezug">${b.realbezug}</span>` : ""
+    ].join("");
     if (b.ziel) { lkLink.href = b.ziel; lkLink.hidden = false; } else lkLink.hidden = true;
     lk.classList.add("offen");
     document.getElementById("lkZu").focus();
