@@ -2,7 +2,7 @@
 
 Die Projektseite zu **Syntaxis** von Gerald Glaser: vier Reihen über das Prüfen von Behauptungen, kostenfrei als PDF und EPUB, unter Creative-Commons-Lizenz.
 
-Live: <https://syntaxisbuch.github.io/Syntaxis/>
+Live: <https://syntaxisbuch.github.io/>
 Kontakt: <Syntaxis_Buch@pm.me>
 
 ---
@@ -113,6 +113,41 @@ Dann <http://localhost:8000> öffnen.
 ## Veröffentlichen
 
 GitHub Pages im Repository unter *Settings → Pages* auf Branch `main`, Ordner `/ (root)` stellen. Die Datei `.nojekyll` liegt bereits bei; sie verhindert, dass GitHub die Dateien durch Jekyll schickt.
+
+---
+
+## Domain
+
+**Die Ausgangslage.** GitHub Pages liefert ein Repository nur dann direkt unter `<konto>.github.io/` aus, wenn das Repository exakt `<konto>.github.io` heißt. Jedes andere Repository — auch eines mit dem richtigen Konto davor — wird als *Projektseite* behandelt und bekommt einen Unterordner: `<konto>.github.io/<repo-name>/`. Ein Aufruf ohne diesen Unterordner liefert eine 404, weil dort schlicht nichts liegt. Das ist kein Fehler in der Konfiguration, sondern das dokumentierte Standardverhalten von GitHub Pages.
+
+**Der eingeschlagene Weg — Repository umbenennen.** Kostenlos, ohne eigene Domain:
+
+1. Auf GitHub: *Settings → General → Repository name*
+2. Von `Syntaxis` zu `Syntaxisbuch.github.io` ändern
+3. Fertig — die Seite ist danach unter `https://syntaxisbuch.github.io/` erreichbar, ohne Unterordner
+
+GitHub legt für den alten Namen eine Weile eine automatische Weiterleitung an; feste Lesezeichen auf `/Syntaxis/`-Adressen sollten trotzdem aktualisiert werden, sobald möglich.
+
+**Der Code ist bereits umgestellt.** `SITE_URL` in `_build/build.py` steht auf `https://syntaxisbuch.github.io` (ohne Unterordner, ohne abschließenden Schrägstrich). Daraus leiten sich beim Bauen automatisch ab:
+- `sitemap.xml` und `robots.txt` — nicht mehr von Hand gepflegt, sondern bei jedem Lauf von `build.py` frisch geschrieben
+- `<link rel="canonical">` und `og:url` auf jeder Seite
+- `og:image` als vollständige Adresse (Open-Graph-Vorschauen brauchen absolute Bildpfade)
+- Das Redirect-Ziel aller vier Kontaktformulare (`Danke`-Seite nach dem Absenden)
+
+**Eine eigene Domain später.** Eine passende Domain lässt sich jederzeit nachrüsten, ohne den Rest anzufassen:
+
+1. `SITE_URL` in `_build/build.py` auf `https://meine-domain.de` setzen
+2. Eine Datei `CNAME` (ohne Dateiendung) mit genau der Domain als einziger Zeile ins Wurzelverzeichnis legen, z. B. `meine-domain.de` — ohne `https://`, ohne Pfad, ohne Zeilenumbruch danach
+3. Beim Domain-Anbieter einen `CNAME`-Eintrag (bei einer Subdomain wie `www`) oder passende `A`-Einträge (bei der nackten Domain, auf GitHubs IP-Adressen) setzen — GitHubs aktuelle Anleitung dazu: <https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site>
+4. `python3 _build/build.py` laufen lassen, damit Sitemap, robots.txt und alle Seiten die neue Adresse tragen
+
+Für dieses Projekt bewusst nicht verwendet: eine bereits vorhandene, aber inhaltlich nicht passende Domain. Der Name einer Domain ist für Besucher und Suchmaschinen Teil der Aussage der Seite — er sollte zum Inhalt passen, nicht nur verfügbar sein.
+
+**Nach jeder Umstellung — kurz prüfen:**
+```bash
+grep -rn "github.io" *.html *.xml *.txt
+```
+Kommt dabei nichts zurück außer den erwarteten Zeilen in den Meta-Angaben, war die Umstellung vollständig.
 
 ---
 

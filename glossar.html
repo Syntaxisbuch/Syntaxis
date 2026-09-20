@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Seite nicht gefunden — Syntaxis</title>
-<meta name="description" content="Diese Adresse liegt außerhalb des Koordinatensystems.">
+<title>Glossar — Syntaxis</title>
+<meta name="description" content="Signatur, Terrasse, Asservat, Toleranz-Zone: 35 Begriffe aus den Werken und der Stadt, durchsuchbar.">
 <meta name="author" content="Gerald Glaser">
 <meta name="theme-color" content="#0C1519">
-<link rel="canonical" href="https://syntaxisbuch.github.io/404.html">
+<link rel="canonical" href="https://syntaxisbuch.github.io/glossar.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Syntaxis - Ein Projekt &uuml;ber kritisches Denken">
-<meta property="og:url" content="https://syntaxisbuch.github.io/404.html">
-<meta property="og:title" content="Seite nicht gefunden — Syntaxis">
-<meta property="og:description" content="Diese Adresse liegt außerhalb des Koordinatensystems.">
+<meta property="og:url" content="https://syntaxisbuch.github.io/glossar.html">
+<meta property="og:title" content="Glossar — Syntaxis">
+<meta property="og:description" content="Signatur, Terrasse, Asservat, Toleranz-Zone: 35 Begriffe aus den Werken und der Stadt, durchsuchbar.">
 <meta property="og:image" content="https://syntaxisbuch.github.io/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/img/marke.svg" type="image/svg+xml">
@@ -21,7 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/syntaxis.css">
 </head>
-<body data-reihe="" data-seite="404">
+<body data-reihe="" data-seite="glossar">
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
 <nav class="hoehenmesser" aria-label="Höhenmesser — Navigation nach Ebene">
@@ -62,16 +62,31 @@
 
 <main id="inhalt">
 <section class="hero">
+  <div class="wrap">
+    <span class="kennung">280 m · Mittlere Terrasse · Verwaltung · Zuständigkeit und Ablage</span>
+    <h1 style="margin-top:.5rem">Glossar</h1>
+    <p class="unter">Begriffe, die in den Werken und auf dieser Seite vorkommen und nirgends sonst dasselbe bedeuten. Signaturen, Terrassen, Asservate, die Toleranz-Zone.</p>
+  </div>
+</section>
+
+<section class="stratum" style="padding-top:0">
+  <div class="wrap">
+    <label class="sr" for="glSuche">Glossar durchsuchen</label>
+    <input class="suchfeld" type="search" id="glSuche" placeholder="Suchen — z. B. Signatur, Asservat, Schicht 6 …" autocomplete="off">
+    <div class="filterreihe" id="glFilter" role="group" aria-label="Nach Gruppe filtern" style="margin-top:1rem"></div>
+    <p class="kennung" id="glZaehler" style="margin:.5rem 0 1.5rem"></p>
+    <div id="glListe"></div>
+  </div>
+</section>
+
+<section class="stratum">
   <div class="wrap schmal">
-    <span class="kennung">FEHLER 404 · KEINE KOORDINATE</span>
-    <h1 style="margin-top:.5rem">Diese Adresse liegt außerhalb des Rasters</h1>
-    <p class="unter">Kein Sektor, keine Terrasse, kein Eintrag im Register. Vermutlich hat sich in der Adresse ein Zeichen verlaufen.</p>
+    <h2>Fehlt etwas?</h2>
+    <p>Wenn dir beim Lesen ein Begriff begegnet, der hier nicht steht und den du nachschlagen wolltest, dann fehlt er wirklich. Schreib ihn auf, er kommt dazu.</p>
     <div class="knopfreihe">
-      <a class="knopf voll" href="index.html">Zurück zur Turmspitze</a>
-      <a class="knopf still" href="downloads.html">Zur Ausgabestelle</a>
+      <a class="knopf" href="mailto:Syntaxis_Buch@pm.me?subject=Glossar%20%E2%80%94%20fehlender%20Begriff">Begriff melden</a>
       <a class="knopf still" href="atlas.html">Zum Atlas</a>
     </div>
-    <p class="leise" style="margin-top:2.5rem">Oder drücke <span class="kennung">/</span> und such direkt nach einem Werk, einem Sektor oder einer Signatur.</p>
   </div>
 </section>
 
@@ -128,6 +143,6 @@
 </div>
 
 <script src="assets/js/core.js"></script>
-
+<script src="assets/js/glossar.js"></script>
 </body>
 </html>
