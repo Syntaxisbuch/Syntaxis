@@ -33,10 +33,12 @@ jobs:
         # Hier rufen wir exakt dein Skript auf
         run: python3 _build/build.py
 
-      - name: 4. Generierte HTML-Seiten committen und pushen
+      - name: 4. Generierte Dateien committen und pushen
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "🤖 Auto-Build: HTML-Seiten aus aktuellen Daten generiert"
+          commit_message: "🤖 Auto-Build: Seiten, Sitemap und robots.txt aus aktuellen Daten generiert"
           branch: main
-          # Der Bot darf nur Dateien im Hauptverzeichnis committen, die auf .html enden
-          file_pattern: "*.html" 
+          # build.py schreibt inzwischen auch sitemap.xml und robots.txt aus SITE_URL —
+          # beide müssen hier mit erfasst werden, sonst committet der Bot nur die HTML-Seiten
+          # und Sitemap/robots.txt frieren auf dem zuletzt von Hand gepushten Stand ein.
+          file_pattern: "*.html sitemap.xml robots.txt"
