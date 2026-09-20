@@ -569,41 +569,31 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
 
 .dateihinweis { margin: .6rem 0 0; font-size: .84rem; color: var(--fog-dim); font-style: italic; }
 
-/* ---------- Chroniken: Bandcover ---------- */
+/* ---------- Downloads: Werkcover ---------- */
 
-.chroniken-bandcover {
-  margin: 0;
+.download-cover {
   width: 8rem;
-  flex: none;
-  background: var(--ink-2);
+  background: var(--ink);
   border: 1px solid var(--line);
+  align-self: start;
 }
 
-.chroniken-bandcover img {
+.download-cover img {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.chroniken-bandcover figcaption {
-  padding: .45rem .55rem .5rem;
-  border-top: 1px solid var(--line);
-  font-family: var(--data);
-  font-size: .62rem;
-  line-height: 1.35;
-  color: var(--fog-dim);
-}
-
 @media (min-width: 820px) {
-  [data-reihe="nc"] .werk {
-    grid-template-columns: 7.5rem 8rem minmax(0, 1fr) auto;
-    column-gap: 1.5rem;
+  .karte-werk.mit-cover {
+    grid-template-columns: 5rem 8rem minmax(0, 1fr) auto;
+    column-gap: 1.25rem;
   }
 }
 
-@media (max-width: 979px) {
-  .chroniken-bandcover {
-    width: min(9rem, 34vw);
-    margin-bottom: .8rem;
+@media (max-width: 819px) {
+  .download-cover {
+    width: min(10rem, 42vw);
+    margin-bottom: .5rem;
   }
 }
