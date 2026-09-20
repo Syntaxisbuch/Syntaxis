@@ -159,7 +159,7 @@ def rendere_faelle():
             cov = (f'<a class="fallcover" href="{f["cover"]}" target="_blank" rel="noopener" '
                    f'aria-label="Cover vergrößern: {f["titel"]}">'
                    f'<img src="{f.get("cover_klein", f["cover"])}" alt="Cover der Autopsie {f["nr"]:02d} — {f["titel"]}" loading="lazy" decoding="async">'
-                   f'</a>')
+                   f'<span class="ki-hinweis">KI-gestaltet</span></a>')
         zeilen.append(f'''<article class="fall{" mit-cover" if cov else ""}" id="au-{f["nr"]}">
         <span class="nr">{f["nr"]:02d}</span>
         {cov}
@@ -174,6 +174,41 @@ def rendere_faelle():
         </span>
       </article>''')
     return "".join(zeilen)
+
+
+def rendere_neuigkeiten():
+    D = json.loads((WURZEL / "data" / "neuigkeiten.json").read_text(encoding="utf-8"))
+    zeilen = []
+    for e in D["eintraege"]:
+        datum = e["datum"]
+        anzeige = f"{datum[8:10]}.{datum[5:7]}.{datum[0:4]}"
+        zeilen.append(f'''<article class="neuigkeit">
+          <span class="kennung">{anzeige}</span>
+          <div><h3><a href="{e["link"]}">{e["titel"]}</a></h3><p>{e["text"]}</p></div>
+        </article>''')
+    return "".join(zeilen)
+
+
+def rendere_quellen():
+    D = json.loads((WURZEL / "data" / "quellen.json").read_text(encoding="utf-8"))
+    bloecke = []
+    for g in D["gruppen"]:
+        eintraege = []
+        for e in g["eintraege"]:
+            kopf = e["name"]
+            if e.get("url"):
+                kopf = f'<a href="{e["url"]}" target="_blank" rel="noopener">{e["name"]} <span class="ext">↗</span></a>'
+            unter = e.get("autor", "")
+            eintraege.append(f'''<div class="gleintrag quelle">
+              <dt>{kopf}{f'<span class="autor">{unter}</span>' if unter else ""}
+                  <span class="kurz">{e["kurz"]}</span></dt>
+              <dd>{e["text"]}</dd>
+            </div>''')
+        bloecke.append(f'''<section class="glgruppe">
+          <h3 class="glgruppe-kopf">{g["name"]}<span class="kennung">{len(g["eintraege"])}</span></h3>
+          <dl class="glossar">{"".join(eintraege)}</dl>
+        </section>''')
+    return "".join(bloecke)
 
 
 def rendere_gefahrenskala():
@@ -367,6 +402,8 @@ BAUSTEINE = {
     "{{F404}}": rendere_f404,
     "{{F404_STIMMEN}}": rendere_f404_stimmen,
     "{{F404_BAENDE}}": rendere_f404_baende,
+    "{{QUELLEN}}": rendere_quellen,
+    "{{NEUIGKEITEN}}": rendere_neuigkeiten,
 }
 
 # slug: (Titel, Beschreibung, Reihenfarbe, zusätzliche Skripte)
@@ -404,6 +441,10 @@ SEITEN = {
     "glossar":     ("Glossar — Syntaxis",
                     "Signatur, Terrasse, Asservat, Toleranz-Zone: 35 Begriffe aus den Werken und der Stadt, durchsuchbar.", "",
                     '<script src="assets/js/glossar.js"></script>'),
+    "quellen":     ("Quellenverzeichnis — Syntaxis",
+                    "GWUP, Mimikama, Psiram, Hoaxilla und weiterführende Bücher: die realen Institutionen und Werke hinter dem Ansatz von Syntaxis.", "lr", ""),
+    "neuigkeiten": ("Neuigkeiten — Syntaxis",
+                    "Was zuletzt dazukam: neue Folgen, neue Bereiche, neue Werke — chronologisch, mit RSS-Feed.", "", ""),
     "404":         ("Seite nicht gefunden — Syntaxis",
                     "Diese Adresse liegt außerhalb des Koordinatensystems.", "", ""),
 }
@@ -467,8 +508,97 @@ def schreibe_robots():
     print("  robots.txt")
 
 
+def umleitungsseite(ziel):
+    """Eine einzelne Weiterleitungsseite. ziel ist der Pfad ab der Domain-Wurzel,
+    leer für die Startseite. Leitet per JavaScript weiter (behält #Sprungmarken
+    und ?Parameter der alten Adresse) und per <noscript>-Meta-Refresh als Rückfall."""
+    return f'''<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seite umgezogen — Syntaxis</title>
+<meta name="robots" content="noindex,follow">
+<noscript><meta http-equiv="refresh" content="0; url=/{ziel}"></noscript>
+<script>location.replace("/{ziel}" + location.hash + location.search);</script>
+<style>
+  body{{background:#0C1519;color:#DDE2DC;font-family:Georgia,serif;display:flex;
+       align-items:center;justify-content:center;min-height:100vh;margin:0;padding:2rem;
+       text-align:center}}
+  a{{color:#3FA8A0}}
+  p{{max-width:32rem;line-height:1.6;font-size:1.05rem}}
+</style>
+</head>
+<body>
+<p>Diese Seite ist umgezogen.<br>Falls die Weiterleitung nicht von selbst startet:
+<a href="/{ziel}">weiter zu syntaxisbuch.github.io/{ziel}</a></p>
+</body>
+</html>'''
+
+
+def schreibe_umleitungen():
+    """Alter Pfad /Syntaxis/… → neue Wurzeladresse, Seite für Seite.
+
+    Nach der Repository-Umbenennung (siehe README, Abschnitt „Domain“) existiert
+    der Projektordner /Syntaxis/ nicht mehr, unter dem die Seite bis dahin lief.
+    Jede dort verlinkte oder mit Lesezeichen versehene Unterseite würde sonst auf
+    eine 404 laufen — nicht nur die Startseite. Für jede reguläre Seite entsteht
+    deshalb hier ein winziger Umleiter am alten Ort, der project- und dateiweit
+    automatisch mitwächst: taucht ein neuer Eintrag in SEITEN auf, bekommt er
+    beim nächsten Bauen seinen Umleiter dazu, ohne dass das hier angefasst wird.
+    """
+    ordner = WURZEL / "Syntaxis"
+    ordner.mkdir(exist_ok=True)
+    ziele = {slug: ("" if slug == "index" else f"{slug}.html")
+             for slug in SEITEN if slug != "404"}
+    ziele["danke"] = "danke.html"  # kein SEITEN-Eintrag, aber eine echte, verlinkte Seite
+    for slug, ziel in ziele.items():
+        datei = "index.html" if slug == "index" else f"{slug}.html"
+        (ordner / datei).write_text(umleitungsseite(ziel), encoding="utf-8")
+    print(f"  Syntaxis/ — {len(ziele)} Umleitungen")
+
+
+def schreibe_feed():
+    """RSS 2.0 aus data/neuigkeiten.json — dieselbe Datei speist auch die
+    Neuigkeiten-Seite. Ein neuer Eintrag dort taucht hier automatisch auf,
+    ohne dass die Feed-Datei je von Hand angefasst werden muss."""
+    D = json.loads((WURZEL / "data" / "neuigkeiten.json").read_text(encoding="utf-8"))
+    def rfc822(datum):
+        j, m, t = int(datum[:4]), int(datum[5:7]), int(datum[8:10])
+        MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        return f"{t:02d} {MON[m-1]} {j} 12:00:00 +0000"
+    def esc(s):
+        return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+    items = []
+    for e in D["eintraege"]:
+        link = seiten_url(e["link"].replace(".html", "")) if e["link"] != "index.html" else SITE_URL + "/"
+        items.append(f'''  <item>
+    <title>{esc(e["titel"])}</title>
+    <link>{link}</link>
+    <guid isPermaLink="false">{e["datum"]}-{esc(e["titel"])}</guid>
+    <pubDate>{rfc822(e["datum"])}</pubDate>
+    <description>{esc(e["text"])}</description>
+  </item>''')
+    xml = f'''<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Syntaxis — Neuigkeiten</title>
+  <link>{SITE_URL}/neuigkeiten.html</link>
+  <description>Neue Folgen, Bereiche und Werke bei Syntaxis — einem Projekt über kritisches Denken.</description>
+  <language>de-de</language>
+  <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="{SITE_URL}/feed.xml" rel="self" type="application/rss+xml"/>
+{chr(10).join(items)}
+</channel>
+</rss>
+'''
+    (WURZEL / "feed.xml").write_text(xml, encoding="utf-8")
+    print("  feed.xml")
+
+
 if __name__ == "__main__":
     print("Syntaxis — Seiten werden gebaut:\n")
     baue()
     schreibe_sitemap()
     schreibe_robots()
+    schreibe_umleitungen()
+    schreibe_feed()
