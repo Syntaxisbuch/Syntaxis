@@ -1,0 +1,26 @@
+<section class="hero">
+  <div class="wrap">
+    <span class="kennung">180 m · Mittlere-Untere Terrasse · Hippocampus · Gedächtnis und Ablage</span>
+    <h1 style="margin-top:.5rem">Die Asservaten&shy;kammer</h1>
+    <p class="unter">Eine Akte aus dem Schrank ziehen, die Bilder an die Wand heften, die Fäden spannen. Klick auf ein Bild holt es heran.</p>
+  </div>
+</section>
+
+<section class="stratum" style="padding-top:0">
+  <div class="wrap">
+    <div class="schrank" id="schrank" role="tablist" aria-label="Aktenschrank"></div>
+    <div class="pinnwand-rahmen">
+      <header class="akten-kopf" id="aktenKopf"></header>
+      <div class="pinnwand" id="pinnwand" aria-live="polite"></div>
+    </div>
+    <p class="kennung" style="margin-top:1rem">Akten und Positionen stehen in <span class="kennung">data/bildband.json</span> · Fäden verbinden Bild-Kennungen</p>
+  </div>
+</section>
+
+<div class="leuchtkasten" id="leuchtkasten" role="dialog" aria-modal="true" aria-label="Bildansicht">
+  <button class="zu" id="lkZu" aria-label="Schließen">×</button>
+  <figure>
+    <img id="lkBild" alt="">
+    <figcaption><strong id="lkTitel"></strong><span id="lkText"></span><a id="lkLink" class="knopf still">Zur Akte</a></figcaption>
+  </figure>
+</div>
