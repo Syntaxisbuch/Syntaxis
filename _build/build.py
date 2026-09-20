@@ -140,8 +140,15 @@ def rendere_faelle():
     for f in r["faelle"]:
         balken = "".join(f'<i class="{"an" if i < f["level"] else ""}"></i>' for i in range(5))
         stufe = next(s for s in r["gefahrenskala"] if s["level"] == f["level"])
-        zeilen.append(f'''<article class="fall" id="au-{f["nr"]}">
+        cov = ""
+        if f.get("cover"):
+            cov = (f'<a class="fallcover" href="{f["cover"]}" target="_blank" rel="noopener" '
+                   f'aria-label="Cover vergrößern: {f["titel"]}">'
+                   f'<img src="{f.get("cover_klein", f["cover"])}" alt="Cover der Autopsie {f["nr"]:02d} — {f["titel"]}" loading="lazy" decoding="async">'
+                   f'</a>')
+        zeilen.append(f'''<article class="fall{" mit-cover" if cov else ""}" id="au-{f["nr"]}">
         <span class="nr">{f["nr"]:02d}</span>
+        {cov}
         <div>
           <h3>{f["titel"]}</h3>
           <p class="unter">{f["unter"]}</p>
@@ -247,6 +254,56 @@ def rendere_downloads():
     return "".join(blöcke)
 
 
+def rendere_f404():
+    D = json.loads((WURZEL / "data" / "frequenz404.json").read_text(encoding="utf-8"))
+    aus = []
+    for f in D["folgen"]:
+        zeilen = []
+        for s in f["transkript"]:
+            werbung = s["sprecher"] == "WERBUNG"
+            regie = f'<span class="regie">{s["regie"]}</span>' if s["regie"] else ""
+            zeilen.append(
+                '<div class="funkzeile%s"><span class="sprecher">%s</span>'
+                '<div class="rede">%s<p>%s</p></div></div>'
+                % (" werbeblock" if werbung else "", s["sprecher"], regie, s["text"]))
+        au = next((x for x in reihe("au")["faelle"] if x["nr"] == f.get("autopsie")), None)
+        shownote = ""
+        if au:
+            shownote = ('<div class="shownotes"><span class="kennung">SHOWNOTES</span>'
+                        '<p>Die vollständige Akte zu dieser Sendung: '
+                        f'<a href="autopsien.html#au-{au["nr"]}">Autopsie #{au["nr"]:02d} — {au["titel"]}</a>. '
+                        'Dort stehen die Belege, die Cassidy im Studio nur behauptet.</p></div>')
+        aus.append(f'''<article class="sendung" id="{f["id"]}">
+          <header class="sendungskopf">
+            <span class="kennung">SENDUNG {f["nummer"]} · {f["zeit"]} · {f["dauer"]}</span>
+            <h3>{f["titel"]}</h3>
+            <p class="setting">{f["setting"]}</p>
+            <p class="signal">[{f["signal"]}]</p>
+          </header>
+          <div class="funkprotokoll">{"".join(zeilen)}</div>
+          <p class="signal ende">[{f["ausklang"]}]</p>
+          {shownote}
+        </article>''')
+    return "".join(aus)
+
+
+def rendere_f404_stimmen():
+    D = json.loads((WURZEL / "data" / "frequenz404.json").read_text(encoding="utf-8"))
+    z = "".join(
+        f'<div class="zelle"><span class="kennung">{s["rolle"].upper()}</span>'
+        f'<h4>{s["name"]}</h4><p>{s["notiz"]}</p></div>' for s in D["reihe"]["stimmen"])
+    return f'<div class="raster drei">{z}</div>'
+
+
+def rendere_f404_baende():
+    D = json.loads((WURZEL / "data" / "frequenz404.json").read_text(encoding="utf-8"))
+    z = "".join(
+        f'<div class="werk"><span class="band">BAND {e["band"]}</span>'
+        f'<div><h3 style="font-size:1.2rem">{e["titel"]}</h3><p>{e["notiz"]}</p></div></div>'
+        for e in D["aus_den_baenden"])
+    return f'<div class="werkliste">{z}</div>'
+
+
 BAUSTEINE = {
     "{{LR_BAENDE}}": rendere_baende_lr,
     "{{LD_BAENDE}}": rendere_baende_ld,
@@ -256,6 +313,9 @@ BAUSTEINE = {
     "{{AU_FAELLE}}": rendere_faelle,
     "{{AU_SKALA}}": rendere_gefahrenskala,
     "{{DOWNLOADS}}": rendere_downloads,
+    "{{F404}}": rendere_f404,
+    "{{F404_STIMMEN}}": rendere_f404_stimmen,
+    "{{F404_BAENDE}}": rendere_f404_baende,
 }
 
 # slug: (Titel, Beschreibung, Reihenfarbe, zusätzliche Skripte)
@@ -285,6 +345,11 @@ SEITEN = {
                     "Was mit den Syntaxis-Werken erlaubt ist: CC BY-NC-ND 4.0 für die Chroniken, CC BY-NC-SA 4.0 für Landkarte und Autopsien.", "", ""),
     "impressum":   ("Impressum und Haftungsausschluss — Syntaxis",
                     "Herausgeber, Kontakt, neurale Assistenz und Haftungsausschluss.", "", ""),
+    "frequenz-404": ("Frequenz 404 — Der Piratensender aus Neocortex City",
+                    "Cassidy Null, Kevin und Dr. Tacheles streiten sich um drei Uhr nachts durch die Mythen der Stadt. Bonus zu den Chroniken von Neocortex City.", "nc", ""),
+    "bildband":    ("Die Asservatenkammer — Syntaxis",
+                    "Akten aus dem Schrank ziehen, Belege an die Pinnwand heften, den roten Faden spannen. Bildarchiv zu Neocortex City und den Fallakten.", "",
+                    '<script src="assets/js/bildband.js"></script>'),
     "404":         ("Seite nicht gefunden — Syntaxis",
                     "Diese Adresse liegt außerhalb des Koordinatensystems.", "", ""),
 }

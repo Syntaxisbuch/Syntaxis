@@ -597,3 +597,130 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
     margin-bottom: .5rem;
   }
 }
+
+/* ---------- 23. Frequenz 404 ---------- */
+.senderkasten { border: 1px solid var(--line); background: var(--ink-2); padding: 1.25rem; }
+.senderkasten .skala {
+  position: relative; height: 54px; border: 1px solid var(--line-hard); background: var(--ink);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; overflow: hidden;
+  background-image: repeating-linear-gradient(90deg, var(--line-soft) 0 1px, transparent 1px 14px);
+}
+.senderkasten .nadel { position: absolute; left: 62%; top: 4px; bottom: 4px; width: 2px; background: var(--nc); box-shadow: 0 0 10px var(--nc); }
+.senderkasten .zahl { font-family: var(--data); font-size: 1.5rem; color: var(--bone); letter-spacing: .1em; }
+.senderkasten dl { display: grid; grid-template-columns: auto 1fr; gap: .35rem .9rem; margin: 0; font-size: .87rem; }
+.senderkasten dt { font-family: var(--data); font-size: .62rem; letter-spacing: .08em; color: var(--fog-dim); padding-top: .2rem; }
+.senderkasten dd { margin: 0; color: var(--fog); }
+
+.sendung { border: 1px solid var(--line); background: var(--ink-2); padding: clamp(1.1rem, 3vw, 2rem); }
+.sendungskopf { border-bottom: 1px solid var(--line); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+.sendungskopf h3 { margin: .45rem 0 .6rem; }
+.sendungskopf .setting { margin: 0 0 .5rem; color: var(--fog); font-size: .93rem; font-style: italic; }
+.signal { font-family: var(--data); font-size: .72rem; color: var(--fog-dim); letter-spacing: .03em; margin: 0; }
+.signal.ende { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+
+.funkzeile { display: grid; gap: .2rem .9rem; padding: .7rem 0; border-top: 1px solid var(--line-soft); }
+.funkzeile:first-child { border-top: 0; }
+@media (min-width: 720px) { .funkzeile { grid-template-columns: 9.5rem 1fr; } }
+.funkzeile .sprecher { font-family: var(--data); font-size: .68rem; letter-spacing: .08em; color: var(--nc); padding-top: .35rem; }
+.funkzeile .rede p { margin: 0; }
+.funkzeile .regie { display: block; font-size: .84rem; font-style: italic; color: var(--fog-dim); margin-bottom: .3rem; }
+.funkzeile .regie::before { content: "["; }
+.funkzeile .regie::after { content: "]"; }
+
+.funkzeile.werbeblock { background: var(--ink); border-left: 2px solid var(--fog-dim); padding-left: 1rem; margin: .9rem 0; border-top: 0; }
+.funkzeile.werbeblock .sprecher { color: var(--fog-dim); }
+.funkzeile.werbeblock .rede p { font-style: italic; color: var(--fog); }
+
+.shownotes { margin-top: 1.5rem; padding: 1rem 1.15rem; border: 1px dashed var(--line-hard); }
+.shownotes p { margin: .4rem 0 0; font-size: .93rem; }
+
+/* Unterpunkt im Höhenmesser: Sektor statt Terrasse */
+.hm-stop[data-sub] { margin-left: 13px; }
+.hm-stop[data-sub] .pkt { width: 5px; height: 5px; background: transparent; }
+
+/* ---------- 24. Fallcover in der Autopsien-Liste ---------- */
+.fallcover { display: block; border: 1px solid var(--line); background: var(--ink-2); align-self: start; overflow: hidden; }
+.fallcover img { display: block; width: 100%; height: auto; transition: transform .35s cubic-bezier(.2,.6,.2,1), opacity .25s; }
+.fallcover:hover img { transform: scale(1.04); }
+.fallcover:hover { border-color: var(--akzent); }
+@media (min-width: 800px) {
+  .fall.mit-cover { grid-template-columns: 3.5rem 7.5rem 1fr 9.5rem; }
+}
+@media (max-width: 799px) { .fallcover { width: min(9rem, 38vw); margin: .3rem 0 .7rem; } }
+
+.seriencover { margin: 0 0 1.75rem; border: 1px solid var(--line); background: var(--ink-2); }
+.seriencover img { display: block; width: 100%; height: auto; }
+.seriencover figcaption { display: block; padding: .6rem .8rem; border-top: 1px solid var(--line); }
+
+/* ---------- 25. Asservatenkammer: Schrank, Pinnwand, Leuchtkasten ---------- */
+.schrank { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-bottom: 1.5rem; }
+@media (min-width: 700px) { .schrank { grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); } }
+.lade {
+  background: var(--ink-2); border: 0; color: inherit; text-align: left; cursor: pointer;
+  padding: 1rem 1.15rem; display: grid; gap: .25rem; font-family: var(--body);
+  border-top: 3px solid transparent; transition: background .18s, border-color .18s, transform .18s;
+}
+.lade:hover { background: var(--ink-3); transform: translateY(-2px); }
+.lade .sig { font-family: var(--data); font-size: .64rem; letter-spacing: .12em; color: var(--fog-dim); }
+.lade .tt { font-size: 1.02rem; }
+.lade .st { font-family: var(--data); font-size: .62rem; color: var(--fog-dim); }
+.lade[aria-selected="true"] { background: var(--ink-3); border-top-color: var(--akzent); }
+.lade[aria-selected="true"] .sig, .lade[aria-selected="true"] .st { color: var(--akzent); }
+
+.pinnwand-rahmen { border: 1px solid var(--line); background: var(--ink-2); }
+.akten-kopf { padding: 1.25rem clamp(1rem, 3vw, 1.75rem); border-bottom: 1px solid var(--line); }
+.akten-kopf h3 { margin: .4rem 0 .2rem; }
+.akten-kopf .unter { margin: 0 0 .5rem; color: var(--fog); font-size: .95rem; }
+.akten-kopf .notiz { margin: 0; color: var(--fog-dim); font-size: .9rem; font-style: italic; max-width: 70ch; }
+
+.pinnwand {
+  position: relative; aspect-ratio: 16 / 10; min-height: 420px; overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(217,138,43,.07), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(126,147,158,.04) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(0deg, rgba(126,147,158,.04) 0 1px, transparent 1px 34px),
+    var(--ink);
+}
+@media (max-width: 760px) { .pinnwand { aspect-ratio: 3 / 4; min-height: 520px; } }
+.pinnwand .leer { position: absolute; inset: 0; display: grid; place-items: center; color: var(--fog-dim); font-style: italic; }
+
+.faeden { position: absolute; inset: 0; width: 100%; height: 100%; }
+.faeden line { stroke: #B2352E; stroke-width: 1.2; opacity: .62; }
+
+.beleg {
+  position: absolute; margin: 0; width: clamp(74px, 8vw, 104px);
+  transform: translate(-50%, -50%) rotate(var(--dreh));
+  background: var(--ink-2); border: 1px solid var(--line-hard); padding: 6px 6px 0;
+  box-shadow: 0 10px 26px rgba(0,0,0,.55); cursor: zoom-in;
+  transition: transform .22s cubic-bezier(.2,.6,.2,1), box-shadow .22s, border-color .22s;
+  animation: anheften .4s var(--verzug) both;
+}
+@keyframes anheften { from { opacity: 0; transform: translate(-50%,-50%) rotate(var(--dreh)) scale(.88); } }
+@media (prefers-reduced-motion: reduce) { .beleg { animation: none; } }
+.beleg:hover, .beleg:focus-visible {
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.16);
+  box-shadow: 0 18px 40px rgba(0,0,0,.7); border-color: var(--akzent); z-index: 5;
+}
+.beleg .nadel {
+  position: absolute; top: -5px; left: 50%; margin-left: -5px; width: 10px; height: 10px;
+  border-radius: 50%; background: #C0453E; box-shadow: 0 1px 3px rgba(0,0,0,.8), inset 0 1px 1px rgba(255,255,255,.35);
+}
+.beleg img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 8%; }
+.beleg figcaption {
+  font-family: var(--data); font-size: .56rem; line-height: 1.35; letter-spacing: .02em;
+  padding: .4rem .1rem .45rem; color: var(--bone);
+}
+.beleg figcaption small { display: block; color: var(--fog-dim); font-size: .54rem; margin-top: .1rem; }
+
+.leuchtkasten { position: fixed; inset: 0; z-index: 95; display: none; background: rgba(5,9,12,.92); backdrop-filter: blur(4px); }
+.leuchtkasten.offen { display: grid; place-items: center; padding: clamp(1rem, 4vw, 3rem); }
+.leuchtkasten figure { margin: 0; max-width: min(100%, 760px); display: grid; gap: 1rem; }
+.leuchtkasten img { display: block; width: 100%; height: auto; max-height: 72vh; object-fit: contain; border: 1px solid var(--line-hard); }
+.leuchtkasten figcaption { display: grid; gap: .5rem; justify-items: start; }
+.leuchtkasten figcaption strong { font-family: var(--display); font-weight: 400; font-size: 1.4rem; }
+.leuchtkasten figcaption span { color: var(--fog); font-size: .95rem; max-width: 62ch; }
+.leuchtkasten .zu {
+  position: absolute; top: 1rem; right: 1.25rem; background: transparent; border: 1px solid var(--line-hard);
+  color: var(--bone); font-size: 1.5rem; line-height: 1; width: 2.4rem; height: 2.4rem; cursor: pointer;
+}
+.leuchtkasten .zu:hover { border-color: var(--akzent); color: var(--akzent); }

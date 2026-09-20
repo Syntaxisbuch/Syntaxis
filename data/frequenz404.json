@@ -1,0 +1,158 @@
+{
+ "reihe": {
+  "name": "Frequenz 404",
+  "untertitel": "Sechs Echokammern",
+  "ort": "Studio 6, Medienviertel · TL-01 · Sektor 5 · Untere Terrasse, 80 m",
+  "sendezeit": "Schicht 6 — zwischen drei und vier Uhr morgens",
+  "beschreibung": "Ein Piratensender irgendwo zwischen zwei offiziellen Frequenzen der Stadt. Drei Leute, ein Mikrofon, kein Netz darunter: Kevin bringt mit, was schön genug klingt, Tacheles zerlegt es, und Cassidy Null zählt die Leichen. Niemand hält hier einen Zehnzeiler am Stück — es wird dazwischengeredet, abgeschnitten und gegenangeredet, bis einer fertig ist.",
+  "hausregel": "Hart gegen die Behauptung, nachgiebig gegen den, der sie glaubt. Kevin ist kein Stichwortgeber, der einknickt, sondern der Grund, warum Tacheles echte Mechanik auffahren muss statt billiger Arroganz.",
+  "jingle": "Drei schiefe Töne, die nie ganz aufgelöst werden.",
+  "stimmen": [
+   {
+    "name": "Cassidy Null",
+    "rolle": "Moderation",
+    "notiz": "Zynischer Taktgeber, nicht artige Ansage. Kommentiert trocken den Schlagabtausch, zieht an der Ockham und schlägt den Gong, bevor das Studio brennt. Nimmt eigene Fehler zurück, wenn sie welche waren — auch auf Sendung."
+   },
+   {
+    "name": "Kevin",
+    "rolle": "Der Einwand",
+    "notiz": "Bringt reale Reizpunkte mit: Mohshärten, Werkzeugspuren, astronomische Anomalien. Glaubt, was schön genug klingt, und wird dafür nie vorgeführt. Sein Satz: „Das sagen Sie immer.“"
+   },
+   {
+    "name": "Dr. Tacheles",
+    "rolle": "Die Prüfung",
+    "notiz": "Methodischer Pfusch quält ihn körperlich. Kein geduldiger Gymnasiallehrer mit Erstens und Zweitens, sondern einer, der dazwischengrätscht. Cassidys Nachsatz: „Weil er es immer ist.“"
+   }
+  ],
+  "laufende_gags": [
+   "„Er hat recht, Kevin.“ — „Das sagen Sie immer.“ — „Weil er es immer ist.“",
+   "Die Werbeblöcke: NeuroKlar, GeistFuchs 3000, Sasquatch-Schreck, Ockham Filterlos, Däniken-Fix.",
+   "Der Abspann, nie zweimal gleich: „Schlaft gut, Neocortex City. Oder gar nicht.“"
+  ]
+ },
+ "folgen": [
+  {
+   "id": "f404-001",
+   "nummer": "404-001",
+   "titel": "Der Götter-TÜV und die Goldmine der Anunnaki",
+   "thema": "Prä-Astronautik",
+   "autopsie": 7,
+   "dauer": "ca. 3:30 min",
+   "ort": "Studio 6, Medienviertel",
+   "zeit": "Schicht 6, 3:47 Uhr",
+   "status": "neu",
+   "setting": "Der Aschenbecher quillt über vor Ockham-Kippen. Es riecht nach verschmortem Transistor, kaltem Filterkaffee und nasser Pappe.",
+   "signal": "Dreckiges Rauschen, das brutale Knacken einer zerschossenen Frequenz-Weiche, ein mechanischer Kippschalter rastet hart ein.",
+   "transkript": [
+    {
+     "sprecher": "CASSIDY NULL",
+     "text": "Frequenz 404. Drei Uhr siebenundvierzig. Für alle, die wach liegen, weil die Matratze durchhängt oder das eigene Leben. Kevin sitzt mir gegenüber und hat seit zehn Minuten nicht geblinzelt. Kevin, schießen Sie los, bevor Ihnen die Halsschlagader platzt.",
+     "regie": ""
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Sumer, Tacheles! Sechstausend Jahre her! Vorher: Ziegen hüten. Nachher: Aus dem absoluten Nichts Gesetze, Sechziger-Mathematik, Medizin und astronomische Karten. Die Sumerer selbst schreiben auf Ton, woher das Zeug kommt: von den Anunnaki. Götter, die vom Himmel fielen. Rollsiegel VA 243 im Berliner Museum: unser Sonnensystem, elf Himmelskörper plus ein zwölfter Brocken auf einer 3.600-Jahre-Umlaufbahn—",
+     "regie": "knallt ein anderthalb Kilo schweres Buch auf das Pult, die Pegelanzeigen springen panisch ins Dunkelrot"
+    },
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "Stopp. Kevin, atmen Sie. Bevor Sie den nächsten Unsinn von Zecharia Sitchin nachbeten: Nennen Sie mir das archäologische Museumsinventar, nicht den Klappentext eines Esoterik-Bestsellers.",
+     "regie": "schneidet ihm mitten im Satz schneidend das Wort ab"
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Ich habe Ihnen gerade das Siegel genannt, Tacheles! VA 243! Elf Punkte um eine Zentralsonne! Uranus, Neptun, Pluto—",
+     "regie": ""
+    },
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "Das Ding ist das private Rollsiegel eines Schreibers namens Ilshu! Der Stern in der Mitte hat in der sumerischen Ikonographie nicht einmal die Strahlen einer Sonne, sondern ist die Glyphe für einen gewöhnlichen Fixstern. Und die Punkte drumherum sind die Plejaden oder Dekoration! Es gibt im gesamten mesopotamischen Korpus nicht eine einzige astronomische Keilschrifttafel — weder im Mul.Apin noch im Enuma Elisch —, die mehr als fünf Planeten kennt. Merkur, Venus, Mars, Jupiter, Saturn. Ende der Durchsage.",
+     "regie": ""
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Schön abgebügelt, Herr Doktor! Die Philologen streiten seit zweihundert Jahren über Vokabeln! Was ist mit den Steinen? Puma Punku in Bolivien! 130 Tonnen schwere Blöcke auf viertausend Metern Höhe! Innenliegende 90-Grad-Kanten, millimetergenaue Bohrlöcher, H-Blöcke, die ineinandergreifen wie vorgefertigte Industriemodule. Die offizielle Archäologie stellt sich hin und faselt von Lamasehnen und Kupfermeißeln. Kupfer an Andesit! Versuchen Sie mal, mit einem Kupferschlägel bolivianischen Andesit zu bearbeiten, Tacheles — das Einzige, was sich verformt, ist Ihr Kupfer!",
+     "regie": ""
+    },
+    {
+     "sprecher": "CASSIDY NULL",
+     "text": "Er hat Sie, Tacheles. Die Kupferkeil-Story klang schon im Grundstudium wie eine Notlüge der Fakultät.",
+     "regie": "zieht an der Ockham, die Glut zischt"
+    },
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "Er hat gar nichts, Cassidy, außer einer YouTube-Doku im Kurzzeitgedächtnis! Kevin, die H-Blöcke von Puma Punku sind kein Andesit. Es ist roter Sandstein. Mohshärte: drei bis vier. Da ritze ich Ihnen mit einem Taschenmesser die Einkaufsliste rein! Die wenigen echten Andesit-Platten dort wurden mit Diorit-Klopfern bearbeitet — vulkanisches Gestein, das härter ist als der Andesit selbst. Jean-Pierre Protzen hat sich mit Sand, Wasser und zwei Steinen hingesetzt und die Kanten in vier Stunden exakt so nachgeschliffen. Keine Laser. Keine Aliens. Dreckige, schmerzhafte Handarbeit.",
+     "regie": ""
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Und die Präzision?",
+     "regie": ""
+    },
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "Geduld, Kevin! Das Zeug, das man nicht mehr kennt, wenn man sein Leben vor Bildschirmen verbringt! Und wissen Sie, was mich an Ihrer Alien-These wirklich anwidert?",
+     "regie": ""
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Erleuchten Sie mich.",
+     "regie": ""
+    },
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "Es ist der blanke, zynische Kolonialismus des gesättigten Wohlstandsbürgers! Jedes Mal, wenn Menschen ohne weiße Hautfarbe vor zweitausend Jahren etwas gebaut haben, das größer war als eine Scheune, kommt ein Typ wie Däniken im Safari-Hemd aus dem Busch gekrochen und ruft: „Das können diese Wilden unmöglich selbst gekonnt haben! Da mussten hochtechnisierte Götter mit Flugscheiben landen!“ Die Griechen durften den Parthenon von Hand bauen. Aber die Inka, die Maya und die Ägypter waren zu blöd für einen rechten Winkel? Wir stehlen unseren eigenen Vorfahren das Genie, nur um die Lücke mit Untertassen zuzukleistern!",
+     "regie": ""
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Das werfe ich den Ureinwohnern nicht vor, Tacheles. Aber warum erzählen dann fast alle alten Kulturen denselben Mythos? Die Dogon in Mali mit Sirius B. Die Hopi mit den Himmelslehrern. Warum träumt die halbe Menschheit auf getrennten Kontinenten denselben Traum von Lehrern aus den Sternen?",
+     "regie": "wird leiser, lässt sich aber nicht beiseite wischen"
+    },
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "Weil der Himmel der einzige Ort war, den der Mensch nicht betreten konnte, Kevin. Wenn du im Dreck hockst, die Ernte verdorrt und dein Kind an Ruhr stirbt — wohin siehst du? Nach oben. Zu dem, was ewig brennt und nicht friert. Und die Dogon? Untersuchen Sie die Akte: Zwei französische Anthropologen, Griaule und Dieterlen, saßen in den 1930ern monatelang bei den Dogon und haben ihnen europäische Sternkarten erklärt! Als spätere Forscher nachfragten, wusste kein einziger Älterer von Sirius B — außer denen, die Griaule vorher interviewt hatte. Das war kein kosmisches Erbe. Das war westlicher Müll, den wir dort abgeladen und hinterher als fremdes Wunder wieder ausgegraben haben!",
+     "regie": "seine Stimme verliert den Zynismus, wird dunkel und ruhig"
+    },
+    {
+     "sprecher": "CASSIDY NULL",
+     "text": "Und während Kevin noch überlegt, ob er das Gold seiner Zahnfüllungen vor den Sumerern verstecken muss: Kurz zu unserem Sponsor.",
+     "regie": "drückt die Kippe im Glasaschenbecher aus"
+    },
+    {
+     "sprecher": "WERBUNG",
+     "text": "Sind Ihre Monumentalbauten mal wieder windschief? Halten Ihre Nachbarn Sie für zu primitiv für Geometrie? Probieren Sie „Däniken-Fix“ — das patentierte Baustellen-Spray mit echten Traktorstrahl-Aerosolen! Verwandelt gewöhnlichen Sandstein im Handumdrehen in außerirdische Landebahnen. Funktioniert ohne Hebelgesetze, ohne Muskelkraft und garantiert ohne historische Quellenarbeit. Bestellen Sie jetzt und erhalten Sie ein sumerisches Wörterbuch gratis dazu — Vokabeln frei erfunden!",
+     "regie": "Schrilles, knisterndes 80er-Jahre-Klimpern, gefolgt von tiefem Weltraum-Brummen"
+    },
+    {
+     "sprecher": "CASSIDY NULL",
+     "text": "Frequenz 404. Vier Uhr null zwei. Kein Nibiru im Orbit. Keine Gen-Ingenieure im Euphrat. Wenn Sie das nächste Mal vor einer Pyramide stehen: Lassen Sie die Raumschiffe im Hangar. Staunen Sie lieber darüber, was zwei Hände, ein Seil und ein sturer Kopf bewegen können, wenn man ihnen nicht einredet, dass sie für alles einen Außerirdischen mit Flaschenzug brauchen. Die echten Akten zu Schwerkraft-Lügen und der Anatomie von Wüstenmythen stehen auf unserer Homepage. Ich bin Cassidy Null. Schlafen Sie schlecht. Die Götter haben Urlaub.",
+     "regie": ""
+    }
+   ],
+   "ausklang": "Signal bricht mit einem harschen, trockenen Knacken ab, gefolgt von der leeren Stille der Nacht."
+  }
+ ],
+ "aus_den_baenden": [
+  {
+   "band": "II",
+   "titel": "Die Hohlerde",
+   "notiz": "Kevin will die kleine Sonne im Bauch der Welt, Tacheles bringt Scherwellen und die Waage. Am Ende gibt Cassidy zu, dass die Sehnsucht nach einer Tür im Boden nichts Dummes ist."
+  },
+  {
+   "band": "III",
+   "titel": "Der Blutmond",
+   "notiz": "Kevin rechnet Vollmond und Kernschatten als Batterien in Reihe. Tacheles: „Das nennt man nicht Schicksal. Das nennt man Mittwoch.“"
+  },
+  {
+   "band": "III",
+   "titel": "Schicht 6 — die Richtigstellung",
+   "notiz": "Cassidy nimmt eine eigene Folge zurück, weil danach jemand mit einem Gewehr auf dem Balkon saß. Sie lässt die Folge online und hängt die Korrektur davor. Die stärkste Sendung der Reihe."
+  },
+  {
+   "band": "IV",
+   "titel": "Vier Audio-Intercepts",
+   "notiz": "Die sechs Stimmen aus einem Kehlkopf, die klingelnden Telefone, die Bögen — und zum Schluss eine Sendung, in der niemand einen Aufmacher vorbereitet hat."
+  }
+ ]
+}

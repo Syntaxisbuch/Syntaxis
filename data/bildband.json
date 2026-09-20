@@ -1,0 +1,183 @@
+{
+ "hinweis": "Jede Akte ist eine Pinnwand. Bilder werden über x/y in Prozent gesetzt, Fäden verbinden Bild-IDs.",
+ "akten": [
+  {
+   "id": "akte-a",
+   "signatur": "AKTE A",
+   "titel": "Sektion A — Der Kosmos voller Lügen",
+   "untertitel": "Zehn abgeschlossene Fallakten, in Leserichtung verfadet",
+   "status": "offen",
+   "notiz": "Die Reihenfolge ist kein Zufall: Sie beginnt beim saubersten Körper und endet bei dem, der sich nicht sezieren lässt.",
+   "bilder": [
+    {
+     "id": "au01",
+     "bild": "assets/img/autopsien/au-01-flache-erde-klein.webp",
+     "gross": "assets/img/autopsien/au-01-flache-erde.webp",
+     "titel": "#01 Die flache Erde",
+     "unterschrift": "Das Großprojekt der Selbstverblendung",
+     "notiz": "Traue nur deinen eigenen Augen — der Satz, der wie Unabhängigkeit klingt und ihr Gegenteil ist.",
+     "ziel": "autopsien.html#au-1",
+     "x": 10,
+     "y": 20,
+     "dreh": -0.3
+    },
+    {
+     "id": "au02",
+     "bild": "assets/img/autopsien/au-02-mondlandung-klein.webp",
+     "gross": "assets/img/autopsien/au-02-mondlandung.webp",
+     "titel": "#02 Die Mondlandungs-Lüge",
+     "unterschrift": "Wie ein Triumph zur Verschwörung wurde",
+     "notiz": "Wer das Werk von vierhunderttausend Menschen eine Filmproduktion nennt, widerlegt keine Theorie.",
+     "ziel": "autopsien.html#au-2",
+     "x": 30,
+     "y": 15,
+     "dreh": 0.38
+    },
+    {
+     "id": "au03",
+     "bild": "assets/img/autopsien/au-03-chemtrails-klein.webp",
+     "gross": "assets/img/autopsien/au-03-chemtrails.webp",
+     "titel": "#03 Chemtrails",
+     "unterschrift": "Der Krieg über unseren Köpfen",
+     "notiz": "Eine echte Angst um die unsichtbare Umwelt, die sich am Himmel ein Bild sucht.",
+     "ziel": "autopsien.html#au-3",
+     "x": 50,
+     "y": 21,
+     "dreh": 2.71
+    },
+    {
+     "id": "au04",
+     "bild": "assets/img/autopsien/au-04-klimawandel-klein.webp",
+     "gross": "assets/img/autopsien/au-04-klimawandel.webp",
+     "titel": "#04 Klimawandel",
+     "unterschrift": "Desinformation und die thermodynamische Realität",
+     "notiz": "Der Zweifel war ein Produkt, hergestellt und verkauft. Die Kurve war nie in Zweifel.",
+     "ziel": "autopsien.html#au-4",
+     "x": 70,
+     "y": 16,
+     "dreh": -0.22
+    },
+    {
+     "id": "au05",
+     "bild": "assets/img/autopsien/au-05-hohl-erde-klein.webp",
+     "gross": "assets/img/autopsien/au-05-hohl-erde.webp",
+     "titel": "#05 Die Hohl-Erde",
+     "unterschrift": "Das Leben im Inneren",
+     "notiz": "Wo die Leugnung das vermessene Außen verweigert, erfindet dieser Mythos ein unvermessenes Innen.",
+     "ziel": "autopsien.html#au-5",
+     "x": 89,
+     "y": 24,
+     "dreh": 0.05
+    },
+    {
+     "id": "au06",
+     "bild": "assets/img/autopsien/au-06-astrologie-klein.webp",
+     "gross": "assets/img/autopsien/au-06-astrologie.webp",
+     "titel": "#06 Astrologie",
+     "unterschrift": "Der kosmische Spiegel, der jedem schmeichelt",
+     "notiz": "Der Barnum-Effekt in Reinform: eine Aussage, die auf jeden passt, gelesen als eine über einen selbst.",
+     "ziel": "autopsien.html#au-6",
+     "x": 12,
+     "y": 64,
+     "dreh": 0.56
+    },
+    {
+     "id": "au07",
+     "bild": "assets/img/autopsien/au-07-prae-astronautik-klein.webp",
+     "gross": "assets/img/autopsien/au-07-prae-astronautik.webp",
+     "titel": "#07 Prä-Astronautik",
+     "unterschrift": "Als die Götter Astronauten waren",
+     "notiz": "Der Mythos nimmt außereuropäischen Kulturen ihre eigene Ingenieursleistung weg und schenkt sie dem All.",
+     "ziel": "autopsien.html#au-7",
+     "x": 32,
+     "y": 70,
+     "dreh": -2.02
+    },
+    {
+     "id": "au08",
+     "bild": "assets/img/autopsien/au-08-roswell-klein.webp",
+     "gross": "assets/img/autopsien/au-08-roswell.webp",
+     "titel": "#08 Roswell und die stillen Götter",
+     "unterschrift": "Der Zwischenfall, der nie endet",
+     "notiz": "Ein Ereignis von 1947, das erst dreißig Jahre später zu dem wurde, was heute erzählt wird.",
+     "ziel": "autopsien.html#au-8",
+     "x": 53,
+     "y": 63,
+     "dreh": 0.08
+    },
+    {
+     "id": "au09",
+     "bild": "assets/img/autopsien/au-09-nibiru-klein.webp",
+     "gross": "assets/img/autopsien/au-09-nibiru.webp",
+     "titel": "#09 Die Planet-Nibiru-Panik",
+     "unterschrift": "Der Planet, der immer kommt und nie ankommt",
+     "notiz": "Eine Prophezeiung, die jedes Scheitern überlebt, weil sie sich nur ein neues Datum sucht.",
+     "ziel": "autopsien.html#au-9",
+     "x": 73,
+     "y": 68,
+     "dreh": 0.83
+    },
+    {
+     "id": "au10",
+     "bild": "assets/img/autopsien/au-10-simulation-klein.webp",
+     "gross": "assets/img/autopsien/au-10-simulation.webp",
+     "titel": "#10 Die Simulation",
+     "unterschrift": "Leben wir in einer Matrix?",
+     "notiz": "Die einzige Autopsie, deren Gegenstand nicht falsch ist, sondern unprüfbar — und genau darum interessant.",
+     "ziel": "autopsien.html#au-10",
+     "x": 90,
+     "y": 76,
+     "dreh": 1.88
+    }
+   ],
+   "faeden": [
+    [
+     "au01",
+     "au02"
+    ],
+    [
+     "au02",
+     "au03"
+    ],
+    [
+     "au03",
+     "au04"
+    ],
+    [
+     "au04",
+     "au05"
+    ],
+    [
+     "au05",
+     "au06"
+    ],
+    [
+     "au06",
+     "au07"
+    ],
+    [
+     "au07",
+     "au08"
+    ],
+    [
+     "au08",
+     "au09"
+    ],
+    [
+     "au09",
+     "au10"
+    ]
+   ]
+  },
+  {
+   "id": "akte-nc",
+   "signatur": "AKTE NC",
+   "titel": "Neocortex City — Bildband",
+   "untertitel": "Die Stadt in Ansichten",
+   "status": "in Vorbereitung",
+   "notiz": "Hier kommen die Stadtansichten hinein: Terrassen, Sektoren, der Tower im Schnitt, die Sky Bridges. Sobald die ersten Bilder da sind, werden sie hier angeheftet und über die Fäden mit den Fällen verbunden, in denen sie vorkommen.",
+   "bilder": [],
+   "faeden": []
+  }
+ ]
+}
