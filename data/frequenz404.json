@@ -28,9 +28,87 @@
    "„Er hat recht, Kevin.“ — „Das sagen Sie immer.“ — „Weil er es immer ist.“",
    "Die Werbeblöcke: NeuroKlar, GeistFuchs 3000, Sasquatch-Schreck, Ockham Filterlos, Däniken-Fix.",
    "Der Abspann, nie zweimal gleich: „Schlaft gut, Neocortex City. Oder gar nicht.“"
-  ]
+  ],
+  "verworfen": "Über zwanzig Folgen sind verworfen worden, weil das Thema nicht zu den Werken passte. Was hier läuft, hat eine Akte."
  },
  "folgen": [
+  {
+   "id": "f404-000",
+   "nummer": "404-000",
+   "titel": "Der Null-Test",
+   "thema": "Auftakt",
+   "autopsie": null,
+   "dauer": "ca. 2:00 min",
+   "ort": "Studio 6, Medienviertel",
+   "zeit": "Schicht 6",
+   "status": "Auftakt",
+   "art": "teaser",
+   "setting": "Ein offenes Leitungsbrummen. Das dumpfe Scheppern eines umgestoßenen Aschenbechers, das heisere Pfeifen eines übersteuerten Pegels und zwei Stimmen, die sich bereits im Vorraum verkeilt haben.",
+   "signal": "Dreckiges Knacken, Frequenzdrift, eine Rückkopplung schneidet ins Ohr, dann schlägt ein Mikrofonständer hart gegen Holz.",
+   "transkript": [
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "… und wenn Sie dieses Wort noch einmal ohne Anführungszeichen in den Raum werfen, Kevin, fliegt Ihr Notizblock aus dem Fenster! „Quantenverschränkung des Geistes“! Das ist kein physikalischer Befund, das ist linguistischer Sondermüll für Leute, die in der Mittelstufe bei der Bruchrechnung geweint haben!",
+     "regie": "bereits mitten im Satz, gereizt, schneidend"
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Sie haben einfach Schiss, Tacheles! Sie sitzen auf Ihrem akademischen Hochsitz und zitieren Peer-Review-Statistiken, während draußen neunzig Prozent der Menschheit Erfahrungen machen, die in Ihre sauberen Tabellen nicht reinpassen! Telepathie, Nahtoderlebnisse, Spukphänomene, Wasseradern — glauben Sie ernsthaft, acht Milliarden Menschen sind kollektiv debil, nur weil Ihr Lehrbuch an der Schlafzimmertür aufhört?",
+     "regie": "knallt eine Akte auf den Tisch"
+    },
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "Debil? Nein, Kevin! Evolutionär stinkfaul! Das menschliche Gehirn ist eine zehntausend Jahre alte Energiesparlampe! Es erfindet lieber einen Dämon auf der Bettkante oder ein interstellares Mutterschiff im Wüstensand, als drei Minuten lang die eigene kognitive Verzerrung auszuhalten! Sie verwechseln Ihr viszerales Bauchgefühl mit einer Messreihe!",
+     "regie": ""
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Und Sie verwechseln Ihre pathologische Arroganz mit Aufklärung! Was ist mit Homöopathie? Millionen Patienten schwören darauf! Was ist mit dem Placebo-Effekt? Wenn eine verdammte Zuckerpille nachweisbar den Blutdruck senkt, wer heilt dann da? Die Pharmaindustrie oder der Glaube?",
+     "regie": ""
+    },
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "Die Avogadro-Konstante heilt da jedenfalls nicht, Sie Hohlkopf! Wenn Sie ein Molekül durch den Atlantik rühren, trinken Sie am Ende teures Leitungswasser und Einbildung! Das ist kein Mysterium, das ist Betrug mit Beipackzettel!",
+     "regie": "brüllt fast ins Mikrofon"
+    },
+    {
+     "sprecher": "CASSIDY NULL",
+     "text": "Ruhe im Gehege. Beide.",
+     "regie": "schlägt mit einem schweren Feuerzeug auf die Tischplatte, Metall auf Holz, Hall"
+    },
+    {
+     "sprecher": "CASSIDY NULL",
+     "text": "Der Kanal steht seit sechzig Sekunden offen, ihr Genies. Schicht 6 hört zu.",
+     "regie": "eine Sekunde feindselige Stille, dann das trockene Schnappen des Zippos"
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Was? Wir sind schon auf Sendung?",
+     "regie": "überrumpelt"
+    },
+    {
+     "sprecher": "CASSIDY NULL",
+     "text": "Seit Tacheles Ihnen das Physikbuch an den Schädel werfen wollte. Willkommen auf Frequenz 404. Die Frequenz auf den sechs Echokammern, die nicht dafür bezahlt wird, euch den Kopf zu streicheln. Was ihr da gerade gehört habt, ist die Betriebstemperatur. Wir machen hier keine Kuschel-Podcasts für den Feierabend. Ab jetzt wird jede Woche seziert. Alles, wovor ihr nachts Angst habt, alles, woran ihr euch tagsüber festklammert, und jede bequeme Lüge, die ihr für gesunden Menschenverstand haltet.",
+     "regie": "ins Mikrofon, trocken, rau, ohne jede Begrüßungsfloskel"
+    },
+    {
+     "sprecher": "DR. TACHELES",
+     "text": "Grenzwissenschaften, die keine Wissenschaft sind. Pseudomedizin, die an eurer Verzweiflung verdient. Antike Götter-Astronauten, Kryptozoologie, die Psychologie der Schlaflähmung und der ganz alltägliche Aberglaube, mit dem ihr euch davor drückt, die Realität so zu nehmen, wie sie ist: verdammt kalt, absolut gesetzmäßig und völlig unbeeindruckt von euren Wünschen.",
+     "regie": "immer noch außer Atem, aber präzise"
+    },
+    {
+     "sprecher": "KEVIN",
+     "text": "Und wir lassen die unbequemen Fragen stehen! Wir prüfen die Akten, die die Herren Professoren gern im Giftschrank vergessen! Wir reden über das, was Zeugen wirklich sehen, bevor die Reduktionisten es glattbügeln!",
+     "regie": "hinterher, bissig"
+    },
+    {
+     "sprecher": "CASSIDY NULL",
+     "text": "Kevin bringt den Schotter mit. Tacheles das Seziermesser. Ich halte die Stoppuhr, bevor sie sich die Gurgel umdrehen. Die erste reguläre Akte wird in Kürze geladen. Bis dahin: Zieht euch warm an, klickt euch durch die Dossiers und lernt wieder zu denken, statt nur zu glauben. Ich bin Cassidy Null. Schlaft schlecht. Wir fangen gerade erst an.",
+     "regie": ""
+    }
+   ],
+   "ausklang": "Ein harter Tritt gegen das Pult, ein Pfeifen, das Signal stirbt mit einem abrupten Knacken ab."
+  },
   {
    "id": "f404-001",
    "nummer": "404-001",
