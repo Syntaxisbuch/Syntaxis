@@ -152,11 +152,12 @@
         { art: "Seite", titel: "Impressum und Haftungsausschluss", unter: "Kontakt, Urheber, neurale Assistenz", href: "impressum.html", gew: 2 }
       );
       try {
-        const [werke, stadt, wz, gf] = await Promise.all([
+        const [werke, stadt, wz, gf, f404] = await Promise.all([
           fetch("data/werke.json").then(r => r.json()).catch(() => null),
           fetch("data/stadt.json").then(r => r.json()).catch(() => null),
           fetch("data/werkzeuge.json").then(r => r.json()).catch(() => null),
-          fetch("data/gegenfragen.json").then(r => r.json()).catch(() => null)
+          fetch("data/gegenfragen.json").then(r => r.json()).catch(() => null),
+          fetch("data/frequenz404.json").then(r => r.json()).catch(() => null)
         ]);
         werke?.reihen.forEach(r => {
           eintraege.push({ art: "Reihe", titel: r.titel, unter: r.claim, href: r.seite, gew: 3 });
@@ -177,6 +178,9 @@
         }));
         wz?.redflags.punkte.forEach(p => eintraege.push({
           art: "Red Flag " + p.nr, titel: p.name, unter: p.frage, href: "werkzeuge.html#redflags", gew: 1
+        }));
+        f404?.folgen.forEach(f => eintraege.push({
+          art: f.nummer, titel: f.titel, unter: f.thema, href: "frequenz-404.html#" + f.id, gew: 1
         }));
         gf?.forEach(g => eintraege.push({
           art: g.id, titel: g.behauptung, unter: "Gegenfrage aus Autopsie #" + String(g.au).padStart(2, "0"),
