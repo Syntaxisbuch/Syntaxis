@@ -62,7 +62,6 @@
 <section class="hero">
   <div class="wrap hero-raster">
     <div>
-      <p class="devise">Fakten sezieren. Muster erkennen. Klarheit gewinnen.</p>
       <h1>Nicht Überlegenheit.<br>Immunität.</h1>
       <p class="unter">Vier Reihen über das Prüfen von Behauptungen: ein Handbuch in neun Bänden, eine Krimireihe, ein forensisches Archiv aus Fallakten — und eine Stadt, die gebaut ist wie ein menschliches Gehirn.</p>
       <p class="unter" style="margin-top:.9rem"><strong>Alles kostenlos.</strong> Als PDF und EPUB, unter Creative-Commons-Lizenz.</p>
@@ -130,7 +129,6 @@
 
     <div class="pforten">
       <a class="pforte" data-reihe="lr" href="landkarte.html">
-        <span class="pforte-streifen" style="background-image:url(assets/img/auszug/pforte-lr.webp)" aria-hidden="true"></span>
         <div class="zeile"><span class="marke">LR · HAUPTWERK</span><span class="kennung">500 m</span></div>
         <h3>Die Landkarte der Realität</h3>
         <p>Neun Bände über das Handwerk selbst. Falsifizierbarkeit, Beweislast, die Hierarchie der Evidenz — und was man mit einem Menschen macht, der etwas Falsches glaubt und deshalb nicht dumm ist.</p>
@@ -138,7 +136,6 @@
       </a>
 
       <a class="pforte" data-reihe="nc" href="chroniken.html">
-        <span class="pforte-streifen" style="background-image:url(assets/img/auszug/pforte-nc.webp)" aria-hidden="true"></span>
         <div class="zeile"><span class="marke">NC · BELLETRISTIK</span><span class="kennung">80 m</span></div>
         <h3>Chroniken von Neocortex City</h3>
         <p>Kriminalfälle für einen Klienten, den niemand vorladen kann. Hardboiled-Noir mit belegtem Anhang: jede Randnotiz führt zu einem echten Beweisstück. Die Bände bauen aufeinander auf.</p>
@@ -146,7 +143,6 @@
       </a>
 
       <a class="pforte" data-reihe="au" href="autopsien.html">
-        <span class="pforte-streifen" style="background-image:url(assets/img/auszug/pforte-au.webp)" aria-hidden="true"></span>
         <div class="zeile"><span class="marke">AU · FORENSIK</span><span class="kennung">−60 m</span></div>
         <h3>Autopsien der Schatten</h3>
         <p>Jeder Mythos einzeln auf dem Tisch, nach demselben Protokoll, in seiner stärksten Fassung — nie in seiner dümmsten. Zehn Akten sind fertig, 105 sind geplant.</p>
@@ -154,7 +150,6 @@
       </a>
 
       <a class="pforte" data-reihe="ld" href="licht.html">
-        <span class="pforte-streifen leer" aria-hidden="true"><span class="hinweis">noch unbelichtet</span></span>
         <div class="zeile"><span class="marke">LD · POPULÄRWISSENSCHAFT</span><span class="kennung">400 m</span></div>
         <h3>Licht der Realität</h3>
         <p>Ein Mythos als Türöffner, dahinter die Wissenschaft, die ihn auflöst. Warum Stahl im Feuer nicht bricht, sondern weich wird. Ein Band je Fachgebiet. Noch nicht erschienen.</p>
@@ -324,38 +319,53 @@
 })();
 </script>
 
+<!-- START: LESERBRIEF / BEOBACHTUNGSPROTOKOLL -->
 <section class="stratum" id="kontakt">
   <div class="wrap">
     <div class="stratum-kopf">
       <h2>Anlage: Beobachtungsprotokoll</h2>
       <span class="hoehe">Einreichung zur Akte — Leserbrief und Kontakt</span>
     </div>
-    <p class="gross schmal">Reichen Sie Ihre Analysen, Zweifel oder Ergänzungen zur Akte ein. Kuratierte Einträge werden nach Prüfung in das Hauptdokument überführt oder privat beantwortet.</p>
-    <form class="protokollform" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="584c8a1f-102e-4d8f-80f0-0aceacd0f188">
-      <input type="hidden" name="redirect" value="https://syntaxisbuch.github.io/Syntaxis/danke.html">
-      <input type="hidden" name="subject" value="Syntaxis — Allgemeine Einreichung">
-      <input type="hidden" name="Betreff" value="Allgemeine Einreichung">
-      <input type="checkbox" name="botcheck" class="honigtopf" tabindex="-1" autocomplete="off">
-      <div class="feldpaar">
-        <div>
-          <label class="kennung" for="fName-allgem">IDENTIFIKATION (OPTIONAL)</label>
-          <input class="feld" type="text" id="fName-allgem" name="Name" placeholder="Pseudonym oder Anonym">
+    
+    <div style="max-width: 800px; padding: 2rem 0;">
+      <p class="gross" style="margin-bottom: 2.5rem;">Reichen Sie Ihre Analysen, Zweifel oder Ergänzungen zur Akte ein. Kuratierte Einträge werden nach Prüfung in das Hauptdokument überführt oder privat beantwortet.</p>
+      
+      <!-- Web3Forms API -->
+      <form action="https://api.web3forms.com/submit" method="POST" style="font-family: 'Azeret Mono', monospace;">
+        
+        <!-- WICHTIG: Hier deinen Key einfügen! -->
+        <input type="hidden" name="access_key" value="584c8a1f-102e-4d8f-80f0-0aceacd0f188">
+        
+        <!-- Weiterleitung zur neuen Danke-Seite -->
+        <input type="hidden" name="redirect" value="https://syntaxisbuch.github.io/Syntaxis/danke.html">
+        
+        <!-- Honeypot zur Spam-Abwehr -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <div style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 1.5rem;">
+          <div>
+            <label for="name" class="kennung" style="display: block; margin-bottom: 0.5rem; color: inherit;">Identifikation (Optional)</label>
+            <input type="text" id="name" name="Name" placeholder="Pseudonym oder 'Anonym'" style="width: 100%; padding: 0.8rem; font-family: inherit; border: 1px solid rgba(126,147,158,.55); background: transparent; color: inherit; box-sizing: border-box;">
+          </div>
+          <div>
+            <label for="email" class="kennung" style="display: block; margin-bottom: 0.5rem; color: inherit;">Rückkanal (Optional)</label>
+            <input type="email" id="email" name="Email" placeholder="e-mail@adresse.xyz" style="width: 100%; padding: 0.8rem; font-family: inherit; border: 1px solid rgba(126,147,158,.55); background: transparent; color: inherit; box-sizing: border-box;">
+          </div>
         </div>
-        <div>
-          <label class="kennung" for="fMail-allgem">RÜCKKANAL (OPTIONAL)</label>
-          <input class="feld" type="email" id="fMail-allgem" name="Email" placeholder="e-mail@adresse.xyz">
+
+        <div style="margin-bottom: 2rem;">
+          <label for="message" class="kennung" style="display: block; margin-bottom: 0.5rem; color: inherit;">Protokolleintrag</label>
+          <textarea id="message" name="Nachricht" rows="7" required placeholder="Ihre Ausführungen..." style="width: 100%; padding: 0.8rem; font-family: inherit; border: 1px solid rgba(126,147,158,.55); background: transparent; color: inherit; box-sizing: border-box; resize: vertical;"></textarea>
         </div>
-      </div>
-      <div class="feldzeile">
-        <label class="kennung" for="fText-allgem">PROTOKOLLEINTRAG · BETREFF ALLGEMEINE EINREICHUNG</label>
-        <textarea class="feld" id="fText-allgem" name="Nachricht" rows="7" required placeholder="Ihre Ausführungen …"></textarea>
-      </div>
-      <button class="knopf voll" type="submit">Zur Akte einreichen</button>
-      <p class="kennung" style="margin-top:.9rem">Es werden nur die Angaben übertragen, die du hier einträgst. Keine Cookies, kein Tracking.</p>
-    </form>
+
+        <div>
+          <button type="submit" class="knopf voll" style="font-family: inherit;">[ DATEN ÜBERMITTELN ]</button>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
+<!-- ENDE: LESERBRIEF -->
 
 </main>
 
