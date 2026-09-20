@@ -14,4 +14,6 @@
   <url><loc>https://syntaxisbuch.github.io/frequenz-404.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://syntaxisbuch.github.io/bildband.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://syntaxisbuch.github.io/glossar.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://syntaxisbuch.github.io/quellen.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://syntaxisbuch.github.io/neuigkeiten.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

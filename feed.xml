@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Syntaxis — Neuigkeiten</title>
+  <link>https://syntaxisbuch.github.io/neuigkeiten.html</link>
+  <description>Neue Folgen, Bereiche und Werke bei Syntaxis — einem Projekt über kritisches Denken.</description>
+  <language>de-de</language>
+  <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://syntaxisbuch.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+  <item>
+    <title>Quellenverzeichnis eröffnet</title>
+    <link>https://syntaxisbuch.github.io/quellen.html</link>
+    <guid isPermaLink="false">2026-09-20-Quellenverzeichnis eröffnet</guid>
+    <pubDate>20 Sep 2026 12:00:00 +0000</pubDate>
+    <description>Die realen Institutionen, Podcasts und Bücher hinter dem Ansatz von Syntaxis, kuratiert und mit Beleg.</description>
+  </item>
+  <item>
+    <title>Frequenz 404 sendet</title>
+    <link>https://syntaxisbuch.github.io/frequenz-404.html</link>
+    <guid isPermaLink="false">2026-09-20-Frequenz 404 sendet</guid>
+    <pubDate>20 Sep 2026 12:00:00 +0000</pubDate>
+    <description>Der Piratensender aus dem Medienviertel: Cassidy Null, Kevin und Dr. Tacheles, mit Auftaktfolge und erster Fallakte.</description>
+  </item>
+  <item>
+    <title>Das Bildarchiv ist eröffnet</title>
+    <link>https://syntaxisbuch.github.io/bildband.html</link>
+    <guid isPermaLink="false">2026-09-20-Das Bildarchiv ist eröffnet</guid>
+    <pubDate>20 Sep 2026 12:00:00 +0000</pubDate>
+    <description>Mnemosynes Sammlung: Stadtansichten und Fallszenen aus Neocortex City, nach Akten sortiert.</description>
+  </item>
+  <item>
+    <title>Glossar veröffentlicht</title>
+    <link>https://syntaxisbuch.github.io/glossar.html</link>
+    <guid isPermaLink="false">2026-09-20-Glossar veröffentlicht</guid>
+    <pubDate>20 Sep 2026 12:00:00 +0000</pubDate>
+    <description>35 Begriffe aus den Werken und der Stadt an einem Ort — von der Signatur bis zur Toleranz-Zone.</description>
+  </item>
+</channel>
+</rss>
