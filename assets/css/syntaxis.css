@@ -843,3 +843,22 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
 .neuigkeit h3 a { text-decoration-color: var(--line-hard); }
 .neuigkeit h3 a:hover { color: var(--akzent); }
 .neuigkeit p { margin: 0; color: var(--fog); font-size: .94rem; }
+
+/* ---------- 32. Frequenz-404-Archiv ---------- */
+.f404-archiv { display: grid; gap: 1px; background: var(--line-soft); border: 1px solid var(--line); }
+.f404-eintrag {
+  display: grid; grid-template-columns: 5.5rem 1fr auto; gap: 1rem; align-items: center;
+  background: var(--ink-2); border: 0; border-left: 2px solid transparent; color: inherit;
+  text-align: left; font-family: var(--body); padding: .85rem 1.1rem; cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.f404-eintrag:hover { background: var(--ink-3); }
+.f404-eintrag[aria-current="true"] { border-left-color: var(--akzent); background: color-mix(in srgb, var(--akzent) 6%, var(--ink-2)); }
+.f404-eintrag .kennung { color: var(--fog-dim); }
+.f404-eintrag[aria-current="true"] .kennung { color: var(--akzent); }
+.f404-eintrag .tt { font-size: .97rem; }
+.f404-eintrag .tt small { display: block; color: var(--fog); font-size: .82rem; margin-top: .1rem; }
+.f404-eintrag .art { font-family: var(--data); font-size: .6rem; letter-spacing: .07em; color: var(--fog-dim); white-space: nowrap; }
+.f404-eintrag .art-sonderfolge { color: var(--au); }
+.f404-eintrag .art-teaser { color: var(--nc); }
+@media (max-width: 640px) { .f404-eintrag { grid-template-columns: 1fr; gap: .3rem; } .f404-eintrag .art { justify-self: start; } }
