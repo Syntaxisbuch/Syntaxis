@@ -1,78 +1,111 @@
 {
- "hinweis": "Jede Akte ist eine Pinnwand. x/y in Prozent, Fäden verbinden Bild-IDs. ebene: STADTANSICHT | FALLSZENE | COVER. realbezug wird gesetzt, wo ein reales Vorbild genannt wird.",
+ "hinweis": "Jede Akte ist eine Wand. x/y in Prozent, Fäden verbinden Bild-IDs. ebene: STADTANSICHT | FALLSZENE | COVER.",
  "akten": [
   {
    "id": "nc-achse",
    "signatur": "AKTE NC-1",
    "titel": "Die Achse",
-   "status": "offen",
    "untertitel": "Der Tower of Reason und die Schaltstellen, die an ihm hängen",
-   "notiz": "Alles, was senkrecht läuft. Erdgeschoss auf Plaza-Höhe, Penthouse bei 520 Metern — und dazwischen die Stellen, an denen umgestiegen wird.",
+   "status": "offen",
+   "notiz": "Alles, was senkrecht läuft. Erdgeschoss auf Plaza-Höhe, Penthouse bei 520 Metern.",
    "bilder": [
     {
-     "id": "ticht",
+     "id": "t-00-tower-of-reason-portal",
+     "bild": "assets/img/stadt/t-00-tower-of-reason-portal-klein.webp",
+     "gross": "assets/img/stadt/t-00-tower-of-reason-portal.webp",
+     "titel": "Tower of Reason, Portal",
+     "unterschrift": "Altitudo · Conscientia · Concordia",
+     "ebene": "STADTANSICHT",
+     "notiz": "Cogitare, ordinare, protegere. Ratio ducet, scientia servat.",
+     "sektor": "T-00",
+     "x": 25.0,
+     "y": 22,
+     "dreh": 2.72
+    },
+    {
+     "id": "t-00-tower-of-reason-aussicht",
      "bild": "assets/img/stadt/t-00-tower-of-reason-aussicht-klein.webp",
      "gross": "assets/img/stadt/t-00-tower-of-reason-aussicht.webp",
-     "titel": "Tower of Reason",
-     "unterschrift": "Aussichtsebene, Blick in den Schacht",
+     "titel": "Tower of Reason, Aussichtsebene",
+     "unterschrift": "Blick in den Schacht",
      "ebene": "STADTANSICHT",
-     "x": 22,
-     "y": 26,
-     "dreh": -2.1,
-     "notiz": "Die durchgehende Achse. Abwärts Trieb, aufwärts Kontrolle.",
-     "sektor": "T-00"
-    },
-    {
-     "id": "plazation",
-     "bild": "assets/img/stadt/plaza-of-perception-klein.webp",
-     "gross": "assets/img/stadt/plaza-of-perception.webp",
-     "titel": "Plaza of Perception",
-     "unterschrift": "Erdgeschoss, Z 0 m",
-     "ebene": "STADTANSICHT",
-     "x": 62,
+     "notiz": "Abwärts Trieb, aufwärts Kontrolle.",
+     "sektor": "T-00",
+     "x": 50.0,
      "y": 22,
-     "dreh": 1.8,
-     "notiz": "Wo die Stadt anfängt: sechs Sinne als Marktstände.",
-     "sektor": "T-00 EG"
+     "dreh": 2.87
     },
     {
-     "id": "tcstion",
-     "bild": "assets/img/stadt/tcs-01-thalamus-central-station-klein.webp",
-     "gross": "assets/img/stadt/tcs-01-thalamus-central-station.webp",
-     "titel": "Thalamus Central Station",
-     "unterschrift": "Sektor 17, Z 20 m",
+     "id": "plaza-of-perception-weit",
+     "bild": "assets/img/stadt/plaza-of-perception-weit-klein.webp",
+     "gross": "assets/img/stadt/plaza-of-perception-weit.webp",
+     "titel": "Plaza of Perception",
+     "unterschrift": "Hier beginnt die Welt",
      "ebene": "STADTANSICHT",
-     "x": 28,
-     "y": 70,
-     "dreh": 2.4,
-     "notiz": "Die Schaltstelle. Tags einzeln und getreu, nachts in Salven.",
-     "sektor": "TCS-01"
+     "notiz": "Sehen, hören, riechen, schmecken, fühlen, erleben, verstehen.",
+     "sektor": "T-00 EG",
+     "x": 75.0,
+     "y": 22,
+     "dreh": 2.51
     },
     {
-     "id": "capsulansit",
+     "id": "altstadt-plaza-basar",
+     "bild": "assets/img/stadt/altstadt-plaza-basar-klein.webp",
+     "gross": "assets/img/stadt/altstadt-plaza-basar.webp",
+     "titel": "Plaza bei Nacht",
+     "unterschrift": "Limbischer Basar, Broca Madison Club, Synapsen-Bar",
+     "ebene": "STADTANSICHT",
+     "notiz": "Der Pontiac steht am Straßenrand. Baujahr 1962.",
+     "sektor": "T-00 EG",
+     "x": 25.0,
+     "y": 52,
+     "dreh": -2.67
+    },
+    {
+     "id": "tcs-01-thalamus-weit",
+     "bild": "assets/img/stadt/tcs-01-thalamus-weit-klein.webp",
+     "gross": "assets/img/stadt/tcs-01-thalamus-weit.webp",
+     "titel": "Thalamus Central Station",
+     "unterschrift": "Omnia connectit · Sektor 17",
+     "ebene": "STADTANSICHT",
+     "notiz": "Tags einzeln und getreu, nachts in Salven.",
+     "sektor": "TCS-01",
+     "x": 50.0,
+     "y": 52,
+     "dreh": 0.59
+    },
+    {
+     "id": "capsula-interna-transit",
      "bild": "assets/img/stadt/capsula-interna-transit-klein.webp",
      "gross": "assets/img/stadt/capsula-interna-transit.webp",
      "titel": "Capsula Interna",
-     "unterschrift": "Transitröhren zwischen Alt- und Neustadt",
+     "unterschrift": "Gedanken überwinden Distanzen",
      "ebene": "STADTANSICHT",
-     "x": 70,
-     "y": 68,
-     "dreh": -1.6,
-     "notiz": "Noch nicht im Koordinatensystem v9 verzeichnet."
+     "x": 75.0,
+     "y": 52,
+     "dreh": -0.49
     }
    ],
    "faeden": [
     [
-     "ticht",
-     "plazation"
+     "t-00-tower-of-reason-portal",
+     "t-00-tower-of-reason-aussicht"
     ],
     [
-     "plazation",
-     "tcstion"
+     "t-00-tower-of-reason-aussicht",
+     "plaza-of-perception-weit"
     ],
     [
-     "tcstion",
-     "capsulansit"
+     "plaza-of-perception-weit",
+     "altstadt-plaza-basar"
+    ],
+    [
+     "altstadt-plaza-basar",
+     "tcs-01-thalamus-weit"
+    ],
+    [
+     "tcs-01-thalamus-weit",
+     "capsula-interna-transit"
     ]
    ]
   },
@@ -80,269 +113,475 @@
    "id": "nc-terrassen",
    "signatur": "AKTE NC-2",
    "titel": "Die Terrassen",
+   "untertitel": "Von der Vernunft bis zum Zweifel, der weh tut",
    "status": "offen",
-   "untertitel": "Was auf den Ebenen liegt, von der Vernunft bis zum Gedächtnis",
    "notiz": "Sechs Ebenen, jede eine Hirnregion. Wer im Aufzug abwärts fährt, fährt nicht nur tiefer, sondern älter.",
    "bilder": [
     {
-     "id": "plstos",
+     "id": "pl-01-schmiede-des-hephaistos",
      "bild": "assets/img/stadt/pl-01-schmiede-des-hephaistos-klein.webp",
      "gross": "assets/img/stadt/pl-01-schmiede-des-hephaistos.webp",
      "titel": "Schmiede des Hephaistos",
-     "unterschrift": "PL-01 · Obere-Mittlere Terrasse, 400 m",
+     "unterschrift": "PL-01 · 400 m · Präzision, Stabilität, Perspektive",
      "ebene": "STADTANSICHT",
-     "x": 16,
-     "y": 24,
-     "dreh": -2.6,
-     "notiz": "Ratios Arbeitsplatz und lokaler Fixpunkt der Terrasse.",
-     "sektor": "PL-01"
+     "notiz": "Ratios Arbeitsplatz. Bessere Instrumente, klarere Gedanken.",
+     "sektor": "PL-01",
+     "x": 25.0,
+     "y": 22,
+     "dreh": 0.19
     },
     {
-     "id": "phthen",
+     "id": "ph-01-park-der-heldenmythen",
      "bild": "assets/img/stadt/ph-01-park-der-heldenmythen-klein.webp",
      "gross": "assets/img/stadt/ph-01-park-der-heldenmythen.webp",
      "titel": "Park der Heldenmythen",
-     "unterschrift": "PH-01 · Oberste Terrasse, 500 m",
+     "unterschrift": "PH-01 · 500 m",
      "ebene": "STADTANSICHT",
-     "x": 45,
-     "y": 20,
-     "dreh": 1.9,
-     "notiz": "Band I, Kapitel 17.",
-     "sektor": "PH-01"
+     "notiz": "Denen, die Fragen stellten und trotzdem weitergingen.",
+     "sektor": "PH-01",
+     "x": 50.0,
+     "y": 22,
+     "dreh": -2.37
     },
     {
-     "id": "hceume",
-     "bild": "assets/img/stadt/hc-01-archiv-verbrannte-traeume-klein.webp",
-     "gross": "assets/img/stadt/hc-01-archiv-verbrannte-traeume.webp",
-     "titel": "Archiv der verbrannten Träume",
-     "unterschrift": "HC-01 · Mittlere-Untere Terrasse, 180 m",
-     "ebene": "STADTANSICHT",
-     "x": 76,
-     "y": 26,
-     "dreh": -1.4,
-     "notiz": "Mnemosynes Hauptstelle. Verba volant, scripta manent.",
-     "sektor": "HC-01"
-    },
-    {
-     "id": "gyrusasse",
+     "id": "gyrus-cinguli-strasse",
      "bild": "assets/img/stadt/gyrus-cinguli-strasse-klein.webp",
      "gross": "assets/img/stadt/gyrus-cinguli-strasse.webp",
      "titel": "Gyrus Cinguli",
-     "unterschrift": "Straßenzug, Untere Terrasse",
+     "unterschrift": "Sorgen, erinnern, hoffen, zweifeln, weitergehen",
      "ebene": "STADTANSICHT",
-     "x": 26,
-     "y": 70,
-     "dreh": 2.2,
-     "notiz": "Noch nicht im Koordinatensystem v9 verzeichnet."
+     "sektor": "CIN-01",
+     "x": 75.0,
+     "y": 22,
+     "dreh": -1.97
     },
     {
-     "id": "apothekeulum",
-     "bild": "assets/img/stadt/apotheke-am-cingulum-klein.webp",
-     "gross": "assets/img/stadt/apotheke-am-cingulum.webp",
-     "titel": "Apotheke am Cingulum",
-     "unterschrift": "Offizin",
+     "id": "cin-01-anteriorer-cingulaerer-kortex",
+     "bild": "assets/img/stadt/cin-01-anteriorer-cingulaerer-kortex-klein.webp",
+     "gross": "assets/img/stadt/cin-01-anteriorer-cingulaerer-kortex.webp",
+     "titel": "Anteriorer Cingulärer Kortex",
+     "unterschrift": "CIN-01 · Katalog und Orientierung",
      "ebene": "STADTANSICHT",
-     "x": 62,
-     "y": 73,
-     "dreh": -2.3,
-     "notiz": "Noch nicht im Koordinatensystem v9 verzeichnet. Passt thematisch zu Band V."
+     "notiz": "Gute Bücher stellen bessere Fragen.",
+     "sektor": "CIN-01",
+     "x": 25.0,
+     "y": 52,
+     "dreh": -0.35
+    },
+    {
+     "id": "cin-01-apotheke-am-cingulum",
+     "bild": "assets/img/stadt/cin-01-apotheke-am-cingulum-klein.webp",
+     "gross": "assets/img/stadt/cin-01-apotheke-am-cingulum.webp",
+     "titel": "Apotheke am Cingulum",
+     "unterschrift": "CIN-01 · seit 1893",
+     "ebene": "FALLSZENE",
+     "notiz": "Heilen besiegt nicht die Zeit, aber es gibt ihr Bedeutung. Schauplatz zu Band V.",
+     "sektor": "CIN-01",
+     "x": 50.0,
+     "y": 52,
+     "dreh": -1.79
+    },
+    {
+     "id": "la-01-limbische-altstadt",
+     "bild": "assets/img/stadt/la-01-limbische-altstadt-klein.webp",
+     "gross": "assets/img/stadt/la-01-limbische-altstadt.webp",
+     "titel": "Limbische Altstadt",
+     "unterschrift": "LA-01 · Erinnerung, Emotion, Identität",
+     "ebene": "STADTANSICHT",
+     "notiz": "Manchmal führt das Herz weiter als der Verstand.",
+     "sektor": "LA-01",
+     "x": 75.0,
+     "y": 52,
+     "dreh": -0.29
     }
    ],
    "faeden": [
     [
-     "plstos",
-     "phthen"
+     "pl-01-schmiede-des-hephaistos",
+     "ph-01-park-der-heldenmythen"
     ],
     [
-     "phthen",
-     "hceume"
+     "ph-01-park-der-heldenmythen",
+     "gyrus-cinguli-strasse"
     ],
     [
-     "hceume",
-     "gyrusasse"
+     "gyrus-cinguli-strasse",
+     "cin-01-anteriorer-cingulaerer-kortex"
     ],
     [
-     "gyrusasse",
-     "apothekeulum"
+     "cin-01-anteriorer-cingulaerer-kortex",
+     "cin-01-apotheke-am-cingulum"
+    ],
+    [
+     "cin-01-apotheke-am-cingulum",
+     "la-01-limbische-altstadt"
+    ]
+   ]
+  },
+  {
+   "id": "nc-gedaechtnis",
+   "signatur": "AKTE NC-3",
+   "titel": "Das Gedächtnis",
+   "untertitel": "Mnemosynes Archiv, dreimal betreten",
+   "status": "offen",
+   "notiz": "Katalogisiert alles, deutet nichts. Verba volant, scripta manent.",
+   "bilder": [
+    {
+     "id": "hc-01-archiv-portal",
+     "bild": "assets/img/stadt/hc-01-archiv-portal-klein.webp",
+     "gross": "assets/img/stadt/hc-01-archiv-portal.webp",
+     "titel": "Archiv der verbrannten Träume, Portal",
+     "unterschrift": "HC-01 · 180 m · Hippocampus",
+     "ebene": "STADTANSICHT",
+     "notiz": "Erinnerung bewahrt, was die Zeit zu löschen sucht.",
+     "sektor": "HC-01",
+     "x": 25.0,
+     "y": 22,
+     "dreh": -3.04
+    },
+    {
+     "id": "hc-01-archiv-verbrannte-traeume",
+     "bild": "assets/img/stadt/hc-01-archiv-verbrannte-traeume-klein.webp",
+     "gross": "assets/img/stadt/hc-01-archiv-verbrannte-traeume.webp",
+     "titel": "Lesesaal",
+     "unterschrift": "Erinnern, verstehen, loslassen, weitergehen",
+     "ebene": "STADTANSICHT",
+     "notiz": "Manche Träume müssen brennen, damit wir weitergehen können.",
+     "sektor": "HC-01",
+     "x": 50.0,
+     "y": 22,
+     "dreh": -2.65
+    },
+    {
+     "id": "hc-01-archiv-magazin",
+     "bild": "assets/img/stadt/hc-01-archiv-magazin-klein.webp",
+     "gross": "assets/img/stadt/hc-01-archiv-magazin.webp",
+     "titel": "Magazingang",
+     "unterschrift": "Akten, die nicht geöffnet werden",
+     "ebene": "STADTANSICHT",
+     "notiz": "Was wir vergessen, vergisst uns nicht.",
+     "sektor": "HC-01",
+     "x": 75.0,
+     "y": 22,
+     "dreh": 1.34
+    },
+    {
+     "id": "hc-01-mnemosyne-schalter",
+     "bild": "assets/img/stadt/hc-01-mnemosyne-schalter-klein.webp",
+     "gross": "assets/img/stadt/hc-01-mnemosyne-schalter.webp",
+     "titel": "Mnemosyne am Schalter",
+     "unterschrift": "Archivar der Stadt",
+     "ebene": "FALLSZENE",
+     "notiz": "Project Aquatone, 1955 bis 1956. Die Akte, die Trace in Band I abholt.",
+     "sektor": "HC-01",
+     "x": 50.0,
+     "y": 52,
+     "dreh": -0.5
+    }
+   ],
+   "faeden": [
+    [
+     "hc-01-archiv-portal",
+     "hc-01-archiv-verbrannte-traeume"
+    ],
+    [
+     "hc-01-archiv-verbrannte-traeume",
+     "hc-01-archiv-magazin"
+    ],
+    [
+     "hc-01-archiv-magazin",
+     "hc-01-mnemosyne-schalter"
     ]
    ]
   },
   {
    "id": "nc-rand",
-   "signatur": "AKTE NC-3",
+   "signatur": "AKTE NC-4",
    "titel": "Der Rand",
+   "untertitel": "Nadelwald, Brücken und die Außenkante",
    "status": "offen",
-   "untertitel": "Nadelwald, Brücken und die Außenkante, an der die Stadt aufhört",
-   "notiz": "Peripherie und Querung. Das Nadelwald-Archiv hat ein eigenes Fünf-Geräte-Sinnessystem — Vogelchor statt Aufzugsanzeige, Mycel statt Sky Bridge.",
+   "notiz": "Das Nadelwald-Archiv hat ein eigenes Fünf-Geräte-Sinnessystem — Vogelchor statt Aufzugsanzeige, Mycel statt Sky Bridge.",
    "bilder": [
     {
-     "id": "nwlick",
+     "id": "nw-01-nadelwald-archiv-fernblick",
      "bild": "assets/img/stadt/nw-01-nadelwald-archiv-fernblick-klein.webp",
      "gross": "assets/img/stadt/nw-01-nadelwald-archiv-fernblick.webp",
      "titel": "Nadelwald-Archiv",
-     "unterschrift": "NW-01 · Blick auf die Stadt",
+     "unterschrift": "NW-01 · Erinnern, ordnen, verstehen",
      "ebene": "STADTANSICHT",
-     "x": 16,
-     "y": 24,
-     "dreh": -2.0,
-     "notiz": "Erinnern, ordnen, verstehen.",
-     "sektor": "NW-01"
+     "sektor": "NW-01",
+     "x": 25.0,
+     "y": 22,
+     "dreh": 0.08
     },
     {
-     "id": "nwelle",
+     "id": "nw-01-nadelwald-archiv-aussenstelle",
      "bild": "assets/img/stadt/nw-01-nadelwald-archiv-aussenstelle-klein.webp",
      "gross": "assets/img/stadt/nw-01-nadelwald-archiv-aussenstelle.webp",
-     "titel": "Nadelwald-Archiv, Außenstelle",
+     "titel": "Außenstelle",
      "unterschrift": "Memoria crescit in humiditate",
      "ebene": "STADTANSICHT",
-     "x": 45,
-     "y": 20,
-     "dreh": 2.5,
      "notiz": "Archiva non iudicant, sed servant.",
-     "sektor": "NW-01"
+     "sektor": "NW-01",
+     "x": 50.0,
+     "y": 22,
+     "dreh": 1.5
     },
     {
-     "id": "nwsaal",
+     "id": "nw-01-nadelwald-archiv-lesesaal",
      "bild": "assets/img/stadt/nw-01-nadelwald-archiv-lesesaal-klein.webp",
      "gross": "assets/img/stadt/nw-01-nadelwald-archiv-lesesaal.webp",
-     "titel": "Nadelwald-Archiv, Lesesaal",
+     "titel": "Lesesaal",
      "unterschrift": "Memoria · Contextus · Connexiones",
      "ebene": "STADTANSICHT",
-     "x": 77,
-     "y": 27,
-     "dreh": -1.7,
-     "sektor": "NW-01"
+     "sektor": "NW-01",
+     "x": 75.0,
+     "y": 22,
+     "dreh": -0.9
     },
     {
-     "id": "brueckeatus",
+     "id": "bruecke-uncinatus",
      "bild": "assets/img/stadt/bruecke-uncinatus-klein.webp",
      "gross": "assets/img/stadt/bruecke-uncinatus.webp",
      "titel": "Uncinatus-Brücke",
      "unterschrift": "Ad profundum · per memoriam · in altera silva",
      "ebene": "STADTANSICHT",
-     "x": 20,
-     "y": 71,
-     "dreh": 1.4,
-     "notiz": "Eine der sechs bestätigten Querungen. Reale Entsprechung: Fasciculus uncinatus."
+     "notiz": "Reale Entsprechung: Fasciculus uncinatus.",
+     "x": 25.0,
+     "y": 52,
+     "dreh": -2.83
     },
     {
-     "id": "brueckewald",
+     "id": "bruecke-im-regen-nadelwald",
      "bild": "assets/img/stadt/bruecke-im-regen-nadelwald-klein.webp",
      "gross": "assets/img/stadt/bruecke-im-regen-nadelwald.webp",
      "titel": "Brücke im Regen",
      "unterschrift": "Übergang zur Waldseite",
      "ebene": "STADTANSICHT",
-     "x": 50,
-     "y": 74,
-     "dreh": -2.2
+     "x": 50.0,
+     "y": 52,
+     "dreh": 1.81
     },
     {
-     "id": "pglzone",
+     "id": "pgl-01-sektor-23-agrarzone",
      "bild": "assets/img/stadt/pgl-01-sektor-23-agrarzone-klein.webp",
      "gross": "assets/img/stadt/pgl-01-sektor-23-agrarzone.webp",
      "titel": "Sektor 23, Agrarzone",
-     "unterschrift": "PGL-01 · Parietales Grenzland, 400 m",
+     "unterschrift": "PGL-01 · Versorgung, Stabilität, Leben",
      "ebene": "FALLSZENE",
-     "x": 80,
-     "y": 70,
-     "dreh": 2.8,
-     "notiz": "Ehemaliges Werwolf-Territorium. Seit Band III gilt der Fall als gelöst, die Struktur verblasst.",
-     "sektor": "PGL-01"
+     "notiz": "Ehemaliges Werwolf-Territorium. Seit Band III verblasst die Struktur.",
+     "sektor": "PGL-01",
+     "x": 75.0,
+     "y": 52,
+     "dreh": 0.57
     }
    ],
    "faeden": [
     [
-     "nwlick",
-     "nwelle"
+     "nw-01-nadelwald-archiv-fernblick",
+     "nw-01-nadelwald-archiv-aussenstelle"
     ],
     [
-     "nwelle",
-     "nwsaal"
+     "nw-01-nadelwald-archiv-aussenstelle",
+     "nw-01-nadelwald-archiv-lesesaal"
     ],
     [
-     "nwsaal",
-     "brueckeatus"
+     "nw-01-nadelwald-archiv-lesesaal",
+     "bruecke-uncinatus"
     ],
     [
-     "brueckeatus",
-     "brueckewald"
+     "bruecke-uncinatus",
+     "bruecke-im-regen-nadelwald"
     ],
     [
-     "brueckewald",
-     "pglzone"
+     "bruecke-im-regen-nadelwald",
+     "pgl-01-sektor-23-agrarzone"
     ]
    ]
   },
   {
    "id": "nc-faelle",
-   "signatur": "AKTE NC-4",
+   "signatur": "AKTE NC-5",
    "titel": "Aus den Fällen",
+   "untertitel": "Schauplätze außerhalb der Stadt",
    "status": "offen",
-   "untertitel": "Szenen, die außerhalb der Stadt spielen",
-   "notiz": "Diese vier zeigen keine Stadtansicht, sondern Schauplätze aus laufenden Ermittlungen. Zwei davon nennen einen realen Ort beim Namen — dort ist die Kennzeichnung wichtig, damit niemand ein erzeugtes Bild für eine Aufnahme hält.",
+   "notiz": "Diese elf zeigen keine Stadtansicht, sondern Orte aus laufenden Ermittlungen. Wo ein realer Ort beim Namen genannt wird, steht es dabei.",
    "bilder": [
     {
-     "id": "band2math",
+     "id": "band1-traces-buero",
+     "bild": "assets/img/stadt/band1-traces-buero-klein.webp",
+     "gross": "assets/img/stadt/band1-traces-buero.webp",
+     "titel": "Traces Büro",
+     "unterschrift": "Band I · Ordnung schafft Freiheit",
+     "ebene": "FALLSZENE",
+     "notiz": "Auf dem Tisch: Area 51 — Mythos oder Wahrheit? Auf der Tasse: Realität ist kein Glaubenssystem.",
+     "x": 20.0,
+     "y": 22,
+     "dreh": 1.01
+    },
+    {
+     "id": "band1-route-375",
+     "bild": "assets/img/stadt/band1-route-375-klein.webp",
+     "gross": "assets/img/stadt/band1-route-375.webp",
+     "titel": "Route 375",
+     "unterschrift": "Band I · der schwarze Briefkasten",
+     "ebene": "FALLSZENE",
+     "notiz": "Die Ausfallstraße in die Wüste.",
+     "realbezug": "Route 375 in Nevada und der schwarze Briefkasten existieren. Personen und Szene sind erfunden; das Bild ist erzeugt, keine Aufnahme.",
+     "x": 40.0,
+     "y": 22,
+     "dreh": 0.77
+    },
+    {
+     "id": "band2-zeugenlager-klamath",
      "bild": "assets/img/stadt/band2-zeugenlager-klamath-klein.webp",
      "gross": "assets/img/stadt/band2-zeugenlager-klamath.webp",
      "titel": "Zeugenlager",
      "unterschrift": "Band II · „Same place, same hour, still no second witness.“",
      "ebene": "FALLSZENE",
-     "x": 20,
-     "y": 26,
-     "dreh": -2.4,
-     "notiz": "Die Kernszene der Kryptozoologie: derselbe Ort, dieselbe Stunde, nie ein zweiter Zeuge.",
-     "realbezug": "Klamath National Forest ist ein realer Ort. Person, Lager und Aufzeichnungen sind erfunden; das Bild ist erzeugt, keine Aufnahme."
+     "notiz": "Derselbe Ort, dieselbe Stunde, nie ein zweiter Zeuge.",
+     "realbezug": "Klamath National Forest ist ein realer Ort. Person, Lager und Aufzeichnungen sind erfunden; das Bild ist erzeugt, keine Aufnahme.",
+     "x": 60.0,
+     "y": 22,
+     "dreh": 3.01
     },
     {
-     "id": "band2gung",
-     "bild": "assets/img/stadt/band2-huette-befragung-klein.webp",
-     "gross": "assets/img/stadt/band2-huette-befragung.webp",
-     "titel": "Hütte im Wald",
-     "unterschrift": "Band II · Befragung",
+     "id": "band2-fussabdruck",
+     "bild": "assets/img/stadt/band2-fussabdruck-klein.webp",
+     "gross": "assets/img/stadt/band2-fussabdruck.webp",
+     "titel": "Der Abdruck",
+     "unterschrift": "Band II · Vermessung mit Maßstab",
      "ebene": "FALLSZENE",
-     "x": 52,
-     "y": 23,
-     "dreh": 1.7,
-     "notiz": "Trace, Krone und Ratio bei einer Zeugin."
+     "notiz": "Die Gips-Falle beginnt genau hier: mit einem Abdruck, der zu gut ist.",
+     "x": 80.0,
+     "y": 22,
+     "dreh": -0.88
     },
     {
-     "id": "band2bung",
+     "id": "band2-monitorwand",
+     "bild": "assets/img/stadt/band2-monitorwand-klein.webp",
+     "gross": "assets/img/stadt/band2-monitorwand.webp",
+     "titel": "Die Monitorwand",
+     "unterschrift": "Band II · vier Kameras, ein Waldstück",
+     "ebene": "FALLSZENE",
+     "notiz": "Wer lange genug auf Rauschen starrt, sieht ein Muster.",
+     "x": 20.0,
+     "y": 52,
+     "dreh": 1.66
+    },
+    {
+     "id": "band2-kartentisch",
+     "bild": "assets/img/stadt/band2-kartentisch-klein.webp",
+     "gross": "assets/img/stadt/band2-kartentisch.webp",
+     "titel": "Der Kartentisch",
+     "unterschrift": "Band II · Pacific Lumber Co.",
+     "ebene": "FALLSZENE",
+     "notiz": "U.S. Geological Survey. Krone glaubt der Karte, nicht der Erzählung.",
+     "x": 40.0,
+     "y": 52,
+     "dreh": -0.84
+    },
+    {
+     "id": "band2-huette-befragung-2",
+     "bild": "assets/img/stadt/band2-huette-befragung-2-klein.webp",
+     "gross": "assets/img/stadt/band2-huette-befragung-2.webp",
+     "titel": "Die Befragung",
+     "unterschrift": "Band II · Hütte im Wald",
+     "ebene": "FALLSZENE",
+     "notiz": "Die Zeugin redet. Alle vier hören unterschiedlich zu.",
+     "x": 60.0,
+     "y": 52,
+     "dreh": 0.46
+    },
+    {
+     "id": "band2-ausgrabung",
      "bild": "assets/img/stadt/band2-ausgrabung-klein.webp",
      "gross": "assets/img/stadt/band2-ausgrabung.webp",
-     "titel": "Ausgrabung",
-     "unterschrift": "Band II · Fundstelle mit Nummernschildern",
+     "titel": "Die Fundstelle",
+     "unterschrift": "Band II · Nummernschilder im Schlamm",
      "ebene": "FALLSZENE",
-     "x": 30,
-     "y": 70,
-     "dreh": 2.1,
-     "notiz": "Wo aus einem Gerücht ein Befund wird — oder eben nicht."
+     "notiz": "Wo aus einem Gerücht ein Befund wird — oder eben nicht.",
+     "x": 80.0,
+     "y": 52,
+     "dreh": 1.03
     },
     {
-     "id": "band4isch",
+     "id": "band2-kahlschlag",
+     "bild": "assets/img/stadt/band2-kahlschlag-klein.webp",
+     "gross": "assets/img/stadt/band2-kahlschlag.webp",
+     "titel": "Der Kahlschlag",
+     "unterschrift": "Band II · Panorama",
+     "ebene": "FALLSZENE",
+     "notiz": "Das Habitat, das angeblich ein Rudel trägt.",
+     "x": 25.0,
+     "y": 80,
+     "dreh": -1.19
+    },
+    {
+     "id": "band2-holzbruecke",
+     "bild": "assets/img/stadt/band2-holzbruecke-klein.webp",
+     "gross": "assets/img/stadt/band2-holzbruecke.webp",
+     "titel": "Die Holzbrücke",
+     "unterschrift": "Band II · über den Fluss",
+     "ebene": "FALLSZENE",
+     "notiz": "Der Pontiac wartet unten.",
+     "x": 50.0,
+     "y": 80,
+     "dreh": -2.65
+    },
+    {
+     "id": "band4-seance-tisch",
      "bild": "assets/img/stadt/band4-seance-tisch-klein.webp",
      "gross": "assets/img/stadt/band4-seance-tisch.webp",
      "titel": "Der Tisch",
-     "unterschrift": "Band IV · „Zwischen Glaube und Erkenntnis“",
+     "unterschrift": "Band IV · Zwischen Glaube und Erkenntnis",
      "ebene": "FALLSZENE",
-     "x": 68,
-     "y": 68,
-     "dreh": -1.9,
-     "notiz": "Raum 4. Vier fremde Hände, und keine gibt es zu."
+     "notiz": "Vier fremde Hände, und keine gibt es zu.",
+     "x": 75.0,
+     "y": 80,
+     "dreh": -0.17
     }
    ],
    "faeden": [
     [
-     "band2math",
-     "band2gung"
+     "band1-traces-buero",
+     "band1-route-375"
     ],
     [
-     "band2gung",
-     "band2bung"
+     "band1-route-375",
+     "band2-zeugenlager-klamath"
     ],
     [
-     "band2bung",
-     "band4isch"
+     "band2-zeugenlager-klamath",
+     "band2-fussabdruck"
+    ],
+    [
+     "band2-fussabdruck",
+     "band2-monitorwand"
+    ],
+    [
+     "band2-monitorwand",
+     "band2-kartentisch"
+    ],
+    [
+     "band2-kartentisch",
+     "band2-huette-befragung-2"
+    ],
+    [
+     "band2-huette-befragung-2",
+     "band2-ausgrabung"
+    ],
+    [
+     "band2-ausgrabung",
+     "band2-kahlschlag"
+    ],
+    [
+     "band2-kahlschlag",
+     "band2-holzbruecke"
+    ],
+    [
+     "band2-holzbruecke",
+     "band4-seance-tisch"
     ]
    ]
   },

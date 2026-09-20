@@ -507,6 +507,22 @@
     4
    ],
    "kosten": "Ein Brennen hinter den Augen vom Starren auf Monitore, die nie ein Muster zeigen."
+  },
+  {
+   "id": "CIN-01",
+   "name": "Anteriorer Cingulärer Kortex",
+   "terrasse": "untere",
+   "x": 0,
+   "y": 0,
+   "z": 80,
+   "sektor": null,
+   "hirn": "Gyrus cinguli, anteriorer Anteil",
+   "notiz": "Straßenzug mit Katalog und Orientierung, Apotheke am Cingulum, Buchhandlung. Hier sitzt die Stelle, an der ein Widerspruch weh tut, bevor er benannt ist. Schauplatz zu Band V.",
+   "band": [
+    5
+   ],
+   "kosten": "",
+   "flagge": "Die Sektorkennung stammt aus dem Bildarchiv; X- und Y-Werte sind noch nicht festgelegt und hier auf den lokalen Nullpunkt gesetzt."
   }
  ],
  "bruecken": [

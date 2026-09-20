@@ -278,7 +278,7 @@
           "nr": "V",
           "titel": "Der Nullpunkt",
           "jahr": "in Arbeit",
-          "cover": "assets/img/chroniken/band-5-der-nullpunkt.png",
+          "cover": "assets/img/chroniken/band-5-der-nullpunkt-cover.webp",
           "kapitel": 0,
           "fall": "Pseudomedizin",
           "ort": "die ganze Stadt — zum ersten Mal ermitteln alle vier Disziplinen gemeinsam",
@@ -290,7 +290,8 @@
             "Placebo und Nocebo"
           ],
           "status": "in Arbeit",
-          "dateien": []
+          "dateien": [],
+          "cover_klein": "assets/img/chroniken/band-5-der-nullpunkt-cover-klein.webp"
         }
       ]
     },
