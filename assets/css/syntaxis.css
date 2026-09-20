@@ -812,3 +812,34 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
   display: inline-block; margin-top: .55rem; font-family: var(--data); font-size: .68rem;
   color: var(--fog-dim); border: 1px solid var(--line); padding: .18rem .45rem;
 }
+
+/* ---------- 29. Quellenverzeichnis ---------- */
+.gleintrag.quelle dt { display: flex; flex-direction: column; gap: .2rem; }
+.gleintrag.quelle .autor { font-family: var(--data); font-size: .68rem; color: var(--fog-dim); order: 2; }
+.gleintrag.quelle a { text-decoration-color: var(--line-hard); }
+.gleintrag.quelle a:hover { color: var(--akzent); }
+.gleintrag.quelle .ext { font-size: .8em; opacity: .7; }
+
+/* ---------- 30. KI-Hinweis auf Bildmaterial ---------- */
+/* Rechtlich nicht vorgeschrieben (Art. 50 EU AI Act greift nur bei
+   täuschend echten Abbildungen realer Personen/Orte/Ereignisse — hier
+   erkennbar stilisierte Fiktion). Freiwillig, aus Transparenzgründen,
+   dezent wie vom Gesetz für Kunst und Fiktion selbst als ausreichend
+   beschrieben. */
+.ki-hinweis {
+  position: absolute; right: 6px; bottom: 6px; z-index: 3;
+  font-family: var(--data); font-size: .56rem; letter-spacing: .06em;
+  color: var(--fog); background: rgba(12,21,25,.72); border: 1px solid rgba(126,147,158,.3);
+  padding: .12rem .4rem; pointer-events: none;
+}
+.fallcover, .seriencover, .beleg { position: relative; }
+
+/* ---------- 31. Neuigkeiten ---------- */
+.neuigkeit { display: grid; gap: .2rem 1.5rem; padding: 1.3rem 0; border-top: 1px solid var(--line); }
+.neuigkeit:last-child { border-bottom: 1px solid var(--line); }
+@media (min-width: 620px) { .neuigkeit { grid-template-columns: 6.5rem 1fr; } }
+.neuigkeit .kennung { padding-top: .3rem; }
+.neuigkeit h3 { margin: 0 0 .3rem; font-size: 1.25rem; }
+.neuigkeit h3 a { text-decoration-color: var(--line-hard); }
+.neuigkeit h3 a:hover { color: var(--akzent); }
+.neuigkeit p { margin: 0; color: var(--fog); font-size: .94rem; }
