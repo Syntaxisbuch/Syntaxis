@@ -795,3 +795,20 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
 .feld::placeholder { color: var(--fog-dim); }
 .feld:focus { outline: none; border-color: var(--akzent); }
 .protokollform button { font-size: 1rem; }
+
+/* ---------- 28. Glossar ---------- */
+.glgruppe { margin-bottom: 2.5rem; }
+.glgruppe-kopf {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+  font-size: 1.5rem; margin: 0 0 .5rem; padding-bottom: .6rem; border-bottom: 1px solid var(--line-hard);
+}
+.glossar { margin: 0; }
+.gleintrag { display: grid; gap: .25rem 1.75rem; padding: 1.05rem 0; border-bottom: 1px solid var(--line-soft); }
+@media (min-width: 820px) { .gleintrag { grid-template-columns: 15rem 1fr; } }
+.gleintrag dt { font-family: var(--display); font-size: 1.22rem; line-height: 1.15; }
+.gleintrag dt .kurz { display: block; font-family: var(--body); font-size: .85rem; color: var(--akzent); margin-top: .25rem; line-height: 1.4; }
+.gleintrag dd { margin: 0; color: var(--fog); font-size: .96rem; }
+.gleintrag dd .beispiel {
+  display: inline-block; margin-top: .55rem; font-family: var(--data); font-size: .68rem;
+  color: var(--fog-dim); border: 1px solid var(--line); padding: .18rem .45rem;
+}
