@@ -144,6 +144,39 @@
 
 <style>@media (min-width:900px){.ld-raster{grid-template-columns:1.3fr .8fr;gap:3.5rem}}</style>
 
+<section class="stratum" id="kontakt">
+  <div class="wrap">
+    <div class="stratum-kopf">
+      <h2>Thema vorschlagen</h2>
+      <span class="hoehe">Welcher Mythos wäre eine gute Tür in ein Fachgebiet?</span>
+    </div>
+    <p class="gross schmal">Wenn dir ein Mythos einfällt, hinter dem ein ganzes Fachgebiet steckt — schick ihn. Am besten mit dem Punkt, an dem du selbst ins Grübeln gekommen bist.</p>
+    <form class="protokollform" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="584c8a1f-102e-4d8f-80f0-0aceacd0f188">
+      <input type="hidden" name="redirect" value="https://syntaxisbuch.github.io/Syntaxis/danke.html">
+      <input type="hidden" name="subject" value="Syntaxis — Themenvorschlag Licht der Realität">
+      <input type="hidden" name="Betreff" value="Themenvorschlag Licht der Realität">
+      <input type="checkbox" name="botcheck" class="honigtopf" tabindex="-1" autocomplete="off">
+      <div class="feldpaar">
+        <div>
+          <label class="kennung" for="fName-themen">IDENTIFIKATION (OPTIONAL)</label>
+          <input class="feld" type="text" id="fName-themen" name="Name" placeholder="Pseudonym oder Anonym">
+        </div>
+        <div>
+          <label class="kennung" for="fMail-themen">RÜCKKANAL (OPTIONAL)</label>
+          <input class="feld" type="email" id="fMail-themen" name="Email" placeholder="e-mail@adresse.xyz">
+        </div>
+      </div>
+      <div class="feldzeile">
+        <label class="kennung" for="fText-themen">PROTOKOLLEINTRAG · BETREFF THEMENVORSCHLAG LICHT DER REALITÄT</label>
+        <textarea class="feld" id="fText-themen" name="Nachricht" rows="7" required placeholder="Ihre Ausführungen …"></textarea>
+      </div>
+      <button class="knopf voll" type="submit">Zur Akte einreichen</button>
+      <p class="kennung" style="margin-top:.9rem">Es werden nur die Angaben übertragen, die du hier einträgst. Keine Cookies, kein Tracking.</p>
+    </form>
+  </div>
+</section>
+
 </main>
 
 <footer class="fuss">
