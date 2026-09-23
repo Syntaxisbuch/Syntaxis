@@ -20,8 +20,8 @@ WERKE = json.loads((WURZEL / "data" / "werke.json").read_text(encoding="utf-8"))
 # ---------------------------------------------------------------------------
 # EINZIGE STELLE FÜR DIE DOMAIN.
 # Ändert sich der Hosting-Ort — Repository-Umzug, eigene Domain — genügt eine
-# Änderung hier. Sitemap, robots.txt, Formular-Weiterleitung und die
-# og:url/canonical-Angaben jeder Seite werden daraus abgeleitet.
+# Änderung hier. Sitemap, robots.txt und die og:url/canonical-Angaben
+# jeder Seite werden daraus abgeleitet.
 #
 # Aktuell: das Repository heißt "Syntaxisbuch.github.io" (umbenannt von
 # "Syntaxis"), GitHub Pages liefert es deshalb an der Wurzel aus, ohne
@@ -320,43 +320,6 @@ def rendere_f404_baende():
     return f'<div class="werkliste">{z}</div>'
 
 
-def rendere_formular(betreff="Allgemeine Einreichung", titel="Anlage: Beobachtungsprotokoll",
-                     unter="Einreichung zur Akte — Leserbrief und Kontakt",
-                     text="Reichen Sie Ihre Analysen, Zweifel oder Ergänzungen zur Akte ein. Kuratierte Einträge werden nach Prüfung in das Hauptdokument überführt oder privat beantwortet."):
-    return f'''<section class="stratum" id="kontakt">
-  <div class="wrap">
-    <div class="stratum-kopf">
-      <h2>{titel}</h2>
-      <span class="hoehe">{unter}</span>
-    </div>
-    <p class="gross schmal">{text}</p>
-    <form class="protokollform" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="584c8a1f-102e-4d8f-80f0-0aceacd0f188">
-      <input type="hidden" name="redirect" value="{SITE_URL}/danke.html">
-      <input type="hidden" name="subject" value="Syntaxis — {betreff}">
-      <input type="hidden" name="Betreff" value="{betreff}">
-      <input type="checkbox" name="botcheck" class="honigtopf" tabindex="-1" autocomplete="off">
-      <div class="feldpaar">
-        <div>
-          <label class="kennung" for="fName-{betreff[:6].lower().replace(" ", "")}">IDENTIFIKATION (OPTIONAL)</label>
-          <input class="feld" type="text" id="fName-{betreff[:6].lower().replace(" ", "")}" name="Name" placeholder="Pseudonym oder Anonym">
-        </div>
-        <div>
-          <label class="kennung" for="fMail-{betreff[:6].lower().replace(" ", "")}">RÜCKKANAL (OPTIONAL)</label>
-          <input class="feld" type="email" id="fMail-{betreff[:6].lower().replace(" ", "")}" name="Email" placeholder="e-mail@adresse.xyz">
-        </div>
-      </div>
-      <div class="feldzeile">
-        <label class="kennung" for="fText-{betreff[:6].lower().replace(" ", "")}">PROTOKOLLEINTRAG · BETREFF {betreff.upper()}</label>
-        <textarea class="feld" id="fText-{betreff[:6].lower().replace(" ", "")}" name="Nachricht" rows="7" required placeholder="Ihre Ausführungen …"></textarea>
-      </div>
-      <button class="knopf voll" type="submit">Zur Akte einreichen</button>
-      <p class="kennung" style="margin-top:.9rem">Es werden nur die Angaben übertragen, die du hier einträgst. Keine Cookies, kein Tracking.</p>
-    </form>
-  </div>
-</section>'''
-
-
 BAUSTEINE = {
     "{{LR_BAENDE}}": rendere_baende_lr,
     "{{LD_BAENDE}}": rendere_baende_ld,
@@ -433,9 +396,6 @@ def baue():
         for marke, fn in BAUSTEINE.items():
             if marke in inhalt:
                 inhalt = inhalt.replace(marke, fn())
-        for m in re.findall(r"\{\{FORMULAR:([^}]*)\}\}", inhalt):
-            teile = [x.strip() for x in m.split("|")]
-            inhalt = inhalt.replace("{{FORMULAR:" + m + "}}", rendere_formular(*teile))
         html = (LAYOUT
                 .replace("{{TITEL}}", titel)
                 .replace("{{BESCHREIBUNG}}", beschr)
@@ -518,7 +478,6 @@ def schreibe_umleitungen():
     ordner.mkdir(exist_ok=True)
     ziele = {slug: ("" if slug == "index" else f"{slug}.html")
              for slug in SEITEN if slug != "404"}
-    ziele["danke"] = "danke.html"  # kein SEITEN-Eintrag, aber eine echte, verlinkte Seite
     for slug, ziel in ziele.items():
         datei = "index.html" if slug == "index" else f"{slug}.html"
         (ordner / datei).write_text(umleitungsseite(ziel), encoding="utf-8")
