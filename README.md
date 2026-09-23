@@ -166,9 +166,11 @@ Kommt dabei nichts zurück außer den erwarteten Zeilen in den Meta-Angaben, war
 
 Ohne Konten, ohne Werbung, ohne Analysewerkzeuge, ohne Cookies. Die Eingaben in den Werkzeugen bleiben im Browser (`localStorage`) und werden nicht übertragen.
 
-### Schriften lokal einbinden
+### Schriften
 
-Standardmäßig lädt die Seite Instrument Serif, Spectral und Azeret Mono von Google Fonts. Wer das vermeiden will, lädt die Dateien herunter, legt sie unter `assets/fonts/` ab und ersetzt in `_build/layout.html` den `<link>` auf `fonts.googleapis.com` durch eigene `@font-face`-Regeln. Danach den Datenschutzabschnitt in `_build/pages/impressum.html` anpassen und neu bauen.
+Instrument Serif, Spectral und Azeret Mono liegen als `.woff2`-Dateien unter `assets/fonts/` und werden über `assets/css/fonts.css` per `@font-face` eingebunden — es findet keine Anfrage an Google oder einen anderen Schriftenanbieter statt. Alle drei stehen unter der SIL Open Font License.
+
+Um eine Schrift zu aktualisieren oder zu ersetzen: neue `.woff2`-Datei nach `assets/fonts/` legen, `assets/css/fonts.css` entsprechend anpassen (Dateiname, `font-weight`, `font-style`) und neu bauen. Bezugsquelle für Aktualisierungen: [Google Fonts](https://fonts.google.com) — dort die gewünschten Schnitte auswählen, die CSS-Datei mit einem modernen Browser-User-Agent abrufen (liefert `.woff2`-Links) und daraus nur die `latin`-Subset-Blöcke übernehmen; für deutschen Text reicht dieses eine Subset.
 
 ---
 
