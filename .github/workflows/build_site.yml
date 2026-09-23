@@ -38,7 +38,9 @@ jobs:
         with:
           commit_message: "🤖 Auto-Build: Seiten, Sitemap und robots.txt aus aktuellen Daten generiert"
           branch: main
-          # build.py schreibt inzwischen auch sitemap.xml und robots.txt aus SITE_URL —
-          # beide müssen hier mit erfasst werden, sonst committet der Bot nur die HTML-Seiten
-          # und Sitemap/robots.txt frieren auf dem zuletzt von Hand gepushten Stand ein.
-          file_pattern: "*.html sitemap.xml robots.txt"
+          # build.py schreibt inzwischen auch sitemap.xml, robots.txt und die
+          # Umleitungsseiten unter Syntaxis/ aus SITE_URL — alle drei müssen hier
+          # mit erfasst werden, sonst committet der Bot nur die HTML-Seiten am
+          # Wurzelverzeichnis und der Rest friert auf dem zuletzt von Hand
+          # gepushten Stand ein.
+          file_pattern: "*.html sitemap.xml robots.txt Syntaxis/*.html"
