@@ -779,23 +779,6 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; appe
 .pforte-streifen.leer::after { background: none; }
 .pforte > .zeile:first-of-type { padding-top: 0; }
 
-/* ---------- 27. Protokollformular ---------- */
-.protokollform { max-width: 780px; }
-.protokollform .honigtopf { position: absolute; left: -9999px; opacity: 0; }
-.feldpaar { display: grid; gap: 1.1rem; margin-bottom: 1.1rem; }
-@media (min-width: 640px) { .feldpaar { grid-template-columns: 1fr 1fr; } }
-.feldzeile { margin-bottom: 1.4rem; }
-.protokollform label { display: block; margin-bottom: .45rem; }
-.feld {
-  width: 100%; padding: .75rem .85rem; box-sizing: border-box;
-  font-family: var(--body); font-size: .97rem; color: var(--bone);
-  background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--radius);
-  resize: vertical;
-}
-.feld::placeholder { color: var(--fog-dim); }
-.feld:focus { outline: none; border-color: var(--akzent); }
-.protokollform button { font-size: 1rem; }
-
 /* ---------- 28. Glossar ---------- */
 .glgruppe { margin-bottom: 2.5rem; }
 .glgruppe-kopf {
