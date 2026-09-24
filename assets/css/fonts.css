@@ -3,6 +3,12 @@
    assets/fonts/. Keine Anfrage verlässt mehr den Server der Seite selbst —
    kein Google-Aufruf, keine IP-Adresse, die irgendwo sonst ankommt. */
 
+/* 
+ * Instrument Serif: Copyright (c) 2022 The Instrument Serif Project Authors. 
+ * Licensed under the SIL Open Font License 1.1 (OFL-1.1).
+ * Lizenzdatei verfügbar im Ordner: ../fonts/
+ */
+
 @font-face {
   font-family: 'Instrument Serif';
   font-style: normal;
@@ -17,6 +23,12 @@
   font-display: swap;
   src: url('../fonts/instrument-serif-400italic.woff2') format('woff2');
 }
+
+/* 
+ * Spectral: Copyright (c) 2017 The Spectral Project Authors. 
+ * Licensed under the SIL Open Font License 1.1 (OFL-1.1).
+ * Lizenzdatei verfügbar im Ordner: ../fonts/
+ */
 
 @font-face {
   font-family: 'Spectral';
@@ -60,6 +72,13 @@
   font-display: swap;
   src: url('../fonts/spectral-400italic.woff2') format('woff2');
 }
+
+/* 
+ * Azeret Mono: Copyright (c) Displaay, Martin Vácha, Daniel Quisek. Licensed under SIL Open Font License 1.1.
+ * Instrument Serif: Copyright (c) 2022 The Instrument Serif Project Authors. Licensed under SIL Open Font License 1.1.
+ * Spectral: Copyright (c) 2017 The Spectral Project Authors. Licensed under SIL Open Font License 1.1.
+ * Lizenztexte verfügbar unter: /assets/fonts/OFL-1.1.txt
+ */
 
 @font-face {
   font-family: 'Azeret Mono';
