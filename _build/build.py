@@ -106,6 +106,20 @@ def rendere_baende_lr():
     return '<div class="werkliste">' + "".join(zeilen) + "</div>"
 
 
+def rendere_lr_buch2():
+    r = reihe("lr")
+    b2 = r["buch2"]
+    zeilen = []
+    for t in b2["teile"]:
+        marke = f'TEIL {t["teil"]}' if t["teil"] else "—"
+        hinweis = f'<p class="kennung" style="margin-top:.3rem">{t["hinweis"]}</p>' if t.get("hinweis") else ""
+        zeilen.append(f'''<div class="werk">
+        <span class="band">{marke}</span>
+        <div><h3 style="font-size:1.3rem">{t["titel"]}</h3>{hinweis}</div>
+      </div>''')
+    return '<div class="werkliste">' + "".join(zeilen) + "</div>"
+
+
 def rendere_baende_nc():
     r = reihe("nc")
     zeilen = []
@@ -123,6 +137,8 @@ def rendere_baende_nc():
           </figure>'''
 
         verfuegbar = "verfuegbar" if st == "verfügbar" else ""
+        meta = " · ".join(t for t in [
+            f'{b["kapitel"]} Kapitel' if b.get("kapitel", 0) > 0 else "", tags] if t)
 
         zeilen.append(f'''<article class="werk" id="nc-{b["nr"].lower()}">
         <span class="band">BAND {b["nr"]}<br>{b["jahr"]}</span>
@@ -131,7 +147,7 @@ def rendere_baende_nc():
           <h3>{b["titel"]}</h3>
           <p style="color:var(--bone);margin-bottom:.6rem"><strong>{b["fall"]}</strong> — {b["ort"]}</p>
           <p>{b["text"]}</p>
-          <p class="kennung" style="margin-top:.7rem">{b["kapitel"]} Kapitel · {tags}</p>
+          {f'<p class="kennung" style="margin-top:.7rem">{meta}</p>' if meta else ""}
           {dateiliste(b.get("dateien"), b["titel"])}
         </div>
         <span class="status" data-s="{verfuegbar}">{st}</span>
@@ -159,7 +175,7 @@ def rendere_faelle():
             cov = (f'<a class="fallcover" href="{f["cover"]}" target="_blank" rel="noopener" '
                    f'aria-label="Cover vergrößern: {f["titel"]}">'
                    f'<img src="{f.get("cover_klein", f["cover"])}" alt="Cover der Autopsie {f["nr"]:02d} — {f["titel"]}" loading="lazy" decoding="async">'
-                   f'<span class="ki-hinweis">KI-gestaltet</span></a>')
+                   f'<span class="ki-hinweis">KI-generiert</span></a>')
         zeilen.append(f'''<article class="fall{" mit-cover" if cov else ""}" id="au-{f["nr"]}">
         <span class="nr">{f["nr"]:02d}</span>
         {cov}
@@ -236,6 +252,18 @@ def rendere_downloads():
                     None,
                     b.get("cover")
                 ))
+
+        elif r["id"] == "lr":
+            eintraege.append((
+                "Buch 1 — Die Reise", r.get("dateien_buch1"),
+                "Acht Bände, der Reihe nach zu lesen — Stand: Etappe 75, 24.09.2026",
+                None, r.get("cover")
+            ))
+            eintraege.append((
+                "Buch 2 — Die Werkstatt", r.get("dateien_buch2"),
+                "Nachschlagewerk mit Glossar, Modell-Bibliothek und taktischem Kompendium — Stand: Etappe 75, 24.09.2026",
+                None, r.get("cover_buch2")
+            ))
 
         elif r["id"] == "au":
             inhalt = "".join(
@@ -322,6 +350,7 @@ def rendere_f404_baende():
 
 BAUSTEINE = {
     "{{LR_BAENDE}}": rendere_baende_lr,
+    "{{LR_BUCH2}}": rendere_lr_buch2,
     "{{LD_BAENDE}}": rendere_baende_ld,
     "{{AU_PLAN}}": rendere_au_plan,
     "{{NC_BAENDE}}": rendere_baende_nc,
@@ -340,9 +369,9 @@ SEITEN = {
     "index":       ("Syntaxis — Ein Projekt &uuml;ber kritisches Denken",
                     "Kostenlose Bücher über kritisches Denken, Mythen und eine Stadt, die gebaut ist wie ein Gehirn. PDF und EPUB unter Creative-Commons-Lizenz.", "", ""),
     "landkarte":   ("Die Landkarte der Realität — Syntaxis",
-                    "Das Hauptwerk: neun Bände über das Handwerk des Prüfens, vom Rüstzeug des Denkens bis zur Anatomie der Chimäre.", "lr", ""),
+                    "Das Hauptwerk in zwei Büchern: Buch 1, Die Reise, in acht Bänden vom Rüstzeug des Denkens bis zur Anatomie der Chimäre, dazu Buch 2, Die Werkstatt, als Nachschlagewerk.", "lr", ""),
     "chroniken":   ("Chroniken von Neocortex City — Syntaxis",
-                    "Vier Kriminalromane in einer Stadt, die gebaut ist wie ein menschliches Gehirn. Noir mit belegtem Anhang.", "nc", ""),
+                    "Fünf Kriminalromane (drei erschienen, zwei in Arbeit) in einer Stadt, die gebaut ist wie ein menschliches Gehirn. Noir mit belegtem Anhang.", "nc", ""),
     "autopsien":   ("Autopsien der Schatten — Syntaxis",
                     "Mythen, seziert nach einem festen Protokoll. Zehn Fallakten sind fertig, 105 in zehn Sektionen sind geplant.", "au", ""),
     "licht":       ("Licht der Realität — Syntaxis",
@@ -359,7 +388,7 @@ SEITEN = {
     "downloads":   ("Downloads — Syntaxis",
                     "Alle Syntaxis-Werke als PDF und EPUB, kostenlos und unter Creative-Commons-Lizenz.", "", ""),
     "lizenz":      ("Lizenz und Nutzung — Syntaxis",
-                    "Was mit den Syntaxis-Werken erlaubt ist: CC BY-NC-ND 4.0 für die Chroniken, CC BY-NC-SA 4.0 für Landkarte und Autopsien.", "", ""),
+                    "Was mit den Syntaxis-Werken erlaubt ist: CC BY-NC-ND 4.0 für die Chroniken, CC BY-NC 4.0 für Landkarte und Autopsien.", "", ""),
     "impressum":   ("Impressum und Haftungsausschluss — Syntaxis",
                     "Herausgeber, Kontakt, neurale Assistenz und Haftungsausschluss.", "", ""),
     "frequenz-404": ("Frequenz 404 — Der Piratensender aus Neocortex City",
