@@ -239,7 +239,7 @@
       ? treffer.map((e, i) => `<li><a href="${e.href}" class="${i === 0 ? "aktiv" : ""}">
           <span class="art">${e.art}</span>
           <span class="txt">${hervor(e.titel, q)}<small>${e.unter || ""}</small></span></a></li>`).join("")
-      : `<li><a href="gegenfragen.html"><span class="art">—</span><span class="txt">Kein Treffer<small>Versuch es mit einem Sektor-Kürzel wie NK-01, einer Signatur wie LR-I-1.2.3 oder einem Stichwort.</small></span></a></li>`;
+      : `<li><a href="gegenfragen.html"><span class="art">—</span><span class="txt">Kein Treffer<small>Versuch es mit einem Stadtsektor wie NK-01, einer Werksignatur wie LR-I-1.2.3 oder einem Stichwort.</small></span></a></li>`;
   }
 
   async function oeffne() {
