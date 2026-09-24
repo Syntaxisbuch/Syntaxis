@@ -1,6 +1,6 @@
 # Syntaxis - Ein Projekt &uuml;ber kritisches Denken — Website
 
-Die Projektseite zu **Syntaxis** von Gerald Glaser: vier Reihen über das Prüfen von Behauptungen, kostenfrei als PDF und EPUB, unter Creative-Commons-Lizenz.
+Die Projektseite zu **Syntaxis** von Gerald Glaser: vier Reihen über das Prüfen von Behauptungen, kostenfrei als PDF, die Chroniken auch als EPUB, unter Creative-Commons-Lizenz.
 
 Live: <https://syntaxisbuch.github.io/>
 Kontakt: <Syntaxis_Buch@pm.me>
@@ -154,7 +154,7 @@ Kommt dabei nichts zurück außer den erwarteten Zeilen in den Meta-Angaben, war
 ## Was diese Seite kann
 
 - **Höhenmesser-Navigation** — die Ebenen der Stadt als Seitenstruktur, mit Tastaturbedienung
-- **Suche** — `/` oder `Strg`+`K`; findet Werke, Sektoren, Denkwerkzeuge und Signaturen wie `LR-I-1.2.3` oder `NK-01`
+- **Suche** — `/` oder `Strg`+`K`; findet Werke, Denkwerkzeuge und Signaturen wie `LR-I-1.2.3`, dazu Stadtsektoren aus dem Koordinatensystem wie `NK-01` (Die Naturkonstante)
 - **Kartographischer Atlas** — Grundriss je Terrasse aus den echten X/Y-Koordinaten, Sektordetails mit neuroanatomischer Entsprechung, Wegbeschreibung mit Stationen, Richtungsgesetz und körperlichen Kosten
 - **Red-Flag-Prüfung** — dreizehn Warnzeichen als Prüfliste mit Befund
 - **Autopsie-Protokoll** — neunzehn Punkte als Arbeitsbogen, mit Textexport
@@ -177,7 +177,7 @@ Um eine Schrift zu aktualisieren oder zu ersetzen: neue `.woff2`-Datei nach `ass
 ## Lizenz
 
 **Inhalte** (Texte, Werke, Daten): siehe [Lizenz und Nutzung](lizenz.html).
-Landkarte der Realität und Autopsien der Schatten: CC BY-NC-SA 4.0.
+Landkarte der Realität und Autopsien der Schatten: CC BY-NC 4.0.
 Chroniken von Neocortex City: CC BY-NC-ND 4.0.
 
 **Quelltext dieser Website** (HTML, CSS, JavaScript, Generator): MIT, siehe `LICENSE`.
