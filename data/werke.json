@@ -21,19 +21,19 @@
         "Keine bearbeiteten Fassungen verbreiten"
       ]
     },
-    "by-nc-sa": {
-      "kurz": "CC BY-NC-SA 4.0",
-      "name": "Namensnennung — Nicht kommerziell — Weitergabe unter gleichen Bedingungen 4.0 International",
-      "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.de",
+    "by-nc": {
+      "kurz": "CC BY-NC 4.0",
+      "name": "Namensnennung — Nicht kommerziell 4.0 International",
+      "url": "https://creativecommons.org/licenses/by-nc/4.0/deed.de",
       "darf": [
         "Kopieren und weitergeben, in jedem Format",
         "Bearbeiten, kürzen, übersetzen, remixen",
-        "Eigene Materialien daraus bauen"
+        "Eigene Materialien daraus bauen, auch mit eigener Lizenz für die Bearbeitung"
       ],
       "bedingung": [
         "Nennung von Autor und Werk",
-        "Keine kommerzielle Nutzung",
-        "Bearbeitungen wieder unter genau dieser Lizenz weitergeben"
+        "Keine kommerzielle Nutzung durch Dritte",
+        "Änderungen kenntlich machen"
       ]
     }
   },
@@ -47,74 +47,136 @@
       "terrasse": "oberste",
       "z": 500,
       "hirn": "Präfrontaler Kortex",
-      "lizenz": "by-nc-sa",
+      "lizenz": "by-nc",
       "signatur": "LR-[BAND]-[SEKTION]",
       "seite": "landkarte.html",
-      "beschreibung": "Neun Bände in einem Werk. Wo die Chroniken das Lagerfeuer sind, an dem gestaunt wird, ist die Landkarte das Steingebäude, das vor der Kälte schützt. Sie beginnt beim Rüstzeug — Falsifizierbarkeit, Beweislast, Hierarchie der Evidenz — und endet bei der Frage, was man mit einem Menschen macht, der etwas Falsches glaubt und deshalb nicht dumm ist.",
+      "beschreibung": "Zwei Bücher. Buch 1, Die Reise, führt in acht Bänden vom Rüstzeug des Denkens bis zu den beiden Meister-Autopsien über Glaubenskrieg und Chimäre. Buch 2, Die Werkstatt, ist ein Nachschlagewerk mit Glossar, Modell-Bibliothek und taktischem Kompendium — nicht der Reihe nach zu lesen, sondern zu betreten, wenn man etwas sucht.",
       "form": "Sachbuch mit Übungsteil",
-      "umfang": "rund 900 Seiten",
+      "umfang": "zwei Bücher, rund 335.000 Wörter",
       "status": "verfügbar",
-      "cover": "assets/img/landkarte/serie-landkarte-der-realitaet.webp",
+      "cover": "assets/img/landkarte/buch-1-die-reise.webp",
       "baende": [
         {
           "nr": "I",
           "titel": "Das Rüstzeug des Denkens",
-          "inhalt": "Falsifizierbarkeit, Ockham, Beweislast, Hanlon, die Hierarchie der Evidenz, die Anatomie einer guten Studie, die dreizehn Red Flags, Denkfehler, Statistik als Waffe."
+          "inhalt": "Evidenz, Konsens, Denkfehler, Statistik, die ersten Katas."
         },
         {
           "nr": "II",
           "titel": "Die Maschine der Realität",
-          "inhalt": "Thermodynamik, Urknall, Kernfusion, DNA, Abiogenese, Evolution, Epigenetik. Die physikalischen und biologischen Grundlagen, gegen die jede Behauptung geprüft wird."
+          "inhalt": "Vom Urknall bis zur Zelle; die Naturgesetze als Schiedsrichter."
         },
         {
           "nr": "III",
           "titel": "Der Geist in der Welt",
-          "inhalt": "Wahrnehmung, Gedächtnis, Konformität, Gehorsam, Gruppendenken, Narrative, Blasen und die Aufmerksamkeits-Maschine."
+          "inhalt": "Das Betriebssystem des Einzelnen, der Gruppe, der Erzählung."
         },
         {
           "nr": "IV",
           "titel": "Die Grenzen der Karte",
-          "inhalt": "Was die Methode nicht kann. Das harte Problem des Bewusstseins, die Ist-Soll-Lücke, die Replikationskrise — und wie man im Nebel navigiert."
+          "inhalt": "Was die Methode nicht kann, und wie man im Nebel navigiert."
         },
         {
           "nr": "V",
           "titel": "Die Architektur der Wahrheit",
-          "inhalt": "Die Schatten-Kathedrale der Irrationalität, gebaut aus Furcht, Gotik, Chrom und Serverraum. Und der Gegenentwurf: Dialog statt Belehrung."
+          "inhalt": "Die Schatten-Kathedrale und der Garten dagegen."
         },
         {
           "nr": "VI",
           "titel": "Das Dojo",
-          "inhalt": "Der Übungsteil. Werkstücke, Sparringsrunden, Katas für Familie, Arztbesuch und Kindererziehung."
+          "inhalt": "Der Übungsteil, Gürtel für Gürtel: Werkzeuge erkennen, Prozesse anwenden, Strategien simulieren, lehren — bis zur Meisterprüfung, zum Sparringspartner aus Silizium und zur Festung des Geistes (Immunisierung, Resilienz, verbales Judo)."
         },
         {
           "nr": "VII",
-          "titel": "Die Festung des Geistes",
-          "inhalt": "Mentale Modelle als tägliches Immunsystem, intellektuelle Hygiene, digitale Selbstverteidigung."
+          "titel": "Die Anatomie eines Glaubenskrieges",
+          "inhalt": "Erste Meister-Autopsie: die Kreuzzüge als Mechanik von Gewalt, Manipulation und kollektivem Rausch."
         },
         {
           "nr": "VIII",
-          "titel": "Die Anatomie eines Glaubenskrieges",
-          "inhalt": "Was passiert, wenn Gewissheit auf Gewissheit trifft — und warum die erlebte Linse beider Seiten stimmig ist."
-        },
-        {
-          "nr": "IX",
           "titel": "Die Anatomie der Chimäre",
-          "inhalt": "Die schwierigsten Fälle: Behauptungen, die zur Hälfte stimmen."
+          "inhalt": "Zweite Meister-Autopsie: wie Theosophie, Ariosophie und die „Protokolle“ zur braunen Esoterik verschmolzen — und wo ihre Muster heute wiederkehren."
         }
       ],
-      "dateien": [
+      "cover_klein": "assets/img/landkarte/buch-1-die-reise-klein.webp",
+      "buch1": {
+        "titel": "Die Reise",
+        "untertitel": "acht Bände, der Reihe nach zu lesen",
+        "begleiter": [
+          {
+            "titel": "Der Kompass",
+            "hinweis": "Checklisten für den Akutfall"
+          },
+          {
+            "titel": "Das Mini-Glossar",
+            "hinweis": "100 Werkzeuge in Kürze"
+          },
+          {
+            "titel": "Das Schutz-Kompendium",
+            "hinweis": ""
+          }
+        ]
+      },
+      "buch2": {
+        "titel": "Die Werkstatt",
+        "untertitel": "ein Nachschlagewerk, in jeder Reihenfolge zu betreten",
+        "signaturpraefix": "LR-W",
+        "teile": [
+          {
+            "teil": "I",
+            "titel": "Der Kompass"
+          },
+          {
+            "teil": "II",
+            "titel": "Das große Glossar",
+            "hinweis": "171 Werkstücke in acht Clustern"
+          },
+          {
+            "teil": "III",
+            "titel": "Die Modell-Bibliothek"
+          },
+          {
+            "teil": "IV",
+            "titel": "Das Taktische Kompendium",
+            "hinweis": "28 Fallakten"
+          },
+          {
+            "teil": "V",
+            "titel": "Das interdisziplinäre Netzwerk"
+          },
+          {
+            "teil": "VI",
+            "titel": "Die Meister-Lösungen"
+          },
+          {
+            "teil": "VII",
+            "titel": "Die Werkstatt der Zukunft"
+          },
+          {
+            "teil": "VIII",
+            "titel": "Das Schutz-Kompendium"
+          },
+          {
+            "teil": null,
+            "titel": "Stichwortindex"
+          }
+        ]
+      },
+      "cover_buch2": "assets/img/landkarte/buch-2-die-werkstatt.webp",
+      "cover_buch2_klein": "assets/img/landkarte/buch-2-die-werkstatt-klein.webp",
+      "dateien_buch1": [
         {
           "format": "PDF",
-          "datei": "downloads/landkarte-der-realitaet.pdf",
-          "label": "Landkarte der Realität — PDF"
-        },
-        {
-          "format": "EPUB",
-          "datei": "downloads/landkarte-der-realitaet.epub",
-          "label": "Landkarte der Realität — EPUB"
+          "datei": "downloads/landkarte-buch-1-die-reise.pdf",
+          "label": "Buch 1 — Die Reise — PDF"
         }
       ],
-      "cover_klein": "assets/img/landkarte/serie-landkarte-der-realitaet-klein.webp"
+      "dateien_buch2": [
+        {
+          "format": "PDF",
+          "datei": "downloads/landkarte-buch-2-die-werkstatt.pdf",
+          "label": "Buch 2 — Die Werkstatt — PDF"
+        }
+      ]
     },
     {
       "id": "nc",
@@ -181,11 +243,11 @@
           "nr": "I",
           "titel": "Der Schatten über Dreamland",
           "jahr": "2026",
-          "cover": "assets/img/chroniken/band-1-schatten-ueber-dreamland.png",
+          "cover": "assets/img/chroniken/band-1-schatten-ueber-dreamland.webp",
           "kapitel": 24,
           "fall": "Area 51 und Bob Lazar",
           "ort": "Administrativer Kortex, Wüste, Route 375",
-          "text": "VORABVERSION! Ein vergilbtes Steuerformular aus dem Jahr 1989, seziert im Sektor des Administrativen Kortex. Darunter kein kosmisches Wunder, sondern ein Netzwerk aus Spionage, Medienmythos und der menschlichen Sehnsucht nach dem Wunderbaren. Kein Buch, das den Himmel leerräumt — das Werkzeug, um das echte Staunen zurückzugewinnen.",
+          "text": "Ein vergilbtes Steuerformular aus dem Jahr 1989, seziert im Sektor des Administrativen Kortex. Darunter kein kosmisches Wunder, sondern ein Netzwerk aus Spionage, Medienmythos und der menschlichen Sehnsucht nach dem Wunderbaren. Kein Buch, das den Himmel leerräumt — das Werkzeug, um das echte Staunen zurückzugewinnen.",
           "tags": [
             "Area 51",
             "Ufologie",
@@ -201,13 +263,14 @@
               "format": "EPUB",
               "datei": "downloads/chroniken-1-schatten-ueber-dreamland.epub"
             }
-          ]
+          ],
+          "status": "Vorabversion"
         },
         {
           "nr": "II",
           "titel": "Der König des dichten Unterholzes",
           "jahr": "2026",
-          "cover": "assets/img/chroniken/band-2-koenig-des-dichten-unterholzes.png",
+          "cover": "assets/img/chroniken/band-2-koenig-des-dichten-unterholzes.webp",
           "kapitel": 29,
           "fall": "Bigfoot und das Patterson-Gimlin-Filmmaterial",
           "ort": "Nadelwald-Archiv, Insula-Distrikt",
@@ -233,7 +296,7 @@
           "nr": "III",
           "titel": "Das Tier im Menschen",
           "jahr": "2026",
-          "cover": "assets/img/chroniken/band-3-das-tier-im-menschen.png",
+          "cover": "assets/img/chroniken/band-3-das-tier-im-menschen.webp",
           "kapitel": 39,
           "fall": "Werwolf und Vampirismus",
           "ort": "Parietales Grenzland, Limbische Altstadt",
@@ -259,7 +322,7 @@
           "nr": "IV",
           "titel": "Was das Licht verspricht",
           "jahr": "in Arbeit",
-          "cover": "assets/img/chroniken/band-4-was-das-licht-verspricht.png",
+          "cover": "assets/img/chroniken/band-4-was-das-licht-verspricht.webp",
           "kapitel": 45,
           "fall": "Spuk, Séance und Ideomotorik",
           "ort": "Registratur der Fürbitten, Verwaltungsflügel Ost, Die Bögen, Halbergs Zirkel",
@@ -304,7 +367,7 @@
       "terrasse": "sub-unterste",
       "z": -60,
       "hirn": "Sonderzugang unter dem Basisdatum",
-      "lizenz": "by-nc-sa",
+      "lizenz": "by-nc",
       "signatur": "AU-[SEKTION]-[NUMMER]",
       "seite": "autopsien.html",
       "beschreibung": "Kein Spott, kein Rabatt. Jede Autopsie legt den Mythos in seiner stärksten Fassung auf den Tisch, nicht in seiner dümmsten, und führt ihn durch zwölf Punkte: Verführung, Genealogie, Verwandtschaft, kultureller Fußabdruck, Toleranz-Zone, ökonomisches Röntgenbild, Beweisführung, naturwissenschaftliche Autopsie, psychologische Anatomie, Gegenprobe, historischer Spiegel, Dialog-Leitfaden. Der Mensch, der irrt, wird nie zum Gegenstand.",
@@ -485,7 +548,7 @@
       "terrasse": "obere-mittlere",
       "z": 400,
       "hirn": "Parietallappen",
-      "lizenz": "by-nc-sa",
+      "lizenz": "by-nc",
       "signatur": "LD-[BAND]-[FALL]",
       "seite": "licht.html",
       "beschreibung": "Jeder Band nimmt sich ein wissenschaftliches Fachgebiet vor und erklärt es entlang der Mythen, die es betreffen. Der Verschwörungserzählung wird nicht widersprochen — sie wird als Einstieg benutzt und dann durch die Sache selbst ersetzt. Wer wissen will, warum die Türme fielen, lernt dabei, was mit Stahl bei 600 Grad passiert. Wer wissen will, ob die Pyramiden von Besuchern gebaut wurden, lernt Statik, Hebelgesetze und Rampenbau. Das Ziel ist nicht die Widerlegung, sondern das bessere Bild dahinter.",
